@@ -24,6 +24,16 @@ Generic pipeline automation — not preclinical-specific, not tied to one CRO ty
 Sold as: your scientists do the hands-on bench work, our tools handle analysis and
 reporting.
 
+**Key point — two distinct value props, both must be present:**
+1. **Improve what they already do** — make existing workflows better and raise product
+   (deliverable) quality on services they already offer.
+2. **Expand what they can offer** — help them launch entirely new service lines /
+   enter new markets they don't currently serve (e.g. add RNA-seq, advanced imaging,
+   or other capabilities without building every specialist in-house).
+
+Don't let the page collapse into just "we make you faster" — the market-expansion
+angle is equally central, not a minor add-on.
+
 **Workflow:** Analysis Plan → Process Assay Data (any assay/instrument) → Best-Practice
 Analytics → High-Quality Reports.
 

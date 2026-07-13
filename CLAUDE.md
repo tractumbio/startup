@@ -9,6 +9,13 @@ lost between sessions — read it before starting new work on this repo.
 used the name "Tractus" — that name is superseded. If you find old files/exports
 referencing "Tractus," rename to Tractum Bio Consulting before reusing them.)
 
+Domain **tractumbio.com** is live; founder email is `adrian@tractumbio.com`. Real logo
+asset recovered from Drive and saved to `assets/logo.png` (blue arrow-through-"T" mark,
+wordmark "tractumbio," tagline "WORKFLOW AUTOMATION" — that tagline only reflects the
+CRO practice, so don't use the tagline version in contexts covering both practices).
+Reference email signature saved to `assets/emailsig.png` — confirms Adrian's title as
+**Managing Director and Founder**.
+
 ## What the company does — two practices
 
 ### 1. CRO Automation Services (for any CRO)
@@ -108,10 +115,34 @@ reconstructing from memory.
   reporting pipelines; statistical modelling (lm, glm, gam, XGBoost, ML frameworks);
   end-to-end data pipelines (wrangling → modelling → visualisation → report); DCF and
   rNPV financial modelling for investor materials
-- Two bio source documents exist but are NOT yet in this repo:
-  `CV_DAI_Adrian_Cioanca_2.pdf`, `Adrian_Cioanca_Resume_2025_data_analytics.pdf`
-  (referenced in a separate claude.ai project; upload here if needed for further bio
-  work).
+- **Title: Managing Director and Founder, Tractum Bio Consulting** (confirmed via email
+  signature asset)
+- Tractum itself (founded 2025) already has real, active client contracts — described
+  in Adrian's CV as AI-powered ophthalmic drug development models and automated CRO
+  data pipelines. **Client names are to stay private on the public site** (use generic
+  language like "a global pharmaceutical company" — do not publish specific client
+  names without their explicit sign-off first).
+- ANU JCSMR: Postdoctoral Fellow & Genetics Lecturer, 2022–2026. Partnered with biotech
+  and large pharma (named in CV) to build bespoke analytics pipelines; led a 7-person
+  team; mentored 6 students (all top of cohort); delivered genetics lectures to 120+
+  medical students (4.8/5 teaching score, pass rate improved 82% → 97%)
+- ErythroSight (co-founder & CTO, 2023–2026): secured 3 patents, raised $670K, **exited
+  via a commercial licensing deal**; DCF/rNPV modelling; pitched at 3 national
+  accelerators including CSIRO ON Accelerate (<5% acceptance)
+- Founded **Vision ACTion** — a research translation forum uniting researchers,
+  clinicians, and patients to accelerate therapeutic development
+- Featured in national media: Startup Daily, Ophthalmology Times, CSIRO, Sky News
+  Australia
+- STEM outreach speaker, Canberra Science Week (8,000+ attendees) and national high
+  school programs
+- Multiple CV drafts exist in Drive with slightly varying numbers (publication counts
+  ranging ~20–25, patent counts 2–3 depending on context) — treat the figures already
+  in this file as the ones to use; if precision matters for a specific claim, go back
+  to the source CVs in Drive rather than re-deriving.
+- One CV draft's summary mentions a personal long-term interest in transitioning
+  toward quantitative trading. Confirmed as **outdated / not reflective of current
+  plans** — Tractum is the real, current focus. Do not let this influence the site,
+  bio, or any framing of commitment to the company.
 
 ## Team — other roles needed (not yet staffed with real people)
 
@@ -139,9 +170,18 @@ finalizing.)
 
 ## Open decisions / gaps to resolve
 
-1. Import the real prototype HTML files + PDFs into this repo (currently absent).
-2. Reconcile the green/blue practice-color system against the navy/teal palette above.
-3. Fill in a named specific for Adrian's "AI/data systems" work (currently unbacked by
-   a concrete example).
+1. Prototype HTML files (`index.html`, `tractus.html`, `tractus-ophthalmology.html`)
+   were searched for in Google Drive and NOT found — only brand assets (logo,
+   email signature) turned up in the Drive "website" folder. They may only exist in
+   the other claude.ai project's sandbox output and may need to be rebuilt from
+   scratch here rather than imported, unless Adrian can export them from that project.
+2. Reconcile the green/blue practice-color system (used in the prototype) against the
+   navy/teal palette in this file — logo.png uses a bright blue (~#2E7BE0-ish, sample
+   the file directly), not the navy `#10233F` from the original brief. Pick one system.
+3. Fill in a named specific for Adrian's "AI/data systems" work beyond the retinal
+   bioinformatics pipelines already documented (text embeddings/NLP/vector-similarity
+   work at Accenture is documented now — may be sufficient).
 4. Decide on core team vs. advisory board split and recruit/confirm the clinician gap.
 5. Tech stack / CMS / hosting not yet chosen for a production build.
+6. Real client names (Merck, GenN Tech per CV) must stay off the public site pending
+   their explicit sign-off — use generic descriptors instead.

@@ -126,9 +126,10 @@ reconstructing from memory.
   and large pharma (named in CV) to build bespoke analytics pipelines; led a 7-person
   team; mentored 6 students (all top of cohort); delivered genetics lectures to 120+
   medical students (4.8/5 teaching score, pass rate improved 82% → 97%)
-- ErythroSight (co-founder & CTO, 2023–2026): secured 3 patents, raised $670K, **exited
-  via a commercial licensing deal**; DCF/rNPV modelling; pitched at 3 national
-  accelerators including CSIRO ON Accelerate (<5% acceptance)
+- ErythroSight (co-founder & CTO, 2023–2026): secured 3 patents, raised $670K; DCF/rNPV
+  modelling; pitched at 3 national accelerators including CSIRO ON Accelerate (<5%
+  acceptance). **Do not state or imply any exit/licensing outcome publicly or in any
+  materials — not disclosable.**
 - Founded **Vision ACTion** — a research translation forum uniting researchers,
   clinicians, and patients to accelerate therapeutic development
 - Featured in national media: Startup Daily, Ophthalmology Times, CSIRO, Sky News

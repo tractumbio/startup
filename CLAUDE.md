@@ -37,6 +37,49 @@ angle is equally central, not a minor add-on.
 **Workflow:** Analysis Plan → Process Assay Data (any assay/instrument) → Best-Practice
 Analytics → High-Quality Reports.
 
+**Worked example — the concrete proof artifact for this page** (archetype: a specialist
+ocular CRO like Iris Pharma — GLP ocular efficacy/safety/PK + bioanalysis, using ERG,
+Spectralis HRA+OCT, LC-MS/MS, ELISA, histopath). **Present publicly as "a specialist
+ocular CRO" / illustrative — do NOT name Iris Pharma; they are a real peer/competitor
+and naming them implies a relationship that doesn't exist.**
+
+A single ocular study generates five incompatible raw streams + paperwork:
+- OCT retinal scans → image data
+- ERG traces → electrophysiology data
+- LC-MS/MS ocular PK + ELISA cytokines (VEGF, inflammatory) → numerical assay data
+- Histopathology / IHC slides → image data
+- Slit-lamp / IOP / fundus scoring → structured observations
+- Protocol, animal metadata, dosing records, acceptance criteria → docs + metadata
+
+*Before (the pain):* sponsor receives a folder of 20+ loose files (PDFs, CSVs, image
+exports), thin methods that don't show how numbers were derived, ad-hoc/inconsistent
+stats (t-tests where mixed models are needed; eye-within-animal nesting mishandled;
+multiplicity ignored). The sponsor — who has deep expertise in the assay they bought —
+can't fully audit or reproduce it. Scientists burn days wrangling data.
+
+*With Tractum (one modular pipeline):* INGEST → PROCESS → ANALYSE → HUMAN REVIEW →
+REPORT → improve-over-time.
+1. Ingest all streams + protocol + metadata; one module per data type
+2. Deterministic automated processing per type (OCT segmentation, ERG waveform
+   extraction, PK curve-fitting, ELISA standard curves); every step logged
+3. Best-practice stats applied consistently (repeated-measures mixed models, correct
+   eye/animal nesting, multiplicity handled)
+4. Human-in-the-loop: scientists own the QC/exclusions sign-off; automation removes the
+   grind, not the judgment
+5. One coherent client deliverable — figures + fully transparent traceable methods +
+   interpretation + audit trail, replacing the 20-file dump
+6. Modular, so new/better methods (new OCT biomarker, updated stats) drop in centrally
+   and every future study inherits them — the product keeps improving without per-project
+   re-tooling
+
+This example carries BOTH value props:
+- #1 improve existing work — the six steps above
+- #2 expand into new markets — the SAME modular pipeline extends to omics the CRO
+  doesn't offer (e.g. RNA-seq). Differentiator: Tractum understands the biology (the
+  client's disease question / which pathways matter), so analytics are optimised/
+  customised to that biology, not a generic off-the-shelf report — deeper biological
+  insight, no in-house bioinformatics team required.
+
 **Core properties:** Deterministic · Fully auditable · Human-in-the-loop.
 
 **Selling points:**

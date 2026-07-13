@@ -16,9 +16,63 @@ CRO practice, so don't use the tagline version in contexts covering both practic
 Reference email signature saved to `assets/emailsig.png` — confirms Adrian's title as
 **Managing Director and Founder**.
 
-## What the company does — two practices
+## Strategic direction (CURRENT — an ophthalmic-focused firm)
 
-### 1. CRO Automation Services (for any CRO)
+**Supersedes the earlier "two independent practices (generic CRO automation + biotech
+ophthalmology)" framing.** Tractum is narrowing to ONE domain — **ophthalmology** — to
+play entirely to Adrian's real moat. Generic "any preclinical CRO automation" is NOT the
+centerpiece; the data/analytics/pipeline skill is retained but applied IN SERVICE OF
+ophthalmology (it becomes the "advanced analytics" component of the pharma capability
+build), not sold as a standalone generic CRO product.
+
+**One firm, one domain, two buyer tiers (differentiated by what the client already
+has / needs):**
+
+**Tier 1 — Small biotech → advisory & guidance.** They lack ophthalmic expertise,
+infra, and capability. Tractum guides them through the whole preclinical-to-IP journey:
+is the eye a real, valuable opportunity for your asset (go/no-go + valuation) → then
+guidance through the preclinical path to IP (mechanism → indication → safety/efficacy
+plan → IP & path to Phase 1 → valuation modelling → CRO matching). Deliverable =
+decisions + roadmap + defensible valuation story. *(This is the existing 5-act
+ophthalmology journey — see "Ophthalmology Consulting" section below.)*
+
+**Tier 2 — Pharma (and preclinical CROs wanting ophthalmic capability) → full end-to-end
+capability build.** They already HAVE data infra (AWS/GCP) + research infra + resources;
+they want ophthalmic testing capability in-house. **VALIDATED — Adrian has built
+ophthalmic animal models for large pharma bringing testing in-house.** Tractum builds it
+end-to-end, layered ON TOP of their existing infrastructure (we provide ophthalmic
+domain capability + analytics, NOT infrastructure): bespoke disease modelling +
+molecular/histology work + imaging + RNA (transcriptomics) + advanced analytics.
+Deliverable = a working ophthalmic capability with method/know-how transferred and
+analytics built. Bigger, deeper, higher-value engagement than Tier 1. *(The analytics
+layer reuses the multimodal pipeline story in the "CRO Automation" section below.)*
+
+**Why this focus is right:** eliminates the depth-vs-breadth problem (everything is
+ophthalmic = everything plays to the moat); legible in one sentence ("we guide biotechs
+into the eye, and we build ophthalmic capability for pharma"); both tiers validated by
+real experience; the pharma "on top of existing infra" scope is realistic for a small
+firm (specialist capability layer, not enterprise vendor — sidesteps the SOC 2 / GxP /
+2am-support credibility problem because the client owns the infra). Trade-off
+consciously accepted: smaller TAM (ophthalmology only) for credibility + focus — can
+broaden later from strength.
+
+**Boundary (unchanged):** capability build = enablement / method-and-know-how transfer,
+NOT Tractum operating an ongoing lab/CRO (consistent with killing the "Ophthalmic
+Precision" operate-a-CRO model).
+
+**Pharma proof point:** cite generically ("built ophthalmic disease models for a global
+pharmaceutical company") — keep client names private pending sign-off.
+
+---
+
+## Reference detail — the two service stories (now re-slotted under the tiers above)
+
+The two worked stories below predate the ophthalmic-focus pivot. They are still the
+content, re-slotted: the **CRO Automation / multimodal pipeline story = the analytics
+component of Tier 2 (pharma build)**; the **Ophthalmology Consulting journey = Tier 1
+(biotech advisory)**. Kept for their detailed narrative/value-prop work.
+
+### 1. CRO Automation Services (analytics engine — now the Tier-2 analytics layer)
 
 Generic pipeline automation — not preclinical-specific, not tied to one CRO type.
 Sold as: your scientists do the hands-on bench work, our tools handle analysis and
@@ -94,7 +148,7 @@ improve what you deliver today (Acts 3–4) and expand what you can offer tomorr
 - Enterprise-grade: secure, auditable, integrates into existing GMP/GLP workflows rather
   than replacing them; ongoing support included
 
-### 2. Ophthalmology Consulting (for any biotech entering ophthalmology)
+### 2. Ophthalmology Consulting (= TIER 1: small-biotech advisory & guidance)
 
 Positioned as a **valuation-uplift argument**, not a services list. The pitch: "your
 lead asset may already have a second market — it's in the eye."
@@ -278,9 +332,12 @@ finalizing.)
    email signature) turned up in the Drive "website" folder. They may only exist in
    the other claude.ai project's sandbox output and may need to be rebuilt from
    scratch here rather than imported, unless Adrian can export them from that project.
-2. Reconcile the green/blue practice-color system (used in the prototype) against the
-   navy/teal palette in this file — logo.png uses a bright blue (~#2E7BE0-ish, sample
-   the file directly), not the navy `#10233F` from the original brief. Pick one system.
+2. Site structure now follows the ophthalmic-focus pivot: ONE ophthalmic firm, two
+   buyer tiers (Tier 1 small-biotech advisory / Tier 2 pharma capability build) — NOT
+   the old "CRO automation vs ophthalmology" two-practice split. The green/blue
+   two-practice color system from the prototype no longer maps cleanly; likely move to
+   a single ophthalmic-led palette (logo blue ~#2E7BE0, sample the file). Reconcile
+   before building.
 3. Fill in a named specific for Adrian's "AI/data systems" work beyond the retinal
    bioinformatics pipelines already documented (text embeddings/NLP/vector-similarity
    work at Accenture is documented now — may be sufficient).

@@ -37,48 +37,48 @@ angle is equally central, not a minor add-on.
 **Workflow:** Analysis Plan → Process Assay Data (any assay/instrument) → Best-Practice
 Analytics → High-Quality Reports.
 
-**Worked example — the concrete proof artifact for this page** (archetype: a specialist
-ocular CRO like Iris Pharma — GLP ocular efficacy/safety/PK + bioanalysis, using ERG,
-Spectralis HRA+OCT, LC-MS/MS, ELISA, histopath). **Present publicly as "a specialist
-ocular CRO" / illustrative — do NOT name Iris Pharma; they are a real peer/competitor
-and naming them implies a relationship that doesn't exist.**
+**Worked example — the concrete proof artifact for this page.** Tell it as a STORY (a
+single study's journey from bench to client-ready report), not a feature list. Keep it
+generic to any CRO — do NOT name a real CRO (no Iris Pharma etc.). Use genuinely
+multimodal inputs: image data, numerical assay data, the experimental protocol, and
+metadata.
 
-A single ocular study generates five incompatible raw streams + paperwork:
-- OCT retinal scans → image data
-- ERG traces → electrophysiology data
-- LC-MS/MS ocular PK + ELISA cytokines (VEGF, inflammatory) → numerical assay data
-- Histopathology / IHC slides → image data
-- Slit-lamp / IOP / fundus scoring → structured observations
-- Protocol, animal metadata, dosing records, acceptance criteria → docs + metadata
+**The sharp value prop (the spine):** Most analytics vendors have only ever sat at the
+computer. Tractum has stood at the bench that generates the data, at the computer that
+turns it into evidence, AND at the client's desk that receives the report — so the
+pipeline is built to serve all three. That triple vantage (bench → computer → client)
+is the moat; a software vendor only knows the middle one.
 
-*Before (the pain):* sponsor receives a folder of 20+ loose files (PDFs, CSVs, image
-exports), thin methods that don't show how numbers were derived, ad-hoc/inconsistent
-stats (t-tests where mixed models are needed; eye-within-animal nesting mishandled;
-multiplicity ignored). The sponsor — who has deep expertise in the assay they bought —
-can't fully audit or reproduce it. Scientists burn days wrangling data.
+**The journey — one study, five acts:**
+- **Act 1 — the bench:** a study wraps, producing multimodal raw data — high-content
+  images, numerical assay readouts, the protocol that defines what it means, the
+  metadata tying every file to subject/group/timepoint. Rich but heterogeneous, inert,
+  scattered.
+- **Act 2 — the old path (pain):** days of manual wrangling; images graded by hand,
+  assay numbers pasted between tools, ad-hoc stats, thin methods. Sponsor gets 20+
+  loose files and a report that never shows HOW each number was derived. Scientists
+  stuck at the keyboard instead of the bench.
+- **Act 3 — the pipeline (where the 3 vantage points show):** one pipeline that
+  (a) reads protocol + metadata FIRST so it analyses in context, knowing design/arms/
+  endpoints/acceptance criteria [= knows what happens at the bench];
+  (b) processes each modality correctly, automation carrying the grind [= knows what
+  must happen at the computer];
+  (c) applies the RIGHT statistics for the design, consistently, every time;
+  (d) keeps the human at the quality gate — scientists own exclusions/QC/sign-off;
+  automation removes labour, never judgment.
+- **Act 4 — the deliverable (payoff):** not 20 files — ONE report: accurate results,
+  clear analytics, publication-grade figures, fully transparent traceable methods
+  (every value maps to how it was computed). The sponsor — who knows the assay cold —
+  can audit it, trust it, hand it to their board [= knows what the client wants to see].
+- **Act 5 — the compounding edge (dynamic + adaptable):** modular, so a better method
+  drops in centrally and every future study inherits it, and NEW services (RNA-seq /
+  omics) plug into the same frame. Because Tractum understands the biology, those
+  analytics are customised to the client's disease question, not a generic off-the-shelf
+  readout. Deliverable keeps sharpening; service menu keeps widening.
 
-*With Tractum (one modular pipeline):* INGEST → PROCESS → ANALYSE → HUMAN REVIEW →
-REPORT → improve-over-time.
-1. Ingest all streams + protocol + metadata; one module per data type
-2. Deterministic automated processing per type (OCT segmentation, ERG waveform
-   extraction, PK curve-fitting, ELISA standard curves); every step logged
-3. Best-practice stats applied consistently (repeated-measures mixed models, correct
-   eye/animal nesting, multiplicity handled)
-4. Human-in-the-loop: scientists own the QC/exclusions sign-off; automation removes the
-   grind, not the judgment
-5. One coherent client deliverable — figures + fully transparent traceable methods +
-   interpretation + audit trail, replacing the 20-file dump
-6. Modular, so new/better methods (new OCT biomarker, updated stats) drop in centrally
-   and every future study inherits them — the product keeps improving without per-project
-   re-tooling
-
-This example carries BOTH value props:
-- #1 improve existing work — the six steps above
-- #2 expand into new markets — the SAME modular pipeline extends to omics the CRO
-  doesn't offer (e.g. RNA-seq). Differentiator: Tractum understands the biology (the
-  client's disease question / which pathways matter), so analytics are optimised/
-  customised to that biology, not a generic off-the-shelf report — deeper biological
-  insight, no in-house bioinformatics team required.
+**Why this carries both value props as ONE continuous story (not a bolted-on list):**
+improve what you deliver today (Acts 3–4) and expand what you can offer tomorrow
+(Act 5) are the same pipeline seen at two moments in time.
 
 **Core properties:** Deterministic · Fully auditable · Human-in-the-loop.
 

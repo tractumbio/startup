@@ -122,6 +122,55 @@ profitability) → safety/efficacy research plan → IP & path to Phase 1 → CR
 **Scope:** broad ophthalmology — retina (AMD, DR, RVO, GA/IRD) *and* anterior segment
 (dry eye, glaucoma).
 
+**Worked story — tell the ophthalmology page as a JOURNEY (parallel in structure to the
+CRO story), not a service list.**
+
+**The sharp value prop (the spine):** a banker can model the upside but can't judge
+whether the biology is real; a bench scientist can judge the biology but can't model the
+deal or chart the path to the clinic. Tractum has been all three — the retinal
+scientist, the biotech founder who raised on these very models, and the translational
+developer — so the number handed over is one the client can defend to their board and
+partners. The triple vantage is **biology → deal → path**, mapping to Adrian's real,
+unfakeable credentials (retinal PhD/fluency; ErythroSight raise + rNPV/DCF modelling;
+translational development). This is the direct answer to "why should I trust your
+valuation?"
+
+**The journey — one asset, five acts:**
+- **Act 1 — the asset (setup):** a biotech has a lead molecule in its first indication;
+  the board sees a single-asset company with a single-asset valuation. But mechanism
+  doesn't care what the molecule was designed for — it may already be relevant in the
+  eye, where no one is looking.
+- **Act 2 — why the eye (reframe):** the eye is a uniquely favourable development site —
+  small, contained, immune-privileged, directly accessible, microgram doses, deep
+  regulatory/clinical precedent; retinal therapies carry pricing power; 505(b)(2)
+  repurposing is cheaper/faster/higher-PoS (~50–70% vs 10–30% for a new molecule). A
+  second eye indication is disproportionately de-risked upside on an asset already owned.
+- **Act 3 — the rigorous assessment (where the 3 vantages show):** a decision funnel,
+  not a service menu — mechanism deep dive (is the rationale REAL; the scientist
+  vantage) → indication screening (unmet need AND profitability) → safety/efficacy plan
+  (what evidence proves it) → IP & path to Phase 1 (defensible? route?) → valuation
+  modelling (rNPV/DCF; the founder/investor vantage) → CRO matching (orchestrate the
+  real development; the developer vantage — Tractum connects, doesn't run the bench).
+- **Act 4 — the decision (payoff; NO-GO is the hero):** output is never a promise of
+  success — it is a high-quality decision made before serious capital is committed.
+  GO → focused roadmap to the next value-inflection point + defensible uplift story.
+  NO-GO → clear scientific/commercial rationale for NOT pursuing; preserve capital.
+  "We will tell you no" is what makes a yes worth trusting — the line that converts a
+  skeptical CSO.
+- **Act 5 — the prize, quantified (transparent, not hyped):** illustratively $85M →
+  $150M (+76%) via a credible ophthalmic indication, shown as a transparent, TUNABLE
+  sum-of-the-parts model with scenario range (+30% / +76% / +140%), every input visible,
+  labelled illustrative. Point isn't the number — it's that a de-risked second
+  indication is one of the highest-leverage moves a single-asset biotech can make.
+  Precedent: bevacizumab (designed for colorectal cancer; ophthalmic value discovered
+  later — the mechanism was always there).
+
+**Deliberate symmetry with the CRO story (this is what makes the two practices read as
+ONE firm, resolving the two-practice coherence risk):** both rest on a triple-vantage
+claim (bench/computer/client ↔ biology/deal/path); both make the honest/human element
+the trust anchor (human QC gate ↔ the no-go); both end on the compounding prize
+(better+wider deliverable ↔ valuation uplift).
+
 ## Site structure (from the prototype build)
 
 A prior claude.ai session built a working HTML prototype with this structure:

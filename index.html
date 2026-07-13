@@ -1,8 +1,8 @@
 <title>Tractum Bio — Is the eye the opportunity for your asset?</title>
 <style>
   :root{
-    --ground:#F7F8F6;--surface:#FFFFFF;--surface-2:#EDF2F6;--ink:#26333E;--muted:#5C6B76;
-    --heading:#0E2038;--line:#DCE4EA;--line-strong:#C3D0DA;--blue:#2463A7;--blue-bright:#2E7BE0;
+    --ground:#F9FBF8;--surface:#FFFFFF;--surface-2:#EEF3F8;--ink:#33414C;--muted:#66757F;
+    --heading:#183553;--line:#DFE6EC;--line-strong:#C7D3DC;--blue:#2463A7;--blue-bright:#2E7BE0;
     --teal:#2B8C86;--amber:#B27E24;--band:#0E2038;--band-ink:#C6D4E2;--band-head:#F4F8FC;
     --band-line:#263B57;--band-muted:#8FA2B6;
     --measure:66ch;--maxw:1120px;
@@ -19,8 +19,8 @@
     }
   }
   :root[data-theme="light"]{
-    --ground:#F7F8F6;--surface:#FFFFFF;--surface-2:#EDF2F6;--ink:#26333E;--muted:#5C6B76;
-    --heading:#0E2038;--line:#DCE4EA;--line-strong:#C3D0DA;--blue:#2463A7;--blue-bright:#2E7BE0;
+    --ground:#F9FBF8;--surface:#FFFFFF;--surface-2:#EEF3F8;--ink:#33414C;--muted:#66757F;
+    --heading:#183553;--line:#DFE6EC;--line-strong:#C7D3DC;--blue:#2463A7;--blue-bright:#2E7BE0;
     --teal:#2B8C86;--amber:#B27E24;--band:#0E2038;--band-ink:#C6D4E2;--band-head:#F4F8FC;
     --band-line:#263B57;--band-muted:#8FA2B6;
   }
@@ -100,13 +100,14 @@
   .stop .sn{font-family:var(--mono);font-size:.72rem;color:var(--teal);letter-spacing:.06em}
   .stop .stt{font-weight:640;color:var(--heading);font-size:.98rem;line-height:1.25}
   .stop:first-child{border-radius:12px 0 0 12px}
-  .stop.terminal{border-radius:0 12px 12px 0;background:var(--band);border-color:var(--band-line)}
-  .stop.terminal .stt{color:var(--band-head)}
+  .stop.terminal{border-radius:0 12px 12px 0;background:color-mix(in srgb,var(--teal) 9%,var(--surface));
+    border-color:color-mix(in srgb,var(--teal) 34%,var(--line))}
+  .stop.terminal .stt{color:var(--heading)}
   .stop.terminal .sn{color:var(--teal)}
   .stop.terminal .outs{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-  .stop.terminal .outs span{font-size:.76rem;font-family:var(--mono);color:var(--band-muted);
-    border:1px solid var(--band-line);border-radius:20px;padding:3px 9px}
-  .stop.terminal .outs span.stop-o{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,var(--band-line))}
+  .stop.terminal .outs span{font-size:.76rem;font-family:var(--mono);color:var(--muted);background:var(--surface);
+    border:1px solid var(--line-strong);border-radius:20px;padding:3px 9px}
+  .stop.terminal .outs span.stop-o{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 50%,var(--line-strong))}
   @media(max-width:820px){
     .journey{flex-direction:column;gap:0}
     .stop{border-right:1px solid var(--line)!important;border-bottom:none}
@@ -149,17 +150,15 @@
   .src-note{margin-top:30px;font-size:.8rem;color:var(--muted);line-height:1.7;border-top:1px solid var(--line);padding-top:18px}
   .src-note b{color:var(--ink)}
 
-  /* deal band (dark) */
-  .band{background:var(--band);color:var(--band-ink)}
-  .band h2,.band h3{color:var(--band-head)}
+  /* deal band (soft, light) */
+  .band{background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .band .eyebrow{color:var(--teal)}.band .eyebrow::before{background:var(--teal)}
-  .band .lead{color:var(--band-muted)}
-  .deal{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center;margin-top:8px}
+  .deal{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;margin-top:8px}
   @media(max-width:680px){.deal{grid-template-columns:1fr;gap:18px}}
-  .deal .big{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:760;color:var(--band-head);font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.02em}
-  .deal .big small{display:block;font-size:.9rem;font-weight:500;color:var(--teal);margin-top:10px;letter-spacing:.02em}
-  .deal p{color:var(--band-muted);font-size:1rem;max-width:52ch}
-  .deal .cite{font-family:var(--mono);font-size:.72rem;color:var(--band-muted);margin-top:14px;display:block}
+  .deal .big{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:760;color:var(--blue);font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.02em}
+  .deal .big small{display:block;font-size:.9rem;font-weight:500;color:var(--muted);margin-top:10px;letter-spacing:.02em}
+  .deal p{color:var(--ink);font-size:1rem;max-width:52ch}
+  .deal .cite{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:14px;display:block}
 
   /* vantage + founder */
   .three{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);

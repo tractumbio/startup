@@ -95,12 +95,79 @@ reconstructing from memory.
   factors; also extracellular vesicle biology (EVs as intercellular signaling in
   retinal health/disease)
 - Co-founder, **ErythroSight** — accelerator-backed venture developing red blood
-  cell-derived extracellular vesicle therapeutics for age-related macular degeneration
+  cell-derived extracellular vesicle therapeutics for age-related macular degeneration.
+  Raised $670K, holds 3 international patents; built partnerships with 4 biotech
+  partners leading to a $3M capital raise. Participated in ON Prime / ON Accelerate
+  (CSIRO deep-tech commercialization program, <5% acceptance rate).
+- **J.G. Crawford Prize nominee** — 2 of ~7,000 ANU graduates
+- Currently **Data & AI Consultant, Accenture** (Canberra, Australia)
+- Led a 7-person team spanning gene therapeutics, preclinical models, and biomarker
+  analytics; designed and delivered a **$200K Merck & Co. preclinical model
+  project — 8× ROI**
+- Technical skills: 5+ years R, Python, SQL; R Shiny apps; R Markdown automated
+  reporting pipelines; statistical modelling (lm, glm, gam, XGBoost, ML frameworks);
+  end-to-end data pipelines (wrangling → modelling → visualisation → report); DCF and
+  rNPV financial modelling for investor materials
 - Two bio source documents exist but are NOT yet in this repo:
   `CV_DAI_Adrian_Cioanca_2.pdf`, `Adrian_Cioanca_Resume_2025_data_analytics.pdf`
-  (referenced in a separate claude.ai project; need to be uploaded here if needed for
-  further bio work, e.g. the "AI Dev" / data-systems work isn't yet backed by named
-  specifics).
+  (referenced in a separate claude.ai project; upload here if needed for further bio
+  work).
+
+## Related but SEPARATE venture: "Ophthalmic Precision" (investment memo)
+
+**This is not Tractum Bio Consulting.** A separate investment memorandum exists for a
+different, parallel play — do not blend its messaging into the Tractum Bio Consulting
+site. Keep them distinct.
+
+**What it is:** a pitch to acquire/build an operating, AI-powered **specialist
+ophthalmic preclinical CRO** (i.e. actually running the lab and selling preclinical
+services directly), not a consulting/advisory business. Framed as "A Commercial
+Investment Case: Specialist Retinal Preclinical Services, Powered by AI-Automated Data
+Pipelines," dated 2025.
+
+**Headline numbers:** $450M addressable CRO market today, 12% annual growth, 25% AI
+cost reduction in data analysis claimed, 4–5× 5-year return on incremental capital.
+Illustrative model on a $50M baseline CRO: revenue $57M (Yr1) → $66.7M (Yr2) → $77.2M
+(Yr3) → $94.1M (Yr5); Year 5 incremental EBITDA $11.5M; 12–14× specialist M&A multiple;
+$138–161M enterprise value created.
+
+**Thesis:** two converging trends — (1) ophthalmic drug pipeline growing ~2× the rate
+of the broader preclinical CRO market on a $6.3B 2024 funding wave into retinal gene
+therapy/cell therapy/biologics, and (2) AI lab automation cutting data-analysis costs
+50–80%. No current competitor combines both. Plan: acquire a boutique ophthalmic CRO
+(named candidates: EyeCRO, Powered Research, Ichor) for $5–15M all-in entry cost, layer
+on AI pipelines, capture the specialist pricing premium (+15–30% over generalists) and
+AI throughput gains.
+
+**AI pipeline time-savings claimed per assay type:** OCT/fundus imaging 90–95%, ELISA
+processing 80–85%, LC-MS/MS peak integration 70–85%, cell/morphology analysis 60–80%,
+tox histopathology 40–50%, statistical reporting 65–70%, EDC/data capture 30–50%.
+Annual labour cost avoidance $600K–$1.8M; AI implementation cost $400K–$1.0M; payback
+12–18 months.
+
+**Named market data points:** global preclinical CRO market $6.5B (2025, 7–8% CAGR);
+ophthalmic preclinical CRO segment $450M (10–12% CAGR); ocular gene therapy market
+$7.4B by 2032 (25% CAGR); $6.3B ophthalmology VC funding in 2024 (+$1.1B in Q1–Q2 2025);
+73 active ocular gene therapy trials; 75 GA drugs in development (45 preclinical);
+notable pharma validation deals — Merck $3B EyeBio, Lilly $475M MeiraGTx, BI $1B
+Re-Vana. BIOSECURE Act (2024) cited as a tailwind, redirecting $2B+ from Chinese CROs
+to Western providers.
+
+**Named target companies (35+ identified, examples):** Gene therapy — Cirrus, RhyGaze,
+PulseSight, Mirugen, HuidaGene. Cell therapy — GelMEDIX, InGel Therapeutics, Eyestem.
+Small molecule/biologic — AsclepiX, ForwardVue, SeaBeLife, Re-Vana, Therini Bio. RNA
+therapeutics — Isarna, City Therapeutics, Astherna. Large pharma divisions — Regeneron,
+Roche, AbbVie, Merck (EyeBio), BI. Top 10 priority targets ranked with funding amounts
+and outsourcing-propensity status are in the source deck if needed later.
+
+**Competitive landscape named:** Charles River, Labcorp/Covance, EyeCRO, Experimentica,
+Iris Pharma, Powered Research, Pharmaron — positioned as generalist-vs-specialist ×
+no-AI-vs-full-AI, with this play claiming the specialist+AI whitespace.
+
+**Source:** Google Slides deck, "Ophthalmic Precision — CRO + AI Analytics," read via
+Drive on 2026-07-13 (file id `1JmYMkzff-3sk1EEbr7Fk4y85V2EFIfiXIEiy6jt3_Qo`). Full text
+was extracted; go back to the source file for exact figures/formatting if rebuilding
+this into its own materials.
 
 ## Team — other roles needed (not yet staffed with real people)
 

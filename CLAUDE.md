@@ -60,6 +60,31 @@ broaden later from strength.
 NOT Tractum operating an ongoing lab/CRO (consistent with killing the "Ophthalmic
 Precision" operate-a-CRO model).
 
+**Additional capability layers folded into Tier 2 (engine, not standalone offerings —
+do not spin these out as separate doors/pillars; they power the two tiers above):**
+
+- **Agentic literature-intelligence workflows.** NLP/agentic pipelines continuously
+  monitor published ophthalmic research to surface emerging retinal/ocular targets,
+  mechanisms, and repurposing candidates — an expert (Adrian) then judges what's real.
+  AI mines/ranks/surfaces; the scientist decides. Same human-in-the-loop philosophy as
+  everywhere else. Powers Tier 1's mechanism/indication screening (faster, evidence-
+  current) and is a sellable standing capability within Tier 2. Do NOT pitch as
+  general "AI drug discovery across all of PubMed" — that's a red ocean (BenevolentAI,
+  Recursion, Insilico) and reads as AI-as-hero, which the brand brief explicitly bans.
+  Scope strictly to ophthalmology.
+- **Cross-study predictive insight layer (long-term ROADMAP item, not sellable today).**
+  As pharma clients run more studies through the same standardized Tier-2 pipeline, the
+  accumulated structured data (multimodal: imaging, molecular, RNA, assay) becomes a
+  growing evidence base that can be mined for cross-study patterns a single report never
+  surfaces, and can reduce redundant animal studies (real regulatory tailwind to cite:
+  FDA Modernization Act 2.0 / the 3Rs). **Do NOT call this a "digital twin" publicly —
+  that implies a validated mechanistic simulation this firm hasn't built and can't yet
+  prove ("show me the twin" is the obvious rebuttal).** Use grounded language: "cross-
+  study intelligence" / "predictive insight layer." Position as where Tier 2 is
+  HEADING with a long-running client, not a current deliverable — this is the
+  compounding-value pitch made inside a Tier-2 engagement, not a fourth pillar to build
+  and sell in parallel now.
+
 **Pharma proof point:** cite generically ("built ophthalmic disease models for a global
 pharmaceutical company") — keep client names private pending sign-off.
 

@@ -4,9 +4,36 @@ Four local agents on Ollama, orchestrated with a human gate at every stage. Noth
 system produces is ever final: agents write to `outputs/drafts/`, a person approves, and
 only then does it reach `outputs/approved/`.
 
-**Status: scaffold.** The structure, orchestration and guardrails are real and working.
-The models, prompts and reference material are placeholders — see
+**Status: scaffold.** The structure, orchestration, storage and guardrails are real and
+working. The models, prompts and reference material are placeholders — see
 [What you need to supply](#what-you-need-to-supply).
+
+---
+
+## Quickstart
+
+```bash
+git clone https://github.com/tractumbio/startup.git
+cd startup && git checkout dev
+cd tractum-agents
+./bootstrap.sh
+```
+
+`bootstrap.sh` creates the venv, installs dependencies, copies `.env.example` to `.env`,
+checks for Ollama, and runs preflight. It is safe to re-run — it never overwrites an
+existing `.env` or venv.
+
+Then:
+
+```bash
+make help        # every task, with a one-line description
+make doctor      # config, agents, and which Ollama models are missing
+make check       # sanity-check before you commit
+```
+
+You still need Ollama itself: install from https://ollama.com/download, run
+`ollama serve`, and `ollama pull llama3.1:8b` (or whichever model you set in
+`config/models.yaml`). `make doctor` names the exact pull command for anything missing.
 
 ---
 

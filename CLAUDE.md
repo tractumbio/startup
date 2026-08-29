@@ -267,6 +267,19 @@ claude.ai session/project ("CRO Consulting") and have not been imported here yet
 If continuing from those files, get them uploaded into this repo first rather than
 reconstructing from memory.
 
+## Agent stack (`tractum-agents/`)
+
+Four local agents on Ollama with a human gate at every stage — `lit_intel`,
+`ophtha_science`, `valuation`, `brand_voice`. Lives in `tractum-agents/`, which has its
+own `CLAUDE.md` covering design decisions, storage model and setup. Read that before
+changing anything in there.
+
+Setup is `cd tractum-agents && ./bootstrap.sh`, then `make help`.
+
+The agents load `tractum-agents/company/COMPANY.md` and `BRAND.md` into every run, and
+both were derived from **this** file — so a correction here should be mirrored there, or
+the agents keep working from the stale version.
+
 ## Founder — Dr. Adrian Cioanca
 
 - PhD in retinal degeneration research, Australian National University (ANU), John

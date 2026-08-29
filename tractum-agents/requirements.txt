@@ -1,0 +1,3 @@
+# Deliberately minimal: stdlib + two small deps. Ollama is reached over plain HTTP.
+requests>=2.31
+PyYAML>=6.0

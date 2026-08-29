@@ -1,0 +1,38 @@
+# Model assignments. Placeholders — set these to models you have actually pulled.
+# Check what you have:  ollama list
+# Pull one:             ollama pull <model>
+#
+# Nothing in this file is validated until run time; `python -m orchestrator.run doctor`
+# tells you which of these are missing from your local Ollama.
+
+defaults:
+  host: ${OLLAMA_HOST:-http://localhost:11434}
+  model: llama3.1:8b          # TODO(adrian): set your default
+  options:
+    temperature: 0.3
+    num_ctx: 8192
+
+agents:
+  lit_intel:
+    model: llama3.1:8b        # TODO: long-context reader; consider a larger num_ctx
+    options:
+      temperature: 0.2        # low — this agent must not embellish
+      num_ctx: 32768
+
+  ophtha_science:
+    model: llama3.1:8b        # TODO: your strongest reasoning model goes here
+    options:
+      temperature: 0.3
+      num_ctx: 16384
+
+  valuation:
+    model: llama3.1:8b        # TODO: arithmetic-reliable model preferred
+    options:
+      temperature: 0.1        # lowest — numbers must be stable across runs
+      num_ctx: 8192
+
+  brand_voice:
+    model: llama3.1:8b        # TODO: best writer available
+    options:
+      temperature: 0.6        # highest — this is the only agent doing prose
+      num_ctx: 16384

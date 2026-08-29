@@ -1,0 +1,51 @@
+# --- secrets: never commit ---
+.env
+*.env
+*.env.*
+.env.*
+!.env.example
+*.key
+*.pem
+*credentials*.json
+*service-account*.json
+
+# --- generated agent output (drafts are never source of truth) ---
+outputs/**
+!outputs/drafts/
+!outputs/drafts/.gitkeep
+!outputs/approved/
+!outputs/approved/.gitkeep
+
+# --- client-supplied inputs: may contain confidential material ---
+inputs/*
+!inputs/.gitkeep
+!inputs/README.md
+
+# --- local model artifacts / caches ---
+.ollama/
+ollama/
+models/
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.onnx
+.cache/
+
+# --- python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# --- os / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

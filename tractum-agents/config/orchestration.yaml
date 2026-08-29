@@ -1,0 +1,62 @@
+# Pipelines. Every stage writes a draft; every gate stops for a human.
+#
+# Gate policy:
+#   required  — always stop and ask (default)
+#   never     — auto-continue (use only for cheap, low-risk stages)
+# There is no "auto-approve everything" switch, by design.
+
+pipelines:
+
+  # Tier 1: is the eye a real opportunity for this asset?
+  tier1_assessment:
+    description: Biotech asset → ophthalmic opportunity assessment and valuation.
+    stages:
+      - id: scan
+        agent: lit_intel
+        gate: required
+        gate_prompt: >
+          Are these the right papers, and is the evidence tiering honest?
+      - id: assess
+        agent: ophtha_science
+        gate: required
+        feeds_from: [scan]
+        gate_prompt: >
+          Does the mechanism hold? Is the GO/NO-GO one you would sign your name to?
+      - id: model
+        agent: valuation
+        gate: required
+        feeds_from: [assess]
+        gate_prompt: >
+          Are the inputs defensible and is every number traceable to the table?
+      - id: write
+        agent: brand_voice
+        gate: required
+        feeds_from: [assess, model]
+        gate_prompt: >
+          Could this be sent to the client as written?
+
+  # Standalone audit of any draft against brand + guardrails.
+  brand_audit:
+    description: Audit an existing draft against BRAND.md and GUARDRAILS.md.
+    stages:
+      - id: audit
+        agent: brand_voice
+        gate: required
+        gate_prompt: Do you agree with these findings?
+
+  # Standing literature watch.
+  lit_watch:
+    description: Recurring ophthalmic literature scan.
+    stages:
+      - id: scan
+        agent: lit_intel
+        gate: required
+        gate_prompt: Anything here worth an hour of your reading?
+
+# Context assembled for every agent, in this order. Guardrails go last so they sit
+# closest to the task.
+context_order:
+  - company/COMPANY.md
+  - company/BRAND.md
+  - agents/{agent}/SOUL.md
+  - company/GUARDRAILS.md

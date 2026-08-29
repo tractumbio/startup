@@ -58,6 +58,11 @@ def _entries_for(owner: str) -> list[Entry]:
     for p in sorted(base.rglob("*")):
         if not p.is_file() or p.name == ".gitkeep":
             continue
+        # Conversation state is not a workspace document. Listing sessions/ here would
+        # put JSON transcripts in every agent's manifest as if they were citable
+        # material; use `chat --session` / `/sessions` to reach them instead.
+        if "sessions" in p.relative_to(base).parts:
+            continue
         st = p.stat()
         out.append(Entry(
             owner=owner,

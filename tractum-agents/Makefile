@@ -5,7 +5,7 @@ PY := .venv/bin/python
 RUN := $(PY) -m orchestrator.run
 
 .DEFAULT_GOAL := help
-.PHONY: help setup doctor agents pipelines store clean check tier1 audit watch
+.PHONY: help setup doctor agents pipelines store clean check tier1 audit watch chat sessions clean-workspace
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## ' $(MAKEFILE_LIST) \
@@ -25,6 +25,15 @@ agents: ## List agents and their configured models
 
 pipelines: ## List pipelines and their stages
 	@$(RUN) pipelines
+
+chat: ## Talk to an agent (AGENT=ophtha_science [SESSION=name])
+	@test -n "$(AGENT)" || { echo "usage: make chat AGENT=ophtha_science [SESSION=name]"; exit 1; }
+	@$(RUN) chat $(AGENT) $(if $(SESSION),--session $(SESSION),)
+
+sessions: ## List saved chat sessions
+	@$(RUN) chat --help >/dev/null 2>&1; $(PY) -c "from orchestrator.session import Session; \
+		rows=Session.list_all(); \
+		[print(f'  {a:16} {n:24} {c} turns') for a,n,c in rows] or print('  no saved sessions')"
 
 store: ## List every agent's workspace files
 	@$(RUN) store ls
@@ -50,7 +59,11 @@ check: ## Sanity-check the codebase (imports, config, gitignore)
 	@git check-ignore -q .env && echo "  .env ignored" || { echo "  !! .env NOT ignored"; exit 1; }
 	@echo "  ok"
 
-clean: ## Remove drafts, caches and workspace working files (keeps approved/)
+clean: ## Remove drafts and caches (keeps approved/, workspace files and chat sessions)
 	rm -rf outputs/drafts/*.md **/__pycache__ orchestrator/__pycache__ .pytest_cache
-	find workspace -type f ! -name '.gitkeep' -delete 2>/dev/null || true
-	@echo "cleaned (outputs/approved/ left alone)"
+	@echo "cleaned drafts and caches (approved/, workspace/ and sessions kept)"
+
+clean-workspace: ## Also wipe workspace files — NOT chat sessions (asks first)
+	@printf 'Delete every workspace file except chat sessions? [y/N] ' && read a && [ "$$a" = y ] || exit 1
+	@find workspace -type f ! -name '.gitkeep' ! -path '*/sessions/*' -delete 2>/dev/null || true
+	@echo "workspace cleared (sessions kept)"

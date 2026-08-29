@@ -31,10 +31,16 @@ prompts and reference material are placeholders.
    only when named via `--load` or a stage's `load:`. Keeps contexts small and stops
    agents assuming what a file contains.
 
-4. **Guardrails load last**, closest to the task, per `context_order` in
+4. **Chat sessions are conversation state, not workspace documents.** They live in
+   `workspace/<agent>/sessions/` but are excluded from `store.list_all()` and therefore
+   from the manifest — otherwise every agent sees JSON transcripts listed as citable
+   material. `make clean` must never delete them; that bug was introduced and fixed once
+   already.
+
+5. **Guardrails load last**, closest to the task, per `context_order` in
    `config/orchestration.yaml`. Keep that ordering.
 
-5. **Refs cannot escape the workspace.** `store.resolve()` rejects `../` traversal.
+6. **Refs cannot escape the workspace.** `store.resolve()` rejects `../` traversal.
    Tested; keep the test in mind if you refactor it.
 
 ## The repo is PUBLIC
@@ -59,7 +65,10 @@ prompts and reference material are placeholders.
 - `config/models.yaml` — per-agent model and temperature. Temperatures are tuned by job
   (valuation 0.1, lit_intel 0.2, ophtha_science 0.3, brand_voice 0.6). Keep that shape
   when swapping models.
-- `orchestrator/` — runtime. ~700 lines, stdlib plus `requests` and `PyYAML`.
+- `orchestrator/` — runtime. ~1,100 lines, stdlib plus `requests` and `PyYAML`.
+  `run.py` CLI · `agent.py` one-shot runs · `session.py` + `repl.py` interactive chat ·
+  `store.py` workspace · `gate.py` approval · `ollama.py` HTTP client (`generate` for
+  one-shot, `chat` for multi-turn).
 
 ## Branch topology (as of this commit)
 

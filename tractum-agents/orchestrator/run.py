@@ -11,7 +11,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from . import store
+from . import repl, store
 from .agent import available_agents, run_agent
 from .config import ROOT, load_env, load_yaml, model_for
 from .gate import approve, ask, rel, write_draft
@@ -228,6 +228,10 @@ def cmd_store(args) -> int:
     return 1
 
 
+def cmd_chat(args) -> int:
+    return repl.run(args.agent, args.session)
+
+
 def main(argv: list[str] | None = None) -> int:
     load_env()
     parser = argparse.ArgumentParser(prog="orchestrator.run", description=__doc__,
@@ -248,6 +252,11 @@ def main(argv: list[str] | None = None) -> int:
     p_agent.add_argument("--load", action="append", metavar="OWNER:NAME",
                          help="inline a workspace file into this run (repeatable)")
     p_agent.set_defaults(func=cmd_agent)
+
+    p_chat = sub.add_parser("chat", help="talk to an agent interactively")
+    p_chat.add_argument("agent")
+    p_chat.add_argument("--session", default="default", help="named session to resume")
+    p_chat.set_defaults(func=cmd_chat)
 
     p_store = sub.add_parser("store", help="inspect and manage agent workspaces")
     store_sub = p_store.add_subparsers(dest="store_cmd", required=True)

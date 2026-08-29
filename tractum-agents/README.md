@@ -119,6 +119,36 @@ python -m orchestrator.run agent brand_voice \
 Output streams to your terminal as it generates. At each gate you get
 `[a]pprove [r]evise [x]reject [e]dit [q]uit` — `e` opens the draft in `$EDITOR`.
 
+## Talking to the agents
+
+```bash
+make chat AGENT=ophtha_science
+# or: python -m orchestrator.run chat ophtha_science --session tbc101
+```
+
+A conversation, not a one-shot run: the agent sees every prior turn, so you can push back
+on an answer and it knows what you are pushing back on. Sessions are named and persisted
+— close the terminal, come back, `--session tbc101` picks up where you left off.
+
+Supervision happens in the same place as the talking:
+
+| | |
+|---|---|
+| `/agent valuation` | hand the thread to another agent, history intact |
+| `/draft` | send the last reply to the approval gate, approve inline |
+| `/save verdict` · `/share comps` | file a reply into this agent's store, or shared |
+| `/load ophtha_science:verdict.md` | pull a workspace file into the conversation |
+| `/history` · `/transcript` | review, or save the whole thread as a draft |
+| `/who` · `/sessions` · `/ls` | what's available |
+
+`/agent` is the one worth knowing. It hands the thread over with the history attached, so
+`valuation` picks up with `ophtha_science`'s reasoning in front of it — in the words it
+was argued in, tagged as another agent's, not condensed into a summary. That is the whole
+Tier 1 funnel, supervised turn by turn, without leaving the terminal.
+
+The system prompt is rebuilt on every message, so editing a `SOUL.md` or dropping a file
+into the workspace takes effect on your next turn rather than needing a new session.
+
 ## The human gate
 
 - Every stage writes a draft **before** asking anything.

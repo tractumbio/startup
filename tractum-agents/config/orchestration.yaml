@@ -26,6 +26,7 @@ pipelines:
         agent: valuation
         gate: required
         feeds_from: [assess]
+        # load: [shared:market-comparables.md]   # workspace files to inline for this stage
         gate_prompt: >
           Are the inputs defensible and is every number traceable to the table?
       - id: write
@@ -52,6 +53,15 @@ pipelines:
         agent: lit_intel
         gate: required
         gate_prompt: Anything here worth an hour of your reading?
+
+# Agent workspaces (workspace/<agent>/ plus workspace/shared/).
+#   read:  every agent can read every other agent's store — cross-visibility
+#   write: an agent writes only to its own store, or to shared/
+# A manifest of what exists is injected into every run; file BODIES are inlined only
+# when named explicitly, via a stage's `load:` list or the CLI's --load flag.
+workspace:
+  enabled: true
+  manifest_in_context: true
 
 # Context assembled for every agent, in this order. Guardrails go last so they sit
 # closest to the task.

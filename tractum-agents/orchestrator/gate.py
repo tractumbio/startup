@@ -7,6 +7,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+from . import store
 from .config import ROOT
 
 
@@ -35,7 +36,7 @@ def write_draft(agent: str, stage: str, content: str, meta: dict) -> Path:
     return path
 
 
-def approve(draft: Path, note: str = "") -> Path:
+def approve(draft: Path, note: str = "", agent: str | None = None) -> Path:
     d = outputs_dir() / "approved"
     d.mkdir(parents=True, exist_ok=True)
     dest = d / draft.name
@@ -43,6 +44,11 @@ def approve(draft: Path, note: str = "") -> Path:
     if note:
         body += f"\n\n---\n**Approver note:** {note}\n"
     dest.write_text(body)
+
+    # File it in the owning agent's store so later runs — its own and the other
+    # agents' — can see and cite it. Only approved work lands here.
+    if agent:
+        store.write(agent, f"approved/{draft.name}", body)
     return dest
 
 

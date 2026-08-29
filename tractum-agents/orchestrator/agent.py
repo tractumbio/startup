@@ -5,6 +5,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
+from . import store
 from .config import ROOT, load_yaml, model_for
 from .ollama import generate
 
@@ -37,6 +38,10 @@ def build_system_prompt(agent: str) -> str:
     system = _read(f"agents/{agent}/prompts/system.md")
     if system.strip():
         parts.append(f"<!-- === agents/{agent}/prompts/system.md === -->\n{system.strip()}")
+
+    manifest = store.manifest(agent)
+    if manifest:
+        parts.append(f"<!-- === workspace manifest === -->\n{manifest}")
     return "\n\n---\n\n".join(parts)
 
 
@@ -67,11 +72,31 @@ class Result:
     output: str
 
 
-def run_agent(agent: str, values: dict[str, str], stream: bool = True) -> Result:
+def load_refs(agent: str, refs: list[str] | None) -> str:
+    """Inline the bodies of explicitly requested workspace files."""
+    blocks = []
+    for ref in refs or []:
+        body = store.read(ref, agent)
+        blocks.append(f"### Workspace file `{ref}`\n\n{body}")
+    return "\n\n".join(blocks)
+
+
+def run_agent(
+    agent: str,
+    values: dict[str, str],
+    stream: bool = True,
+    load: list[str] | None = None,
+) -> Result:
     if agent not in available_agents():
         raise ValueError(f"unknown agent '{agent}'. Known: {', '.join(available_agents())}")
     host, model, options = model_for(agent)
     system = build_system_prompt(agent)
+
+    loaded = load_refs(agent, load)
+    if loaded:
+        values = dict(values)
+        values["input"] = "\n\n".join(filter(None, [loaded, values.get("input", "")]))
+
     task = render_task(agent, values)
     output = generate(host, model, system, task, options=options, stream=stream)
     return Result(agent=agent, model=model, system=system, task=task, output=output)

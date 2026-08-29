@@ -16,6 +16,19 @@ outputs/**
 !outputs/approved/
 !outputs/approved/.gitkeep
 
+# --- agent workspaces: working data, may contain client material ---
+workspace/**
+!workspace/shared/
+!workspace/shared/.gitkeep
+!workspace/lit_intel/
+!workspace/lit_intel/.gitkeep
+!workspace/ophtha_science/
+!workspace/ophtha_science/.gitkeep
+!workspace/valuation/
+!workspace/valuation/.gitkeep
+!workspace/brand_voice/
+!workspace/brand_voice/.gitkeep
+
 # --- client-supplied inputs: may contain confidential material ---
 inputs/*
 !inputs/.gitkeep

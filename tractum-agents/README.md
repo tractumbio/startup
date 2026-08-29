@@ -117,8 +117,10 @@ notes and are accurate but thin. The highest-value thing you can add: two or thr
 paragraphs of **your own writing** you'd be happy to send a client, dropped into
 `BRAND.md`. That teaches voice better than any list of adjectives.
 
-**3. Reference files — `inputs/`.** Gitignored, so client material is safe there. See
-`inputs/README.md`.
+**3. Reference files — `inputs/` and `workspace/`.** Both gitignored, so client material
+is safe in either. Use `inputs/` for raw source you pass with `--input`; use
+`workspace/<agent>/` for material a given agent should hold onto across runs, and
+`workspace/shared/` for anything all four should be able to cite.
 
 **4. Prompts — `agents/*/prompts/`.** The output contracts are opinionated already. Tune
 `system.md` when an agent's output is the wrong *shape*; tune `SOUL.md` when its
@@ -132,7 +134,8 @@ that must never recur.
 ## Secrets
 
 `.gitignore` excludes `.env` and every `*.env*` variant, `outputs/`, `inputs/` (except
-its README), `*.key`, `*.pem`, `*credentials*.json`, model blobs (`*.gguf`, `*.bin`,
+its README), `workspace/` contents (the folder structure is kept, the working data is
+not), `*.key`, `*.pem`, `*credentials*.json`, model blobs (`*.gguf`, `*.bin`,
 `*.safetensors`), and `.DS_Store`. The default local-Ollama setup needs **no API key at
 all**. If you add a hosted provider later, its key goes in `.env` and nowhere else.
 

@@ -11,6 +11,7 @@ import argparse
 import sys
 from pathlib import Path
 
+from . import store
 from .agent import available_agents, run_agent
 from .config import ROOT, load_env, load_yaml, model_for
 from .gate import approve, ask, rel, write_draft
@@ -106,9 +107,10 @@ def cmd_pipelines(args) -> int:
     return 0
 
 
-def _run_stage(agent: str, stage_id: str, values: dict, gate_mode: str, gate_prompt: str):
+def _run_stage(agent: str, stage_id: str, values: dict, gate_mode: str, gate_prompt: str,
+               load: list[str] | None = None):
     print(f"\n--- stage '{stage_id}' :: agent '{agent}' ---", file=sys.stderr)
-    result = run_agent(agent, values)
+    result = run_agent(agent, values, load=load)
     draft = write_draft(
         agent,
         stage_id,
@@ -120,7 +122,7 @@ def _run_stage(agent: str, stage_id: str, values: dict, gate_mode: str, gate_pro
         return result, draft, "approve", ""
     decision, note = ask(gate_prompt, draft)
     if decision == "approve":
-        dest = approve(draft, note)
+        dest = approve(draft, note, agent=agent)
         print(f"approved -> {rel(dest)}", file=sys.stderr)
     return result, draft, decision, note
 
@@ -130,7 +132,8 @@ def cmd_agent(args) -> int:
     values.setdefault("input", _read_input(args.input))
     stage = args.stage or args.agent
     try:
-        _, _, decision, _ = _run_stage(args.agent, stage, values, args.gate, "")
+        _, _, decision, _ = _run_stage(args.agent, stage, values, args.gate, "",
+                                       load=args.load)
     except OllamaError as exc:
         print(f"\n{exc}", file=sys.stderr)
         return 2
@@ -163,6 +166,7 @@ def cmd_pipeline(args) -> int:
             result, draft, decision, note = _run_stage(
                 stage["agent"], stage["id"], values,
                 stage.get("gate", "required"), stage.get("gate_prompt", ""),
+                load=stage.get("load"),
             )
         except OllamaError as exc:
             print(f"\n{exc}", file=sys.stderr)
@@ -186,6 +190,44 @@ def cmd_pipeline(args) -> int:
     return 0
 
 
+def cmd_store(args) -> int:
+    if args.store_cmd == "ls":
+        entries = store.list_all()
+        if not entries:
+            print("workspace is empty")
+            return 0
+        for owner in store.owners():
+            owned = [e for e in entries if e.owner == owner]
+            if not owned:
+                continue
+            print(f"\n{owner}/")
+            for e in owned:
+                print(f"  {e.ref:50} {e.size:>9,} b  {e.modified}")
+        return 0
+
+    if args.store_cmd == "cat":
+        print(store.read(args.ref, args.agent or "shared"))
+        return 0
+
+    if args.store_cmd == "put":
+        content = Path(args.file).read_text()
+        name = args.name or Path(args.file).name
+        dest = store.write(args.agent, name, content)
+        print(f"wrote {rel(dest)}")
+        return 0
+
+    if args.store_cmd == "share":
+        dest = store.promote(args.ref, args.agent or "shared", args.name)
+        print(f"shared -> {rel(dest)}")
+        return 0
+
+    if args.store_cmd == "manifest":
+        text = store.manifest(args.agent or "")
+        print(text or "workspace is empty")
+        return 0
+    return 1
+
+
 def main(argv: list[str] | None = None) -> int:
     load_env()
     parser = argparse.ArgumentParser(prog="orchestrator.run", description=__doc__,
@@ -203,7 +245,27 @@ def main(argv: list[str] | None = None) -> int:
                          help="fill a {{placeholder}} in the task template")
     p_agent.add_argument("--stage", help="label for the draft filename")
     p_agent.add_argument("--gate", choices=["required", "never"], default="required")
+    p_agent.add_argument("--load", action="append", metavar="OWNER:NAME",
+                         help="inline a workspace file into this run (repeatable)")
     p_agent.set_defaults(func=cmd_agent)
+
+    p_store = sub.add_parser("store", help="inspect and manage agent workspaces")
+    store_sub = p_store.add_subparsers(dest="store_cmd", required=True)
+    s_ls = store_sub.add_parser("ls", help="list every agent's files")
+    s_cat = store_sub.add_parser("cat", help="print a file (owner:name)")
+    s_cat.add_argument("ref")
+    s_cat.add_argument("--agent", help="requesting agent, for bare refs")
+    s_put = store_sub.add_parser("put", help="add a file to an agent's own store")
+    s_put.add_argument("agent")
+    s_put.add_argument("file")
+    s_put.add_argument("--name", help="name within the store (default: the filename)")
+    s_share = store_sub.add_parser("share", help="copy a file into shared/")
+    s_share.add_argument("ref")
+    s_share.add_argument("--agent", help="requesting agent, for bare refs")
+    s_share.add_argument("--name")
+    s_man = store_sub.add_parser("manifest", help="show the manifest an agent would see")
+    s_man.add_argument("--agent")
+    p_store.set_defaults(func=cmd_store)
 
     p_pipe = sub.add_parser("pipeline", help="run a multi-stage pipeline")
     p_pipe.add_argument("pipeline")

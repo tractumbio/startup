@@ -95,11 +95,6 @@
   .retina{position:absolute;right:-160px;top:-30px;width:600px;height:600px;pointer-events:none;opacity:.5;z-index:-1}
   @media(max-width:900px){.retina{opacity:.2;right:-260px}}
 
-  /* anchor statement */
-  .anchor{background:var(--surface-2)}
-  .anchor .h2{max-width:24ch;margin-bottom:18px}
-  .anchor .lead{max-width:60ch}
-
   .assess-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:8px}
 
   /* engagement pipeline — three phases + outcome on one rail, with the gate below */
@@ -159,11 +154,12 @@
   .wm-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
     color:var(--muted);font-weight:650;margin:0 0 18px}
   .whyme-eye .ostat{margin-bottom:20px}
-  .capmap{max-width:300px;margin:0 auto}
-  .capmap svg{display:block;width:100%;height:auto}
-  .cap-lbl{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.06em}
-  .cap-sub{font-family:var(--sans);font-size:10px;font-weight:500;fill:var(--muted)}
-  .cap-center{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;fill:var(--heading)}
+  .capmap{max-width:560px;margin:0 auto}
+  .capmap svg{display:block;width:100%;height:auto;overflow:visible}
+  .cap-lbl{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.08em}
+  .cap-sub{font-family:var(--sans);font-size:12px;font-weight:500;fill:var(--muted)}
+  /* the SVG scales down on phones; grow the type in user units so it stays readable */
+  @media(max-width:760px){.cap-lbl{font-size:19px}.cap-sub{font-size:17px}}
 
   /* deal band (soft, light) */
   .band{background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -188,6 +184,18 @@
   .creds li{font-size:.9rem;color:var(--ink);padding-left:18px;position:relative}
   .creds li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:var(--teal)}
   .creds li b{color:var(--heading);font-weight:640}
+
+  /* engagement model */
+  .eng{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:40px}
+  .eng .ecell{background:var(--surface);padding:28px 24px}
+  .eng .ek{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:650;margin-bottom:12px}
+  .eng .ecell h3{margin-bottom:9px;font-size:1.06rem}
+  .eng .ecell p{font-size:.93rem;color:var(--muted);line-height:1.55}
+  @media(max-width:760px){.eng{grid-template-columns:1fr}}
+  .eng-note{margin-top:24px;font-size:.95rem;color:var(--muted);max-width:66ch}
+  .eng-note b{color:var(--heading);font-weight:640}
 
   /* after-go strip */
   .aftergo{border:1px solid var(--line);border-radius:16px;padding:30px 30px;background:var(--surface);
@@ -225,9 +233,10 @@
       <span class="word">tractum<span>bio</span></span>
     </a>
     <nav class="links" aria-label="Primary">
-      <a href="#how">How we assess</a>
-      <a href="#why">Why this, why me</a>
-      <a href="#founder">Who we are</a>
+      <a href="#how">Approach</a>
+      <a href="#engage">Engagement</a>
+      <a href="#why">Evidence</a>
+      <a href="#founder">About</a>
     </nav>
     <a class="nav-cta" href="#contact"><span class="cta-long">Evaluate your candidate</span><span class="cta-short">Get in touch</span></a>
   </div>
@@ -246,22 +255,13 @@
     </svg>
     <p class="eyebrow reveal">Ophthalmic asset diligence</p>
     <h1 class="display reveal">Could your existing lead candidate become a valuable ophthalmic asset?</h1>
-    <p class="lead reveal">We assess whether your existing drug, biologic, or lead candidate has a credible route into ophthalmology — from discovery to IND-ready — before you invest heavily in development.</p>
+    <p class="lead reveal">I assess whether your existing drug, biologic, or lead candidate has a credible route into ophthalmology — from discovery to IND-ready — before you invest heavily in development.</p>
     <div class="cta-row reveal">
       <a class="btn btn-primary" href="#contact">Evaluate your candidate <span class="arw">→</span></a>
-      <a class="btn btn-ghost" href="#how">See how we assess <span class="arw">→</span></a>
+      <a class="btn btn-ghost" href="#how">See the approach <span class="arw">→</span></a>
     </div>
     <div class="hero-meta reveal">
       <span><b>The route:</b> Discovery <span class="arw">→</span> Indication fit <span class="arw">→</span> Evidence <span class="arw">→</span> IND-ready</span>
-    </div>
-  </section>
-
-  <!-- ANCHOR STATEMENT -->
-  <section class="anchor" id="anchor">
-    <div class="wrap">
-      <p class="eyebrow reveal">Start with the asset you own</p>
-      <h2 class="h2 reveal">You already have the candidate. We determine whether the eye is the opportunity.</h2>
-      <p class="lead reveal">We do not begin with an abstract target search. We begin with your existing asset and test whether there is a credible ophthalmic indication, a defensible development strategy, and sufficient commercial upside to justify further investment.</p>
     </div>
   </section>
 
@@ -347,22 +347,72 @@
       <div class="whyme-me" id="me">
         <p class="wm-label">Why me</p>
         <div class="capmap">
-          <svg viewBox="0 0 320 300" role="img" aria-label="Biology, path and deal judgement, converging on one verdict">
-            <circle cx="160" cy="95" r="95" fill="color-mix(in srgb, var(--teal) 14%, transparent)" stroke="var(--teal)" stroke-width="1.6"/>
-            <circle cx="112" cy="188" r="95" fill="color-mix(in srgb, var(--blue) 14%, transparent)" stroke="var(--blue)" stroke-width="1.6"/>
-            <circle cx="208" cy="188" r="95" fill="color-mix(in srgb, var(--amber) 14%, transparent)" stroke="var(--amber)" stroke-width="1.6"/>
-            <text x="160" y="48" text-anchor="middle" class="cap-lbl" fill="var(--teal)">BIOLOGY</text>
-            <text x="160" y="64" text-anchor="middle" class="cap-sub">PhD · retinal degeneration</text>
-            <text x="72" y="226" text-anchor="middle" class="cap-lbl" fill="var(--blue)">PATH</text>
-            <text x="72" y="242" text-anchor="middle" class="cap-sub">Pharma + biotech, both sides</text>
-            <text x="248" y="226" text-anchor="middle" class="cap-lbl" fill="var(--amber)">DEAL</text>
-            <text x="248" y="242" text-anchor="middle" class="cap-sub">Founder-raised · Accenture</text>
-            <rect x="118" y="139" width="84" height="34" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
-            <text x="160" y="161" text-anchor="middle" class="cap-center">THE VERDICT</text>
+          <svg viewBox="0 0 620 250" role="img" aria-label="Three capabilities — biology, path and deal — refracted through one lens into a single verdict">
+            <defs>
+              <linearGradient id="lensG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="var(--teal)"/>
+                <stop offset="0.5" stop-color="var(--blue)"/>
+                <stop offset="1" stop-color="var(--amber)"/>
+              </linearGradient>
+            </defs>
+
+            <!-- incoming rays -->
+            <path d="M185 60 L 313 60"   stroke="var(--teal)"  stroke-width="1.5" fill="none" opacity=".85"/>
+            <path d="M185 125 L 307 125" stroke="var(--blue)"  stroke-width="1.5" fill="none" opacity=".85"/>
+            <path d="M185 190 L 313 190" stroke="var(--amber)" stroke-width="1.5" fill="none" opacity=".85"/>
+
+            <!-- the lens -->
+            <path d="M330 40 C 362 72, 362 178, 330 210 C 298 178, 298 72, 330 40 Z"
+                  fill="url(#lensG)" fill-opacity=".13" stroke="url(#lensG)" stroke-width="1.5"/>
+
+            <!-- refracted, converging -->
+            <path d="M347 60 L 452 125"  stroke="var(--teal)"  stroke-width="1.5" fill="none" opacity=".85"/>
+            <path d="M353 125 L 452 125" stroke="var(--blue)"  stroke-width="1.5" fill="none" opacity=".85"/>
+            <path d="M347 190 L 452 125" stroke="var(--amber)" stroke-width="1.5" fill="none" opacity=".85"/>
+
+            <circle cx="452" cy="125" r="5.5" fill="var(--blue-bright)"/>
+
+            <text x="0" y="56" class="cap-lbl" fill="var(--teal)">BIOLOGY</text>
+            <text x="0" y="74" class="cap-sub">PhD · retinal degeneration</text>
+
+            <text x="0" y="121" class="cap-lbl" fill="var(--blue)">PATH</text>
+            <text x="0" y="139" class="cap-sub">Pharma + biotech</text>
+
+            <text x="0" y="186" class="cap-lbl" fill="var(--amber)">DEAL</text>
+            <text x="0" y="204" class="cap-sub">Founder-raised · Accenture</text>
+
+            <text x="470" y="121" class="cap-lbl" fill="var(--blue-bright)">ONE VERDICT</text>
+            <text x="470" y="139" class="cap-sub">board-ready</text>
           </svg>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ENGAGEMENT MODEL -->
+  <section class="wrap" id="engage">
+    <p class="eyebrow reveal">How the engagement works</p>
+    <h2 class="h2 reveal" style="max-width:26ch">Built for early-stage: a small first step, not a retainer.</h2>
+
+    <div class="eng reveal">
+      <div class="ecell">
+        <div class="ek" style="color:var(--teal)">Start here</div>
+        <h3 class="h3">Track 1, fixed fee</h3>
+        <p>Agreed before anything begins, so there is no open scope and no meter running. Weeks, not quarters. You end with the go / no-go and the evidence underneath it.</p>
+      </div>
+      <div class="ecell">
+        <div class="ek" style="color:var(--blue)">Only if it's a go</div>
+        <h3 class="h3">Tracks 2–3, scoped at the gate</h3>
+        <p>Priced once the evidence plan is known — never before. CRO costs are quoted to you directly and passed through at cost; I don't mark up lab work.</p>
+      </div>
+      <div class="ecell">
+        <div class="ek" style="color:var(--amber)">Deliberately limited</div>
+        <h3 class="h3">A handful of assets at a time</h3>
+        <p>This is a specialist practice, not an agency. If I can't give your asset the attention it needs, I'll tell you that instead of taking it on.</p>
+      </div>
+    </div>
+
+    <p class="eng-note reveal"><b>Pricing on request.</b> Tell me the asset, the stage and the question — you'll get a Track 1 scope and fixed quote back, not a proposal deck.</p>
   </section>
 
   <!-- DEAL EVIDENCE (dark band) -->
@@ -372,7 +422,7 @@
       <div class="deal reveal">
         <div class="big">$1.3B<small>upfront · up to $3B total</small></div>
         <div>
-          <p>In 2024, Merck acquired the ophthalmology company EyeBio for $1.3&nbsp;billion upfront and up to $3&nbsp;billion including milestones — for a clinical-stage candidate targeting diabetic macular edema and wet AMD. It is one of several recent moves by large pharmaceutical companies to acquire and license validated ophthalmic assets rather than build the biology in-house.</p>
+          <p>Merck acquired EyeBio in 2024 for a clinical-stage candidate in diabetic macular edema and wet AMD. Large pharma is buying validated ophthalmic assets rather than building the biology in-house.</p>
           <span class="cite">Merck &amp; Co. — acquisition of EyeBiotech (EyeBio), announced May 2024, closed July 2024</span>
         </div>
       </div>
@@ -405,8 +455,8 @@
     <div class="aftergo reveal">
       <div>
         <p class="eyebrow" style="margin-bottom:12px">If the decision is go</p>
-        <h3 class="h3">We can help you execute, not just decide.</h3>
-        <p>Beyond the assessment, we help design the validating studies, match you to the right specialist CROs, and — for organisations building ophthalmic capability in-house — stand up disease modelling, imaging, molecular and analytics workflows on the infrastructure you already have.</p>
+        <h3 class="h3">I can help you execute, not just decide.</h3>
+        <p>Beyond the assessment, I design the validating studies, match you to the right specialist CROs, and — for organisations building ophthalmic capability in-house — stand up disease modelling, imaging, molecular and analytics workflows on the infrastructure you already have.</p>
       </div>
       <a class="btn btn-ghost" href="#contact">Discuss execution <span class="arw">→</span></a>
     </div>
@@ -416,7 +466,7 @@
   <section class="contact wrap" id="contact">
     <p class="eyebrow reveal" style="justify-content:center">Start with the scientific question</p>
     <h2 class="h2 reveal">Evaluate your candidate.</h2>
-    <p class="lead reveal">Tell us about your asset. We will tell you — honestly — whether the eye is a credible, valuable opportunity worth pursuing.</p>
+    <p class="lead reveal">Tell me about your asset. I will tell you — honestly — whether the eye is a credible, valuable opportunity worth pursuing.</p>
     <a class="mailbtn reveal" href="mailto:adrian@tractumbio.com">Email adrian@tractumbio.com →</a>
   </section>
 

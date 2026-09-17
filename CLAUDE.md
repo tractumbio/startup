@@ -16,10 +16,58 @@ CRO practice, so don't use the tagline version in contexts covering both practic
 Reference email signature saved to `assets/emailsig.png` — confirms Adrian's title as
 **Managing Director and Founder**.
 
+## Firm shape — DECIDED (Sept 2026)
+
+**Tractum is a boutique expert practice. There is no plan to scale it.** Adrian
+decided this explicitly; treat it as settled, not as an open question, and do not
+propose growth-shaped strategies (productisation, headcount, enterprise software,
+venture funding) unless he reopens it himself.
+
+What this settles, and what follows from it:
+
+- **Two arms, deliberately asymmetric — not co-equal practices.**
+  - **Ophthalmic advisory is the front door**: the brand, the website, the content,
+    the outbound. Permanently, not as a phase.
+  - **CRO data-flow automation and capability uplift is the cash engine.** It is
+    genuinely domain-agnostic — any CRO, any therapeutic area — and that is fine.
+    It is served through referral and direct relationships, NOT brand-led, and it
+    does not get its own practice branding, colour system or nav wing.
+- **The unifying spine is the triple vantage (bench → computer → client), not
+  therapeutic domain.** That claim is true for a dermatology CRO as much as an
+  ophthalmic one, which is what makes one firm coherent across two arms.
+- **Scarcity is an asset.** Capacity is roughly 8–12 Tier 1 engagements a year before
+  quality drops. Low volume and selectivity are positioning strengths for a boutique
+  — never apologise for them or design around them.
+- **Sizing is bottom-up**: `reachable companies × conversion × fee`, capped by
+  delivery capacity. The ~$37B ophthalmic drug market is the CLIENTS' market, not
+  Tractum's — never cite it as TAM.
+- **The binding risk is reach, not competition.** Ophthalmic advisory sells into
+  LATENT demand: "your asset may already matter in the eye" is not a thought the CSO
+  is already having, and nobody searches for it. No incumbent, no price comparison —
+  but nobody knows to call. Effort belongs in demand generation, not differentiation.
+- **The firm sells a person, not a company.** Corporate "we" language is a liability
+  here; Adrian's name and record are the product. (Consistent with the existing ban
+  on first-person-plural swagger.)
+- **Cross-study predictive insight layer is de-prioritised.** It was a compounding /
+  scaling story; an expert practice does not need it. Keep as a Tier-2 talking point,
+  not a build target.
+- **Team gaps are an advisory network, not a hiring plan.** See the Team section
+  below and read it that way.
+
+Three earlier framings are now superseded and must not be reintroduced: (a) two
+co-equal independent practices with a green/blue two-door gateway site; (b) "one
+domain only, generic CRO automation is not the centrepiece" — the automation arm is
+real and domain-agnostic, it simply is not brand-led; (c) any framing that treats
+growth or scale as the objective.
+
 ## Strategic direction (CURRENT — an ophthalmic-focused firm)
 
-**Supersedes the earlier "two independent practices (generic CRO automation + biotech
-ophthalmology)" framing.** Tractum is narrowing to ONE domain — **ophthalmology** — to
+**Note (Sept 2026): partially superseded — read "Firm shape" above first.** The
+ophthalmic focus below is still right for the FRONT DOOR, but the claim that generic
+CRO automation is not a real part of the business is not: it is the cash engine, it
+serves any CRO in any therapeutic area, and it is simply not brand-led. The original
+framing said:**Superseded the earlier "two independent practices (generic CRO
+automation + biotech ophthalmology)" framing.** Tractum is narrowing to ONE domain — **ophthalmology** — to
 play entirely to Adrian's real moat. Generic "any preclinical CRO automation" is NOT the
 centerpiece; the data/analytics/pipeline skill is retained but applied IN SERVICE OF
 ophthalmology (it becomes the "advanced analytics" component of the pharma capability
@@ -339,7 +387,11 @@ the agents keep working from the stale version.
   plans** — Tractum is the real, current focus. Do not let this influence the site,
   bio, or any framing of commitment to the company.
 
-## Team — other roles needed (not yet staffed with real people)
+## Team — advisory network, NOT a hiring plan
+
+(Per "Firm shape": the practice is not scaling. Read the profiles below as an
+advisory board and referral network to assemble, not roles to staff.)
+
 
 Ideal profiles drafted for: IP & scientific defensibility (PhD + patent law), molecular
 biology & therapeutic development, biotech commercialization/investor, retina

@@ -10,7 +10,18 @@ Tractum Bio Consulting — an **ophthalmology-focused** scientific consulting fi
 Founded 2025. Managing Director and Founder: Dr. Adrian Cioanca.
 Domain: tractumbio.com · Contact: adrian@tractumbio.com
 
-One domain (the eye), two buyer tiers:
+**Firm shape — decided Sept 2026: a boutique expert practice, not scaling.**
+Two arms, deliberately asymmetric. Ophthalmic advisory is the front door — the brand,
+the site, the outbound. CRO data-flow automation and capability uplift is the cash
+engine: genuinely domain-agnostic (any CRO, any therapeutic area), served by referral,
+never brand-led. The spine that makes it one firm is the triple vantage
+(bench → computer → client), not therapeutic domain.
+
+Capacity is roughly 8–12 Tier 1 engagements a year. Scarcity and selectivity are
+positioning strengths — never apologise for them. The firm sells a person, not a
+company: corporate "we" is a liability here.
+
+The front door, in two buyer tiers:
 
 **Tier 1 — Small biotech → advisory & guidance.**
 They lack ophthalmic expertise, infrastructure, and capability. Tractum guides them from

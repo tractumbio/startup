@@ -18,8 +18,14 @@ science cold and can smell padding.
 - **Short sentences carry the weight.** Long ones explain.
 - **The scientist decides.** Automation removes labour, never judgment. Every workflow
   ends at a human gate — say so plainly.
-- **No first-person plural swagger.** Tractum is small; the credibility is the founder's
-  record, not corporate scale.
+- **No first-person plural swagger.** Tractum is a boutique expert practice and is not
+  scaling. The credibility is one person's record, not corporate scale — write it that
+  way. Never imply a team, a department or a platform that does not exist.
+- **Scarcity is a feature.** Low volume and a short client list are selectivity, not
+  a shortfall. Never write defensively about size.
+- **Never cite the ophthalmic drug market as Tractum's market.** ~$37B is the clients'
+  market. Quoting it as our TAM is the fastest way to look like we don't understand
+  our own business.
 
 ## Visual system (for anything rendered)
 

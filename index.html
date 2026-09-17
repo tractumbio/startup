@@ -102,29 +102,37 @@
 
   .assess-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:8px}
 
-  /* engagement pipeline — three phases on one rail, with the decision gate on it */
+  /* engagement pipeline — three phases + outcome on one rail, with the gate below */
   .pipe{margin-top:44px}
   .pipe-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
+  .pipe-rail-4{grid-template-columns:repeat(4,1fr)}
   .pipe-rail::before{content:"";position:absolute;left:0;right:0;top:11px;height:1px;
-    background:linear-gradient(90deg,var(--teal),var(--blue) 55%,var(--amber));opacity:.45}
+    background:linear-gradient(90deg,var(--teal),var(--blue) 38%,var(--amber) 68%,var(--blue-bright));opacity:.45}
   .phase{position:relative;padding-top:34px}
   .phase::before{content:"";position:absolute;top:6px;left:0;width:11px;height:11px;border-radius:50%;
     background:var(--surface);border:2px solid var(--teal);box-shadow:0 0 0 4px var(--ground)}
   .phase:nth-child(2)::before{border-color:var(--blue)}
   .phase:nth-child(3)::before{border-color:var(--amber)}
+  .phase.outcome::before{border-color:var(--blue-bright);background:var(--blue-bright)}
   .phase .pnum{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
     color:var(--muted);font-weight:650;display:block;margin-bottom:8px}
-  .phase h3{margin-bottom:8px;font-size:1.12rem}
-  .phase .q{font-family:var(--serif);font-style:italic;font-size:1.04rem;color:var(--heading);
-    margin:0 0 14px;letter-spacing:-.01em;max-width:34ch}
-  .phase ul{list-style:none;margin:0 0 16px;padding:0;border-top:1px solid var(--line)}
-  .phase li{font-size:.93rem;color:var(--muted);padding:9px 0 9px 18px;border-bottom:1px solid var(--line);
-    position:relative;line-height:1.5}
-  .phase li::before{content:"";position:absolute;left:0;top:16px;width:7px;height:1px;background:var(--line-strong)}
-  .phase .out{font-size:.88rem;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);
-    border-radius:10px;padding:12px 14px;line-height:1.55}
-  .phase .out b{color:var(--heading);display:block;font-size:.72rem;letter-spacing:.14em;
-    text-transform:uppercase;margin-bottom:5px;font-weight:650;font-family:var(--sans)}
+  .phase.outcome .pnum{color:var(--blue-bright)}
+  .phase h3{margin-bottom:12px;font-size:1.12rem}
+  .phase ul{list-style:none;margin:0 0 14px;padding:0;border-top:1px solid var(--line)}
+  .phase li{font-size:.92rem;color:var(--muted);padding:8px 0 8px 18px;border-bottom:1px solid var(--line);
+    position:relative;line-height:1.4}
+  .phase li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:1px;background:var(--line-strong)}
+  .phase .out{font-size:.86rem;color:var(--heading);font-weight:600;margin:0}
+  .phase.outcome{background:linear-gradient(180deg,color-mix(in srgb,var(--blue-bright) 6%,transparent),transparent);
+    border-radius:12px;padding:34px 16px 10px;margin-top:-10px}
+  .ostat{margin-bottom:14px}
+  .ostat:last-child{margin-bottom:0}
+  .ostat b{display:block;font-size:1.34rem;font-weight:760;color:var(--blue);letter-spacing:-.02em;
+    font-variant-numeric:tabular-nums;line-height:1.1}
+  .ostat b small{font-size:.6rem;font-weight:650;color:var(--muted);letter-spacing:.06em;
+    text-transform:uppercase;margin-left:6px;vertical-align:middle}
+  .ostat span{display:block;font-size:.82rem;color:var(--muted);line-height:1.35;margin-top:2px}
+  @media(max-width:900px){.pipe-rail-4 .phase.outcome{margin-top:0;padding-top:34px}}
 
   .gate{margin:30px 0 0;border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:12px;
     background:linear-gradient(90deg,color-mix(in srgb,var(--amber) 9%,transparent),transparent);
@@ -145,17 +153,6 @@
     .gate .glabel{padding-top:0}
     .phase{padding-left:24px}
   }
-
-  /* value capstone — what the plan is worth, three key points, no paragraphs */
-  .payoff{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
-  .payoff-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:16px}
-  .pay .pn{font-size:clamp(1.6rem,3.4vw,2.1rem);font-weight:760;color:var(--blue);
-    font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1;margin-bottom:10px}
-  .pay .pn small{display:inline-block;font-size:.68rem;font-weight:650;color:var(--muted);
-    letter-spacing:.08em;text-transform:uppercase;margin-left:8px;vertical-align:middle}
-  .pay p{font-size:.92rem;color:var(--muted);line-height:1.55}
-  .pay p b{color:var(--heading);font-weight:640}
-  @media(max-width:820px){.payoff-row{grid-template-columns:1fr;gap:22px}}
 
   /* why ophthalmology — evidence cards */
   .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:44px}
@@ -295,83 +292,60 @@
       </div>
     </div>
 
-    <p class="reveal" style="color:var(--muted);max-width:70ch;margin-top:18px">
-      Three phases, run in order. Phase&nbsp;1 ends in a decision, and that decision is
-      genuinely two-way — most assets should not proceed, and finding that out early is
-      the cheapest result available. Nothing in Phase&nbsp;2 begins until you have chosen
-      to continue.
+    <p class="reveal" style="color:var(--muted);max-width:60ch;margin-top:18px">
+      Three tracks, one gate. Most assets should stop at the gate — an early no-go is the win.
     </p>
 
     <div class="pipe reveal">
-      <div class="pipe-rail">
+      <div class="pipe-rail pipe-rail-4">
 
         <div class="phase">
-          <span class="pnum">Phase 01 · Relevance</span>
-          <h3 class="h3">Is the eye real for this asset?</h3>
-          <p class="q">Does the biology hold — and if it does, in which indication?</p>
+          <span class="pnum">Track 1 · Relevance</span>
+          <h3 class="h3">Is the eye real?</h3>
           <ul>
-            <li>Deep literature research across the target, pathway and ocular tissue evidence</li>
-            <li>In-silico analytics to surface and rank candidate indications at speed</li>
-            <li>Mechanism deep dive: delivery route, tissue relevance, translational evidence</li>
-            <li>Indication screening on unmet need, feasibility and commercial viability</li>
-            <li>Competitive and freedom-to-operate landscape read</li>
+            <li>Lit review + in-silico screen</li>
+            <li>Mechanism → indication fit</li>
+            <li>Feasibility &amp; FTO scan</li>
           </ul>
-          <p class="out"><b>You receive</b> A ranked shortlist of ophthalmic indications, the evidence behind each, what would disprove it, and a recommendation.</p>
+          <p class="out">→ Ranked indications + rationale</p>
         </div>
 
         <div class="phase">
-          <span class="pnum">Phase 02 · Evidence</span>
-          <h3 class="h3">Prove it, with the right studies</h3>
-          <p class="q">What evidence would settle this, and who is qualified to generate it?</p>
+          <span class="pnum">Track 2 · Evidence</span>
+          <h3 class="h3">Prove it</h3>
           <ul>
-            <li>Safety, toxicology and efficacy study plan built around decision thresholds</li>
-            <li>Model selection, endpoints and effect sizes that would count as success</li>
-            <li>CRO identification, scoping and selection for the work required</li>
-            <li>Oversight through execution — protocols, quality gates, troubleshooting</li>
-            <li>Interpretation of the results and how to position them</li>
+            <li>Safety / tox / efficacy plan</li>
+            <li>Endpoints &amp; success thresholds</li>
+            <li>CRO selection + oversight</li>
           </ul>
-          <p class="out"><b>You receive</b> A completed evidence package, interpreted, with the findings framed for the audience that matters next.</p>
+          <p class="out">→ Interpreted evidence package</p>
         </div>
 
         <div class="phase">
-          <span class="pnum">Phase 03 · Position</span>
-          <h3 class="h3">Defend it, and make the case</h3>
-          <p class="q">Can it be protected, and can a partner act on it?</p>
+          <span class="pnum">Track 3 · Position</span>
+          <h3 class="h3">Defend it</h3>
           <ul>
-            <li>IP strategy: freedom to operate, and new intellectual property the work creates</li>
-            <li>Support through drafting and the filing process, alongside your attorneys</li>
-            <li>Valuation modelling — transparent, tunable, every input visible</li>
-            <li>Investor and partnering materials aimed at large pharma</li>
-            <li>Preparation for the diligence questions those audiences will ask</li>
+            <li>IP strategy + filing support</li>
+            <li>Valuation modelling, tunable</li>
+            <li>Investor / pharma materials</li>
           </ul>
-          <p class="out"><b>You receive</b> A defensible IP position and a package your board, investors or a pharma partner can act on.</p>
+          <p class="out">→ Board-ready package</p>
+        </div>
+
+        <div class="phase outcome">
+          <span class="pnum">On track</span>
+          <h3 class="h3">What it's worth</h3>
+          <div class="ostat"><b>5→1</b><span>one package, not five open questions</span></div>
+          <div class="ostat"><b>+76%<small>illustrative</small></b><span>$85M→$150M, range +30/+76/+140%</span></div>
+          <div class="ostat"><b>$1.3B<small>2024</small></b><span>Merck/EyeBio precedent, up to $3B</span></div>
         </div>
 
       </div>
 
       <div class="gate">
-        <span class="glabel">Gate · after Phase 01</span>
+        <span class="glabel">Gate · after Track 1</span>
         <div>
-          <p><b>Go or no-go, before serious capital is committed.</b> A no-go is a complete result, not a failed engagement — you end Phase&nbsp;1 with a clear scientific and commercial rationale for not pursuing the eye, and the capital you would have spent finding that out the expensive way.</p>
-          <p>Automation and analytics accelerate the search and keep the evidence current. They do not make the call. The judgement at this gate is a scientist's, and it is the reason the rest of the plan is worth running.</p>
-        </div>
-      </div>
-
-      <div class="payoff">
-        <p class="eyebrow" style="margin-bottom:2px">What running the plan is worth</p>
-        <div class="payoff-row">
-          <div class="pay">
-            <div class="pn">5 → 1</div>
-            <p><b>One defensible package</b>, not five open questions — mechanism through IP, or a clean no-go, either way signed off by the science.</p>
-          </div>
-          <div class="pay">
-            <div class="pn">+76%<small>illustrative</small></div>
-            <p><b>$85M → $150M</b> sum-of-the-parts, adding a credible ophthalmic indication. Range +30% / +76% / +140% — every input visible, never a promise.</p>
-          </div>
-          <div class="pay">
-            <div class="pn">$1.3B<small>2024</small></div>
-            <p><b>Merck's EyeBio acquisition</b> — up to $3B with milestones. Recent, real precedent for what a validated ophthalmic asset draws.</p>
-          </div>
+          <p><b>Go / no-go before capital moves.</b> No-go = a full result, not a failure. Automation speeds the search — the call is a scientist's.</p>
         </div>
       </div>
     </div>

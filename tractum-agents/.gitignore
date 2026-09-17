@@ -16,6 +16,10 @@ outputs/**
 !outputs/approved/
 !outputs/approved/.gitkeep
 
+# --- BD screen: generated data only; reference/ is hand-written input ---
+bd_screen/data/raw/
+bd_screen/data/processed/
+
 # --- agent workspaces: working data, may contain client material ---
 workspace/**
 !workspace/shared/

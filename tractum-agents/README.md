@@ -119,6 +119,31 @@ python -m orchestrator.run agent brand_voice \
 Output streams to your terminal as it generates. At each gate you get
 `[a]pprove [r]evise [x]reject [e]dit [q]uit` — `e` opens the draft in `$EDITOR`.
 
+## Finding who to talk to (BD screen)
+
+The top of the Tier 1 funnel. `bd_screen/` builds a list of biotechs whose **lead
+asset may already be relevant in the eye**, so outreach starts from a thesis about a
+specific molecule rather than a cold email.
+
+```bash
+pip install -r bd_screen/requirements.txt   # separate from the agent runtime
+make bd-screen                              # fetch, classify, score
+make bd-score                               # re-score without re-fetching
+```
+
+Output lands at `workspace/shared/bd-shortlist.md`, which every agent can read.
+Then have it judged:
+
+```bash
+python -m orchestrator.run pipeline bd_qualify --input workspace/shared/bd-shortlist.md
+```
+
+Scores are computed in code from visible weights — no model decides them, and every
+point is traceable to the phrase that earned it. It is a **screen, not an
+assessment**: a high score means a scientist should spend an hour there. Expect
+`ophtha_science` to throw most of the list out. See `bd_screen/README.md` for the
+weights and the scope limits (ASX-only, keyword matching, two unofficial endpoints).
+
 ## Talking to the agents
 
 ```bash

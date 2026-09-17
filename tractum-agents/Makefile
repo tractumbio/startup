@@ -5,7 +5,7 @@ PY := .venv/bin/python
 RUN := $(PY) -m orchestrator.run
 
 .DEFAULT_GOAL := help
-.PHONY: help setup doctor agents pipelines store clean check tier1 audit watch chat sessions clean-workspace
+.PHONY: help setup doctor agents pipelines store clean check tier1 audit watch chat sessions clean-workspace bd-screen bd-score
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## ' $(MAKEFILE_LIST) \
@@ -25,6 +25,18 @@ agents: ## List agents and their configured models
 
 pipelines: ## List pipelines and their stages
 	@$(RUN) pipelines
+
+bd-screen: ## Build the ophthalmic BD shortlist (needs bd_screen/requirements.txt)
+	@$(PY) -c "import pandas" 2>/dev/null || { echo "install first: pip install -r bd_screen/requirements.txt"; exit 1; }
+	cd bd_screen && ../$(PY) src/fetch_asx_companies.py \
+		&& ../$(PY) src/classify_biotech.py \
+		&& ../$(PY) src/fetch_clinical_trials.py \
+		&& ../$(PY) src/build_dataset.py \
+		&& ../$(PY) src/score_ocular_relevance.py
+	@echo "shortlist -> workspace/shared/bd-shortlist.md (readable by every agent)"
+
+bd-score: ## Re-score an existing company list without re-fetching (fast)
+	cd bd_screen && ../$(PY) src/score_ocular_relevance.py
 
 chat: ## Talk to an agent (AGENT=ophtha_science [SESSION=name])
 	@test -n "$(AGENT)" || { echo "usage: make chat AGENT=ophtha_science [SESSION=name]"; exit 1; }

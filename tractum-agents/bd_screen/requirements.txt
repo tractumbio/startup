@@ -1,0 +1,7 @@
+# BD screen only — NOT installed by bootstrap.sh, which deliberately keeps the
+# agent runtime to two dependencies. Install separately:
+#     pip install -r bd_screen/requirements.txt
+requests>=2.31
+pandas>=2.0
+pyarrow>=14.0
+yfinance>=0.2.40

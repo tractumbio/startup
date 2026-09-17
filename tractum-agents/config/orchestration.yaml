@@ -45,6 +45,32 @@ pipelines:
         gate: required
         gate_prompt: Do you agree with these findings?
 
+  # BD screen: turn the scored shortlist into a judged target list.
+  # Produce the shortlist first with `make bd-screen`, then run this over it:
+  #   python -m orchestrator.run pipeline bd_qualify --input workspace/shared/bd-shortlist.md
+  bd_qualify:
+    description: Screen output -> scientist-judged Tier 1 target list.
+    stages:
+      - id: triage
+        agent: lit_intel
+        gate: required
+        load: [shared:bd-shortlist.md]
+        gate_prompt: >
+          Is the published evidence behind these mechanisms real, and tiered honestly?
+      - id: judge
+        agent: ophtha_science
+        gate: required
+        feeds_from: [triage]
+        gate_prompt: >
+          Which of these would you actually spend an hour on, and which do you throw
+          out now? A short list you believe beats a long one you do not.
+      - id: approach
+        agent: brand_voice
+        gate: required
+        feeds_from: [judge]
+        gate_prompt: >
+          Could this go to the CSO as written, without overclaiming?
+
   # Standing literature watch.
   lit_watch:
     description: Recurring ophthalmic literature scan.

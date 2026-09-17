@@ -79,6 +79,29 @@ branch from `claude/tractum-agent-github-setup-raopjg`.
 Recommended cleanup, one manual step in GitHub settings: rename the default branch to
 `main` (a rename preserves open PRs; creating a new branch does not).
 
+## BD screen (`bd_screen/`)
+
+Adapted from `tractumbio/biotech-trading-strategy` (copied, no history, Sept 2026).
+Steps 1–4 are that repo's ASX universe builder, largely unchanged. Step 5,
+`score_ocular_relevance.py`, is new and is the Tractum-specific part.
+
+Decisions worth keeping:
+- **The score is computed in code, never by a model.** Weights are visible in the
+  scorer and every point is traceable to the phrase that earned it. Same discipline
+  as the valuation agent: visible inputs or it does not count.
+- **A screen is not an assessment.** Output says so on its face. `ophtha_science` is
+  expected to reject most of the list — that is the design.
+- **already-ocular companies are flagged, never pitched.** They are competitors,
+  partners or comparables.
+- **Heavy deps stay out of the base install.** `bootstrap.sh` keeps the agent runtime
+  at two dependencies; pandas/yfinance/pyarrow live in `bd_screen/requirements.txt`.
+- Output goes to `workspace/shared/` so every agent can read it, not just the
+  producer.
+
+Known limits, documented in its README: ASX-only, keyword matching (false negatives
+are the expected failure), two undocumented ASX endpoints that can rotate, and
+ANZCTR having no API so AU-only trial-stage companies can read as Preclinical.
+
 ## Verifying a change
 
 `make check` — compiles the package, parses both configs, assembles every agent's prompt,

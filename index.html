@@ -66,6 +66,14 @@
   nav.links a:hover{color:var(--heading)}
   .nav-cta{font-size:.9rem;font-weight:600;color:#fff;background:var(--blue);padding:9px 16px;border-radius:7px;white-space:nowrap}
   .nav-cta:hover{background:var(--blue-bright)}
+  /* At phone widths the full CTA label overflows the viewport; shorten it rather
+     than let the page scroll sideways. */
+  @media(max-width:420px){
+    .nav-cta{font-size:.82rem;padding:8px 12px}
+    .nav-cta .cta-long{display:none}
+    .nav-cta .cta-short{display:inline}
+  }
+  .nav-cta .cta-short{display:none}
   @media(max-width:900px){nav.links{display:none}}
 
   /* buttons */
@@ -129,6 +137,50 @@
     border-radius:12px;padding:26px 22px;border-bottom:none;margin-top:4px}
   .step.final .idx{color:var(--amber)}
   @media(max-width:620px){.step{grid-template-columns:1fr;gap:6px}.step .idx{padding-top:0}}
+
+  /* engagement pipeline — three phases on one rail, with the decision gate on it */
+  .pipe{margin-top:44px}
+  .pipe-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
+  .pipe-rail::before{content:"";position:absolute;left:0;right:0;top:11px;height:1px;
+    background:linear-gradient(90deg,var(--teal),var(--blue) 55%,var(--amber));opacity:.45}
+  .phase{position:relative;padding-top:34px}
+  .phase::before{content:"";position:absolute;top:6px;left:0;width:11px;height:11px;border-radius:50%;
+    background:var(--surface);border:2px solid var(--teal);box-shadow:0 0 0 4px var(--ground)}
+  .phase:nth-child(2)::before{border-color:var(--blue)}
+  .phase:nth-child(3)::before{border-color:var(--amber)}
+  .phase .pnum{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);font-weight:650;display:block;margin-bottom:8px}
+  .phase h3{margin-bottom:8px;font-size:1.12rem}
+  .phase .q{font-family:var(--serif);font-style:italic;font-size:1.04rem;color:var(--heading);
+    margin:0 0 14px;letter-spacing:-.01em;max-width:34ch}
+  .phase ul{list-style:none;margin:0 0 16px;padding:0;border-top:1px solid var(--line)}
+  .phase li{font-size:.93rem;color:var(--muted);padding:9px 0 9px 18px;border-bottom:1px solid var(--line);
+    position:relative;line-height:1.5}
+  .phase li::before{content:"";position:absolute;left:0;top:16px;width:7px;height:1px;background:var(--line-strong)}
+  .phase .out{font-size:.88rem;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);
+    border-radius:10px;padding:12px 14px;line-height:1.55}
+  .phase .out b{color:var(--heading);display:block;font-size:.72rem;letter-spacing:.14em;
+    text-transform:uppercase;margin-bottom:5px;font-weight:650;font-family:var(--sans)}
+
+  .gate{margin:30px 0 0;border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:12px;
+    background:linear-gradient(90deg,color-mix(in srgb,var(--amber) 9%,transparent),transparent);
+    padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+  .gate .glabel{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--amber);font-weight:700;padding-top:3px;white-space:nowrap}
+  .gate p{margin:0;color:var(--ink);font-size:.97rem;max-width:64ch}
+  .gate p + p{margin-top:8px;color:var(--muted);font-size:.92rem}
+  @media(max-width:900px){
+    .pipe-rail{grid-template-columns:1fr;gap:34px}
+    .pipe-rail::before{left:5px;right:auto;top:0;bottom:0;width:1px;height:auto;
+      background:linear-gradient(180deg,var(--teal),var(--blue) 55%,var(--amber))}
+    .phase{padding-top:0;padding-left:30px}
+    .phase::before{top:4px}
+  }
+  @media(max-width:520px){
+    .gate{grid-template-columns:1fr;gap:8px}
+    .gate .glabel{padding-top:0}
+    .phase{padding-left:24px}
+  }
 
   /* why ophthalmology — evidence cards */
   .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:44px}
@@ -221,7 +273,7 @@
       <a href="#evidence">Evidence</a>
       <a href="#founder">Who we are</a>
     </nav>
-    <a class="nav-cta" href="#contact">Evaluate your candidate</a>
+    <a class="nav-cta" href="#contact"><span class="cta-long">Evaluate your candidate</span><span class="cta-short">Get in touch</span></a>
   </div>
 </header>
 
@@ -273,49 +325,70 @@
   <section class="wrap" id="how">
     <div class="assess-head">
       <div>
-        <p class="eyebrow reveal">How we assess the opportunity</p>
-        <h2 class="h2 reveal" style="max-width:20ch">A disciplined, evidence-led process — not open-ended research.</h2>
+        <p class="eyebrow reveal">How the engagement runs</p>
+        <h2 class="h2 reveal" style="max-width:24ch">A deliberate plan, from first question to a package a partner can act on.</h2>
       </div>
     </div>
-    <div class="steps reveal">
-      <div class="step">
-        <div class="idx">01</div>
-        <div>
-          <h3 class="h3">Mechanism deep dive</h3>
-          <p class="q">Is the biological rationale in the eye genuinely credible?</p>
-          <p>We evaluate the target, mechanism of action, ocular biology, tissue relevance, delivery requirements, translational evidence, and competitive landscape to determine whether the opportunity is scientifically real.</p>
+
+    <p class="reveal" style="color:var(--muted);max-width:70ch;margin-top:18px">
+      Three phases, run in order. Phase&nbsp;1 ends in a decision, and that decision is
+      genuinely two-way — most assets should not proceed, and finding that out early is
+      the cheapest result available. Nothing in Phase&nbsp;2 begins until you have chosen
+      to continue.
+    </p>
+
+    <div class="pipe reveal">
+      <div class="pipe-rail">
+
+        <div class="phase">
+          <span class="pnum">Phase 01 · Relevance</span>
+          <h3 class="h3">Is the eye real for this asset?</h3>
+          <p class="q">Does the biology hold — and if it does, in which indication?</p>
+          <ul>
+            <li>Deep literature research across the target, pathway and ocular tissue evidence</li>
+            <li>In-silico analytics to surface and rank candidate indications at speed</li>
+            <li>Mechanism deep dive: delivery route, tissue relevance, translational evidence</li>
+            <li>Indication screening on unmet need, feasibility and commercial viability</li>
+            <li>Competitive and freedom-to-operate landscape read</li>
+          </ul>
+          <p class="out"><b>You receive</b> A ranked shortlist of ophthalmic indications, the evidence behind each, what would disprove it, and a recommendation.</p>
         </div>
-      </div>
-      <div class="step">
-        <div class="idx">02</div>
-        <div>
-          <h3 class="h3">Indication screening</h3>
-          <p class="q">Which ophthalmic indication offers the strongest opportunity?</p>
-          <p>We screen and rank indications on unmet need, biological fit, clinical feasibility, competitive intensity, market size, reimbursement potential, and expected profitability.</p>
+
+        <div class="phase">
+          <span class="pnum">Phase 02 · Evidence</span>
+          <h3 class="h3">Prove it, with the right studies</h3>
+          <p class="q">What evidence would settle this, and who is qualified to generate it?</p>
+          <ul>
+            <li>Safety, toxicology and efficacy study plan built around decision thresholds</li>
+            <li>Model selection, endpoints and effect sizes that would count as success</li>
+            <li>CRO identification, scoping and selection for the work required</li>
+            <li>Oversight through execution — protocols, quality gates, troubleshooting</li>
+            <li>Interpretation of the results and how to position them</li>
+          </ul>
+          <p class="out"><b>You receive</b> A completed evidence package, interpreted, with the findings framed for the audience that matters next.</p>
         </div>
-      </div>
-      <div class="step">
-        <div class="idx">03</div>
-        <div>
-          <h3 class="h3">Evidence and safety plan</h3>
-          <p class="q">What evidence would prove the opportunity — and what could kill it?</p>
-          <p>We define the critical experiments, biomarkers, safety studies, translational models, and decision thresholds required to validate the candidate efficiently.</p>
+
+        <div class="phase">
+          <span class="pnum">Phase 03 · Position</span>
+          <h3 class="h3">Defend it, and make the case</h3>
+          <p class="q">Can it be protected, and can a partner act on it?</p>
+          <ul>
+            <li>IP strategy: freedom to operate, and new intellectual property the work creates</li>
+            <li>Support through drafting and the filing process, alongside your attorneys</li>
+            <li>Valuation modelling — transparent, tunable, every input visible</li>
+            <li>Investor and partnering materials aimed at large pharma</li>
+            <li>Preparation for the diligence questions those audiences will ask</li>
+          </ul>
+          <p class="out"><b>You receive</b> A defensible IP position and a package your board, investors or a pharma partner can act on.</p>
         </div>
+
       </div>
-      <div class="step">
-        <div class="idx">04</div>
+
+      <div class="gate">
+        <span class="glabel">Gate · after Phase 01</span>
         <div>
-          <h3 class="h3">IP and path to Phase 1</h3>
-          <p class="q">Can the opportunity be defended, and what is the fastest credible route to the clinic?</p>
-          <p>We assess freedom to operate, potential new intellectual property, formulation and delivery requirements, regulatory strategy, and the development pathway to a first-in-human ophthalmic study.</p>
-        </div>
-      </div>
-      <div class="step final">
-        <div class="idx">05</div>
-        <div>
-          <h3 class="h3">The decision</h3>
-          <p class="q">A high-quality go / no-go decision before significant capital is spent.</p>
-          <p>You receive a clear recommendation, the supporting evidence, the major risks, and a practical development roadmap — whether that is to invest, partner, reposition, or stop.</p>
+          <p><b>Go or no-go, before serious capital is committed.</b> A no-go is a complete result, not a failed engagement — you end Phase&nbsp;1 with a clear scientific and commercial rationale for not pursuing the eye, and the capital you would have spent finding that out the expensive way.</p>
+          <p>Automation and analytics accelerate the search and keep the evidence current. They do not make the call. The judgement at this gate is a scientist's, and it is the reason the rest of the plan is worth running.</p>
         </div>
       </div>
     </div>

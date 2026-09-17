@@ -3,6 +3,10 @@
 Working notes for the Tractum Bio Consulting website. This file exists so context isn't
 lost between sessions — read it before starting new work on this repo.
 
+> **Continue here:** [`docs/HANDOVER.md`](docs/HANDOVER.md) — what's built, what's
+> outstanding, how to run everything. [`docs/DECISIONS.md`](docs/DECISIONS.md) records
+> what is already settled and why, so it doesn't get re-litigated. Live branch is `dev`.
+
 ## Brand name
 
 **Tractum Bio Consulting.** (An earlier prototype built in a separate claude.ai session

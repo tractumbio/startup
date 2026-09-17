@@ -128,13 +128,6 @@
   .ostat span{display:block;font-size:.9rem;color:var(--muted);line-height:1.35;margin-top:2px}
   @media(max-width:900px){.pipe-rail-4 .phase.outcome{margin-top:0;padding-top:34px}}
 
-  .gate{margin:30px 0 0;border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:12px;
-    background:linear-gradient(90deg,color-mix(in srgb,var(--amber) 9%,transparent),transparent);
-    padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
-  .gate .glabel{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--amber);font-weight:700;padding-top:3px;white-space:nowrap}
-  .gate p{margin:0;color:var(--ink);font-size:.97rem;max-width:64ch}
-  .gate p + p{margin-top:8px;color:var(--muted);font-size:.92rem}
   @media(max-width:900px){
     .pipe-rail{grid-template-columns:1fr;gap:34px}
     .pipe-rail::before{left:5px;right:auto;top:0;bottom:0;width:1px;height:auto;
@@ -142,11 +135,7 @@
     .phase{padding-top:0;padding-left:30px}
     .phase::before{top:4px}
   }
-  @media(max-width:520px){
-    .gate{grid-template-columns:1fr;gap:8px}
-    .gate .glabel{padding-top:0}
-    .phase{padding-left:24px}
-  }
+  @media(max-width:520px){.phase{padding-left:24px}}
 
   /* why the eye + why me, synthesized */
   .whyme-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;margin-top:36px;align-items:center}
@@ -192,6 +181,12 @@
   .eng .ecell h3{margin-bottom:9px;font-size:1.06rem}
   .eng .ecell p{font-size:.93rem;color:var(--muted);line-height:1.55}
   @media(max-width:760px){.eng{grid-template-columns:1fr}}
+  .introcta{margin-top:28px;border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:14px;
+    background:linear-gradient(90deg,color-mix(in srgb,var(--teal) 7%,transparent),transparent);
+    padding:26px 28px;display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center}
+  @media(max-width:720px){.introcta{grid-template-columns:1fr;gap:18px}}
+  .introcta h3{margin-bottom:8px}
+  .introcta p{color:var(--muted);font-size:.98rem;max-width:58ch}
   .eng-note{margin-top:24px;font-size:.95rem;color:var(--muted);max-width:66ch}
   .eng-note b{color:var(--heading);font-weight:640}
 
@@ -208,6 +203,7 @@
   .mailbtn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1.02rem;
     background:var(--blue);color:#fff;padding:15px 26px;border-radius:10px}
   .mailbtn:hover{background:var(--blue-bright)}
+  .next{margin:20px auto 0;max-width:52ch;font-size:.95rem;color:var(--muted)}
 
   footer{border-top:1px solid var(--line);padding:38px 0}
   .foot{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;font-size:.86rem;color:var(--muted)}
@@ -275,6 +271,7 @@
 
     <p class="reveal" style="color:var(--muted);max-width:60ch;margin-top:18px">
       Three tracks, one gate. Most assets should stop at the gate — an early no-go is the win.
+      Automation speeds the search; the call is mine.
     </p>
 
     <div class="pipe reveal">
@@ -318,13 +315,6 @@
           <div class="ostat"><b>$1.3B<small>2024</small></b><span>Merck/EyeBio precedent, up to $3B</span></div>
         </div>
 
-      </div>
-
-      <div class="gate">
-        <span class="glabel">Gate · after Track 1</span>
-        <div>
-          <p><b>Go / no-go before capital moves.</b> No-go = a full result, not a failure. Automation speeds the search — the call is a scientist's.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -383,7 +373,7 @@
             <text x="0" y="196" class="cap-sub">Founder-raised · IP secured</text>
 
             <text x="0" y="240" class="cap-lbl" fill="var(--blue-bright)">STRATEGY</text>
-            <text x="0" y="261" class="cap-sub">Decision science · Accenture</text>
+            <text x="0" y="261" class="cap-sub">Retail · gov · pharma</text>
 
             <text x="488" y="142" class="cap-lbl" fill="var(--blue-bright)">ONE VERDICT</text>
             <text x="488" y="163" class="cap-sub">board-ready</text>
@@ -401,13 +391,13 @@
     <div class="eng reveal">
       <div class="ecell">
         <div class="ek" style="color:var(--teal)">Start here</div>
-        <h3 class="h3">Track 1, fixed fee</h3>
-        <p>Agreed before anything begins, so there is no open scope and no meter running. Weeks, not quarters. You end with the go / no-go and the evidence underneath it.</p>
+        <h3 class="h3">Free intro call</h3>
+        <p>Thirty minutes, no charge and no obligation. Tell me the asset and the question; I'll tell you straight whether it's worth a Track 1 — including if it isn't.</p>
       </div>
       <div class="ecell">
-        <div class="ek" style="color:var(--blue)">Only if it's a go</div>
-        <h3 class="h3">Tracks 2–3, scoped at the gate</h3>
-        <p>Priced once the evidence plan is known — never before. CRO costs are quoted to you directly and passed through at cost; I don't mark up lab work.</p>
+        <div class="ek" style="color:var(--blue)">Nothing locked in</div>
+        <h3 class="h3">Stop after any track</h3>
+        <p>No retainer, no minimum term, no notice period. Track 1 is a fixed fee agreed upfront; Tracks 2–3 are scoped only if you choose to go. CRO costs are quoted to you directly and passed through at cost — I don't mark up lab work.</p>
       </div>
       <div class="ecell">
         <div class="ek" style="color:var(--amber)">Deliberately limited</div>
@@ -416,7 +406,16 @@
       </div>
     </div>
 
+    <div class="introcta reveal">
+      <div>
+        <h3 class="h3">Start with a conversation, not a contract.</h3>
+        <p>The first call costs nothing and commits you to nothing. Most of what I need to give you a useful first read, I can get in half an hour.</p>
+      </div>
+      <a class="btn btn-primary" href="#contact">Book a free intro call <span class="arw">→</span></a>
+    </div>
+
     <p class="eng-note reveal"><b>Pricing on request.</b> Tell me the asset, the stage and the question — you'll get a Track 1 scope and fixed quote back, not a proposal deck.</p>
+
   </section>
 
   <section class="founder" id="founder">
@@ -443,6 +442,7 @@
           <li><b>Ophthalmic models</b> built for global pharmaceutical companies</li>
           <li><b>Founder, Vision ACTion</b> — research translation forum uniting researchers, clinicians and patients</li>
           <li><b>Genetics lecturer</b>, ANU JCSMR — 120+ medical students, 6 mentored</li>
+          <li><b>Strategy consulting</b> — decision science across retail, government, pharma and biotech</li>
           <li><b>STEM outreach</b> — Canberra Science Week, 8,000+ attendees</li>
         </ul>
       </div>
@@ -466,7 +466,9 @@
     <p class="eyebrow reveal" style="justify-content:center">Start with the scientific question</p>
     <h2 class="h2 reveal">Evaluate your candidate.</h2>
     <p class="lead reveal">Tell me about your asset. I will tell you — honestly — whether the eye is a credible, valuable opportunity worth pursuing.</p>
-    <a class="mailbtn reveal" href="mailto:adrian@tractumbio.com">Email adrian@tractumbio.com →</a>
+    <a class="mailbtn reveal" href="mailto:adrian@tractumbio.com?subject=Intro%20call%20%E2%80%94%20ophthalmic%20asset">Book a free intro call →</a>
+    <p class="next reveal">Thirty minutes, no charge, nothing locked in. I reply within two business days —
+      send the asset, its stage and the question you are trying to answer.</p>
   </section>
 
 </main>

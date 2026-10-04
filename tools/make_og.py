@@ -5,7 +5,7 @@ import pathlib
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-HEADLINE = "Ophthalmic development decisions. Practical capability for the labs behind them."
+HEADLINE = "I help biotechs decide whether a drug belongs in the eye, and help CROs build the services to test it."
 SUBS = ["Opportunity assessment for biotechs", "Capability builds for CROs"]
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans{}.ttf"
 NAVY, MUTED, BLUE, GROUND = (24, 53, 83), (94, 108, 118), (36, 99, 167), (249, 251, 248)

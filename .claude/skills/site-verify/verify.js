@@ -30,7 +30,9 @@ for (const p of pages) {
   if (!/^<!doctype html>/i.test(html[p].trimStart())) fail(p, 'missing <!doctype html>');
   if (!/<link rel="icon"/.test(html[p])) fail(p, 'no favicon link');
   if (!/property="og:image"/.test(html[p])) fail(p, 'no og:image');
-  if (!/<title>Tractum Bio — /.test(html[p])) fail(p, 'title is not descriptive');
+  if (!/<title>Tractum Bio \| /.test(html[p])) fail(p, 'title is not descriptive');
+  // House style: no em dashes anywhere in a page (copy, attributes or comments).
+  if (html[p].includes('\u2014') || /&mdash;|&#8212;/.test(html[p])) fail(p, `em dash found (${(html[p].match(/\u2014|&mdash;|&#8212;/g) || []).length})`);
   if (!/class="skip"/.test(html[p])) fail(p, 'no skip link');
   if (!/class="menu-btn"[^>]*aria-controls="primary-nav"/.test(html[p]) || !/id="primary-nav"/.test(html[p])) fail(p, 'menu button / primary-nav missing');
   for (const [tag] of html[p].matchAll(/<img\b[^>]*>/g)) {

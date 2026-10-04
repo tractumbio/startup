@@ -159,3 +159,12 @@ the rule rather than a preference:
 Not adopted: the review's door headings ("Assess an ophthalmic opportunity" / "Build
 ophthalmic and analytical capabilities") — Adrian's own wording stands. Conversion
 measurement is deferred until an analytics tool is chosen.
+
+## No em dashes, plain copy — Oct 2026
+
+Adrian asked for no em dashes and no "AI slop" feel. All em dashes were removed from the
+three pages, and `verify.js` now fails on any. Slogan constructions ("X, not Y"),
+aphorisms, stock phrases and most section kicker labels were rewritten or removed;
+headings now name the section plainly. The landing headline became "I help biotechs decide
+whether a drug belongs in the eye, and help CROs build the services to test it." The rule
+is recorded in `CLAUDE.md` → Claims discipline and mirrored in the agents' `BRAND.md`.

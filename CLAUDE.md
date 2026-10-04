@@ -106,6 +106,12 @@ and the `brand_voice` agent:
 - **Booking language matches behaviour.** While contact is email-only, CTAs say "Email to
   arrange…", never "Book…".
 - **Dynamic metrics** (citations, h-index) are linked to Google Scholar, not printed.
+- **House style: no em dashes, no AI-sounding copy.** No em dashes anywhere on the site
+  (`verify.js` fails the build on one). Avoid "X, not Y" slogans ("a conversation, not a
+  contract"), aphorisms ("automation removes labour, never judgment"), stock phrases ("every
+  side of the table", "honestly", "tell you straight"), triplet slogans as headings, and a
+  kicker label above every heading. Headings say what the section is; sentences say one
+  plain thing each.
 
 ## Strategic direction (CURRENT — an ophthalmic-focused firm)
 

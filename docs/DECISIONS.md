@@ -104,9 +104,9 @@ The lens diagram shows biology, path, deal **and strategy** (decision science
 / Accenture). Copy avoids counting ("every side of the table") so a fifth
 would not break it.
 
-⚠️ `CLAUDE.md` and `tractum-agents/company/COMPANY.md` still document a triple
-vantage. They need mirroring — otherwise the `brand_voice` agent enforces the
-old version.
+`CLAUDE.md` and `tractum-agents/company/COMPANY.md` were mirrored to four
+vantages in Oct 2026, along with the "brand-led on the CRO page" amendment
+below.
 
 ## Site routes by buyer, and the lab page brand-leads omics + automation — Oct 2026
 

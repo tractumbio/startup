@@ -34,11 +34,18 @@ What this settles, and what follows from it:
     the outbound. Permanently, not as a phase.
   - **CRO data-flow automation and capability uplift is the cash engine.** It is
     genuinely domain-agnostic — any CRO, any therapeutic area — and that is fine.
-    It is served through referral and direct relationships, NOT brand-led, and it
-    does not get its own practice branding, colour system or nav wing.
-- **The unifying spine is the triple vantage (bench → computer → client), not
-  therapeutic domain.** That claim is true for a dermatology CRO as much as an
-  ophthalmic one, which is what makes one firm coherent across two arms.
+    **Amended Oct 2026 (see `docs/DECISIONS.md`):** it IS now brand-led, on the CRO
+    page only (`capability.html`), as three equal capabilities — ophthalmic services,
+    advanced omics (bulk, single-cell, spatial) and pipeline automation — with omics
+    and automation scoped to any therapeutic area. It still gets no separate practice
+    branding or colour system; ophthalmology remains the specialism and the landing
+    page's framing. Reason: CRO buyers have active demand (a lost sponsor request is
+    a known gap), unlike the latent demand on the biotech side.
+- **The unifying spine is the vantage claim, not therapeutic domain.** On the biotech
+  side it is FOUR vantages — biology, path, deal and strategy (decision science) — shown
+  as the lens diagram; copy never counts them ("every side of the table"). On the CRO
+  side it is bench → computer → client. That claim is true for a dermatology CRO as
+  much as an ophthalmic one, which is what makes one firm coherent across two arms.
 - **Scarcity is an asset.** Capacity is roughly 8–12 Tier 1 engagements a year before
   quality drops. Low volume and selectivity are positioning strengths for a boutique
   — never apologise for them or design around them.
@@ -59,10 +66,12 @@ What this settles, and what follows from it:
   below and read it that way.
 
 Three earlier framings are now superseded and must not be reintroduced: (a) two
-co-equal independent practices with a green/blue two-door gateway site; (b) "one
-domain only, generic CRO automation is not the centrepiece" — the automation arm is
-real and domain-agnostic, it simply is not brand-led; (c) any framing that treats
-growth or scale as the objective.
+co-equal independent practices with a green/blue two-door gateway site (the current
+three-page site splits ONE firm by buyer, with shared substance on the landing page —
+that is different and is decided); (b) "one domain only, generic CRO automation is not
+the centrepiece" — the automation arm is real, domain-agnostic, and since Oct 2026
+brand-led on the CRO page; (c) any framing that treats growth or scale as the
+objective.
 
 ## Strategic direction (CURRENT — an ophthalmic-focused firm)
 
@@ -261,9 +270,11 @@ whether the biology is real; a bench scientist can judge the biology but can't m
 deal or chart the path to the clinic. Tractum has been all three — the retinal
 scientist, the biotech founder who raised on these very models, and the translational
 developer — so the number handed over is one the client can defend to their board and
-partners. The triple vantage is **biology → deal → path**, mapping to Adrian's real,
-unfakeable credentials (retinal PhD/fluency; ErythroSight raise + rNPV/DCF modelling;
-translational development). This is the direct answer to "why should I trust your
+partners. The vantages are **biology → path → deal → strategy** (four since Sept 2026;
+the fourth is decision science from broad strategy consulting — never name the
+employer), mapping to Adrian's real, unfakeable credentials (retinal PhD/fluency;
+pharma + biotech development; ErythroSight raise + rNPV/DCF modelling; strategy
+consulting across retail, government and pharma). This is the direct answer to "why should I trust your
 valuation?"
 
 **The journey — one asset, five acts:**

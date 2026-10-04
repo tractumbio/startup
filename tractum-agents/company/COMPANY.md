@@ -13,9 +13,11 @@ Domain: tractumbio.com · Contact: adrian@tractumbio.com
 **Firm shape — decided Sept 2026: a boutique expert practice, not scaling.**
 Two arms, deliberately asymmetric. Ophthalmic advisory is the front door — the brand,
 the site, the outbound. CRO data-flow automation and capability uplift is the cash
-engine: genuinely domain-agnostic (any CRO, any therapeutic area), served by referral,
-never brand-led. The spine that makes it one firm is the triple vantage
-(bench → computer → client), not therapeutic domain.
+engine: genuinely domain-agnostic (any CRO, any therapeutic area). Since Oct 2026 it is
+brand-led on the CRO page only, as three equal capabilities — ophthalmic services,
+advanced omics (bulk, single-cell, spatial) and pipeline automation — with no separate
+practice branding; ophthalmology stays the specialism and the landing-page framing. The
+spine that makes it one firm is the vantage claim (see below), not therapeutic domain.
 
 Capacity is roughly 8–12 Tier 1 engagements a year. Scarcity and selectivity are
 positioning strengths — never apologise for them. The firm sells a person, not a
@@ -51,9 +53,12 @@ transferred.
 
 ## The spine (why anyone should believe it)
 
-Triple vantage, and it is real, not a slogan:
-- Tier 1 — **biology → deal → path**: the retinal scientist, the founder who raised on
-  these models, the translational developer.
+The vantage claim, and it is real, not a slogan:
+- Tier 1 — **biology → path → deal → strategy** (four, since Sept 2026): the retinal
+  scientist, the developer who has worked with pharma and biotech, the founder who
+  raised on these models, and the strategy consultant (decision science across retail,
+  government and pharma — never name the employer). Copy never counts them: "every
+  side of the table".
 - Tier 2 — **bench → computer → client**: stood at the bench that makes the data, the
   computer that turns it into evidence, and the desk that receives the report.
 

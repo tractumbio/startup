@@ -5,9 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tractum Bio — Ophthalmic asset diligence</title>
 <meta name="description" content="Find out whether your lead candidate has a credible route into the eye, from discovery to IND-ready.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tractum Bio">
+<meta property="og:title" content="Tractum Bio — Ophthalmic asset diligence">
+<meta property="og:description" content="Find out whether your lead candidate has a credible route into the eye, from discovery to IND-ready.">
+<meta property="og:url" content="https://tractumbio.com/asset.html">
+<meta property="og:image" content="https://tractumbio.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tractumbio.com/assets/og.jpg">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 
 
 <header class="nav">
@@ -21,12 +33,16 @@
       </svg>
       <span class="word">tractum<span>bio</span></span>
     </a>
-    <nav class="links" aria-label="Primary">
+    <nav class="links" id="primary-nav" aria-label="Primary">
       <a href="#how">Approach</a>
       <a href="#engage">Engagement</a>
       <a href="#founder">About</a>
       <a href="capability.html">For CROs</a>
     </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>Menu</span>
+    </button>
     <a class="nav-cta" href="#contact"><span class="cta-long">Evaluate your candidate</span><span class="cta-short">Get in touch</span></a>
   </div>
 </header>
@@ -34,7 +50,7 @@
 <main id="top">
 
   <!-- HERO -->
-  <section class="hero wrap">
+  <section class="hero split wrap">
     <svg class="retina" viewBox="0 0 400 400" fill="none" aria-hidden="true">
       <g stroke="var(--teal)" stroke-width="1" opacity="0.55" fill="none">
         <circle cx="200" cy="200" r="60"/><circle cx="200" cy="200" r="105"/>
@@ -42,16 +58,24 @@
       </g>
       <path d="M40 210 Q150 205 185 235 Q200 250 215 235 Q250 205 360 210" stroke="var(--blue)" stroke-width="1.4" fill="none" opacity="0.7"/>
     </svg>
-    <p class="eyebrow reveal">Ophthalmic asset diligence</p>
-    <h1 class="display reveal">Could your existing lead candidate become a valuable ophthalmic asset?</h1>
-    <p class="lead reveal">I assess whether your existing drug, biologic, or lead candidate has a credible route into ophthalmology — from discovery to IND-ready — before you invest heavily in development.</p>
-    <div class="cta-row reveal">
-      <a class="btn btn-primary" href="#contact">Evaluate your candidate <span class="arw">→</span></a>
-      <a class="btn btn-ghost" href="#how">See the approach <span class="arw">→</span></a>
+    <div class="hero-copy">
+      <p class="eyebrow reveal">Ophthalmic asset diligence</p>
+      <h1 class="display reveal">Could your existing lead candidate become a valuable ophthalmic asset?</h1>
+      <p class="lead reveal">I assess whether your existing drug, biologic, or lead candidate has a credible route into ophthalmology — from discovery to IND-ready — before you invest heavily in development.</p>
+      <div class="cta-row reveal">
+        <a class="btn btn-primary" href="#contact">Evaluate your candidate <span class="arw">→</span></a>
+        <a class="btn btn-ghost" href="#how">See the approach <span class="arw">→</span></a>
+      </div>
     </div>
-    <div class="hero-meta reveal">
-      <span><b>The route:</b> Discovery <span class="arw">→</span> Indication fit <span class="arw">→</span> Evidence <span class="arw">→</span> IND-ready</span>
-    </div>
+    <aside class="route-card reveal" aria-label="The route from discovery to IND-ready">
+      <span class="rk">The route</span>
+      <ol class="route">
+        <li style="--c:var(--teal)"><b>Discovery</b><span>Is the mechanism real in the eye?</span></li>
+        <li style="--c:var(--blue)"><b>Indication fit</b><span>Which ocular indication, and is it worth it?</span></li>
+        <li style="--c:var(--amber)"><b>Evidence</b><span>The safety and efficacy plan that proves it</span></li>
+        <li class="end" style="--c:var(--blue-bright)"><b>IND-ready</b><span>IP, valuation and a package partners can act on</span></li>
+      </ol>
+    </aside>
   </section>
 
   <!-- HOW WE ASSESS -->
@@ -104,8 +128,8 @@
         <div class="phase outcome">
           <span class="pnum">On track</span>
           <h3 class="h3">What it's worth</h3>
-          <div class="ostat"><b>5→1</b><span>one package, not five open questions</span></div>
-          <div class="ostat"><b>+76%<small>illustrative</small></b><span>$85M→$150M, range +30/+76/+140%</span></div>
+          <div class="ostat"><b>1 package</b><span>mechanism through IP, or a clean no-go</span></div>
+          <div class="ostat"><b>+76%<small>illustrative</small></b><span>$85M base + $65M ophthalmic rNPV = $150M; range +30 / +76 / +140%. Every input visible in the model.</span></div>
           <div class="ostat"><b>$1.3B<small>2024</small></b><span>Merck/EyeBio precedent, up to $3B</span></div>
         </div>
 
@@ -123,7 +147,6 @@
         <p class="wm-label">Why the eye</p>
         <div class="ostat"><b>7.9%<small>Ph1</small></b><span>odds favour the eye — BIO/Informa</span></div>
         <div class="ostat"><b>$20–40B<small>2025</small></b><span>market, retina-weighted — MarketsandMarkets/Mordor</span></div>
-        <div class="ostat"><b>$1.3B<small>2024</small></b><span>Merck/EyeBio — pharma is buying ophthalmic assets, not building them</span></div>
       </div>
 
       <div class="whyme-me" id="me">
@@ -212,33 +235,17 @@
 
   </section>
 
-  <section class="founder" id="founder">
-    <div class="wrap fgrid">
-      <div class="fmark reveal" aria-hidden="true">
-        <svg viewBox="0 0 32 32" fill="none"><path d="M7 8 H21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M14 8 V25" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M8 24 C 14 22, 20 18, 26 7" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round"/><path d="M22 7 H26 V11" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <!-- FOUNDER (compact; full profile on the landing page) -->
+  <section class="wrap" id="founder">
+    <div class="fcard reveal">
+      <div class="fphoto">
+        <img src="assets/adrian.png" alt="Dr. Adrian Cioanca" width="640" height="640" loading="lazy">
       </div>
-      <div class="reveal">
+      <div>
         <p class="frole">Managing Director &amp; Founder</p>
-        <h2 class="h2" style="margin-bottom:14px">Dr. Adrian Cioanca</h2>
-        <p class="lead measure" style="font-size:1.04rem">A retinal scientist who has also been the biotech founder, the translational developer and the strategy consultant — every vantage point an assessment is built on.</p>
-
-        <div class="story measure">
-          <p>I spent my research years on retinal degeneration — why photoreceptors die, and what might stop them. What became obvious from inside the lab is that the science is rarely the bottleneck. Good work stalls because the question was framed late, or the evidence was built in the wrong order, or nobody translated it into terms a board could act on.</p>
-          <p>So I kept moving toward that gap. I founded <b>Vision ACTion</b> to put researchers, clinicians and patients in the same room, because each of them knows something the other two are guessing at. I co-founded a company to take a retinal therapeutic forward myself, and learned what it costs to be wrong late. I now do for other companies what I wish someone had done for us: ask the hard question early, while it is still cheap to answer.</p>
-        </div>
-
-        <ul class="creds">
-          <li><b>PhD, retinal degeneration</b> — ANU, John Curtin School of Medical Research</li>
-          <li><b>Frank Fenner Medal</b> — outstanding PhD thesis</li>
-          <li><b>University Medal</b> — top-ranked honours graduate</li>
-          <li><b>~25 publications</b> · 400+ citations · h-index 14</li>
-          <li><b>Co-founder, ErythroSight</b> — retinal therapeutics; patents &amp; capital raised</li>
-          <li><b>Ophthalmic models</b> built for global pharmaceutical companies</li>
-          <li><b>Founder, Vision ACTion</b> — research translation forum uniting researchers, clinicians and patients</li>
-          <li><b>Genetics lecturer</b>, ANU JCSMR — 120+ medical students, 6 mentored</li>
-          <li><b>Strategy consulting</b> — decision science across retail, government, pharma and biotech</li>
-          <li><b>STEM outreach</b> — Canberra Science Week, 8,000+ attendees</li>
-        </ul>
+        <h3 class="h3">Dr. Adrian Cioanca</h3>
+        <p>Retinal scientist (PhD, ANU), co-founder of a retinal therapeutics company that raised capital and secured patents, and strategy consultant across retail, government and pharma. I have built ophthalmic disease models for a global pharmaceutical company and raised on the valuation models I now build for clients.</p>
+        <a class="more" href="index.html#founder">Full profile <span class="arw">→</span></a>
       </div>
     </div>
   </section>
@@ -280,8 +287,9 @@
     </a>
     <span>Canberra, Australia</span>
     <span><a href="mailto:adrian@tractumbio.com">adrian@tractumbio.com</a></span>
-    <span>tractumbio.com</span>
-    <p class="disc">Sources: BIO/Informa/QLS Advisors, <i>Clinical Development Success Rates 2011–2020</i>; MarketsandMarkets and Mordor Intelligence ophthalmology market estimates, 2025; Merck &amp; Co. EyeBio acquisition, 2024. Figures reflect the cited comparison groups and scopes. Any asset-specific valuation is an illustrative model with visible inputs, not a forecast or guarantee. Tractum Bio coordinates specialist legal, regulatory, clinical and laboratory work through qualified external partners.</p>
+    <span><a href="https://www.linkedin.com/in/adrian-c-58743b25a" rel="me noopener" target="_blank">LinkedIn</a></span>
+    <span><a href="https://scholar.google.com/citations?user=m-zNPssAAAAJ" rel="me noopener" target="_blank">Google Scholar</a></span>
+    <p class="disc">Sources: BIO/Informa/QLS Advisors, <i>Clinical Development Success Rates 2011–2020</i>; MarketsandMarkets and Mordor Intelligence ophthalmology market estimates, 2025; Merck &amp; Co. EyeBio acquisition, 2024. Figures reflect the cited comparison groups and scopes. Any asset-specific valuation is an illustrative model with visible inputs, not a forecast or guarantee. I coordinate specialist legal, regulatory, clinical and laboratory work through qualified external partners.</p>
   </div>
 </footer>
 

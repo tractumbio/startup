@@ -28,6 +28,19 @@ for (const p of pages) {
     if (open !== close) fail(p, `<${tag}> open ${open} / close ${close}`);
   }
   if (!/^<!doctype html>/i.test(html[p].trimStart())) fail(p, 'missing <!doctype html>');
+  if (!/<link rel="icon"/.test(html[p])) fail(p, 'no favicon link');
+  if (!/property="og:image"/.test(html[p])) fail(p, 'no og:image');
+  if (!/<title>Tractum Bio — /.test(html[p])) fail(p, 'title is not descriptive');
+  if (!/class="skip"/.test(html[p])) fail(p, 'no skip link');
+  if (!/class="menu-btn"[^>]*aria-controls="primary-nav"/.test(html[p]) || !/id="primary-nav"/.test(html[p])) fail(p, 'menu button / primary-nav missing');
+  for (const [tag] of html[p].matchAll(/<img\b[^>]*>/g)) {
+    if (!/\balt="/.test(tag)) fail(p, `img without alt: ${tag.slice(0, 60)}`);
+    const src = (tag.match(/src="([^"]+)"/) || [])[1];
+    if (src && !/^https?:/.test(src) && !fs.existsSync(path.join(ROOT, src))) fail(p, `img src missing on disk: ${src}`);
+  }
+  for (const [, src] of html[p].matchAll(/(?:href|content)="(assets\/[^"]+)"/g)) {
+    if (!fs.existsSync(path.join(ROOT, src))) fail(p, `asset missing on disk: ${src}`);
+  }
   for (const [, href] of html[p].matchAll(/href="([^"]+)"/g)) {
     if (/^(mailto:|https?:|tel:)/.test(href) || /\.(css|js|png|svg|ico)$/.test(href)) continue;
     const [file, frag] = href.split('#');
@@ -63,13 +76,34 @@ for (const p of pages) {
           const fs = parseFloat(getComputedStyle(el).fontSize);
           if (fs < minFont) small.add(`${el.tagName.toLowerCase()}.${el.className || ''} ${fs.toFixed(1)}px`);
         });
-        return { overflow, mode: document.compatMode, small: [...small].slice(0, 5) };
+        const vis = el => !!el && getComputedStyle(el).display !== 'none' && el.getBoundingClientRect().width > 0;
+        const cta = document.querySelector('.nav-cta');
+        return { overflow, mode: document.compatMode, small: [...small].slice(0, 5),
+          ctaText: cta ? cta.innerText.trim() : '', ctaVisible: vis(cta),
+          menuVisible: vis(document.querySelector('.menu-btn')), linksVisible: vis(document.querySelector('nav.links')) };
       }, MIN_FONT);
       const tag = `${String(w).padStart(4)} ${scheme}`;
       if (r.overflow > 0) fail(p, `${tag}: horizontal overflow ${r.overflow}px`);
       if (r.mode !== 'CSS1Compat') fail(p, `${tag}: quirks mode`);
       if (errs.length) fail(p, `${tag}: ${errs[0]}`);
       if (w === 1280 && scheme === 'light' && r.small.length) fail(p, `text below ${MIN_FONT}px: ${r.small.join(', ')}`);
+      // Navigation must be reachable at every width: inline links on desktop, a menu button on phones,
+      // and the CTA pill must never render empty (a CSS-ordering bug once made it so).
+      if (!r.ctaVisible || !r.ctaText) fail(p, `${tag}: nav CTA has no visible text`);
+      if (w <= 900 && !r.menuVisible) fail(p, `${tag}: no menu button on narrow screen`);
+      if (w > 900 && (!r.linksVisible || r.menuVisible)) fail(p, `${tag}: desktop nav state wrong (links ${r.linksVisible}, menu ${r.menuVisible})`);
+      if (w <= 900) {
+        await pg.click('.menu-btn');
+        const m = await pg.evaluate(() => {
+          const nl = document.querySelector('nav.links');
+          return { open: !!nl && getComputedStyle(nl).display !== 'none', expanded: document.querySelector('.menu-btn').getAttribute('aria-expanded'),
+            overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth };
+        });
+        if (!m.open || m.expanded !== 'true') fail(p, `${tag}: menu button does not open the nav`);
+        if (m.overflow > 0) fail(p, `${tag}: horizontal overflow ${m.overflow}px with menu open`);
+        if (SHOTS && w === 390 && scheme === 'light') await pg.screenshot({ path: path.join(SHOTS, `${p.replace('.html', '')}-${w}-menu.png`) });
+        await pg.click('.menu-btn');
+      }
       if (SHOTS) await pg.screenshot({ path: path.join(SHOTS, `${p.replace('.html', '')}-${w}-${scheme}.png`), fullPage: true });
       await pg.close();
     }
@@ -82,7 +116,7 @@ for (const p of pages) {
   }
   await browser.close();
 
-  console.log(`Checked ${pages.length} page(s) at ${WIDTHS.join('/')}px, light + dark, reduced motion, links, markup.`);
+  console.log(`Checked ${pages.length} page(s) at ${WIDTHS.join('/')}px, light + dark, reduced motion, nav/menu, links, assets, markup.`);
   if (SHOTS) console.log(`Screenshots: ${SHOTS}`);
   if (failures.length) { console.log(`\nFAIL (${failures.length}):`); failures.forEach(f => console.log('  - ' + f)); process.exit(1); }
   console.log('PASS');

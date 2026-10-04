@@ -15,7 +15,7 @@ Dr. Adrian Cioanca. Two things live here:
 | `asset.html` | For biotech — tracks, outcome, engagement (was the old `index.html`) |
 | `capability.html` | For labs — ophthalmic services, omics, pipeline automation, build rail |
 | `styles.css`, `site.js` | Shared by all three pages — edit once, applies everywhere |
-| `assets/` | Logo and email-signature reference images |
+| `assets/` | Logo, email-signature reference, founder portrait (`adrian.png`), favicon, OG card (`og.jpg`) |
 | `tractum-agents/` | Four local Ollama agents with a human gate, plus a BD screen |
 | `CLAUDE.md` | Strategy, positioning, founder facts. Read before writing copy |
 | `docs/` | This handover, the decision record, and working plans |
@@ -39,12 +39,21 @@ Three static HTML pages sharing `styles.css` and `site.js` — no framework, no
 build step. Open any of them in a browser.
 
 - `index.html`: hero → two doors → why the eye → founder → contact
-- `asset.html`: hero → track rail → why this / why me → engagement → founder → contact
-- `capability.html`: hero → three capabilities → pipeline → build rail →
-  what you own → engagement → contact
+- `asset.html`: split hero (route card) → track rail → why this / why me →
+  engagement → compact founder card → contact
+- `capability.html`: split hero (route card) → three capabilities → pipeline →
+  build rail → what you own → engagement → contact
 
-The founder block exists in both `index.html` and `asset.html` (outbound links
-to biotechs land directly on `asset.html`, so it must stand alone). Edit both.
+The full founder profile (portrait, story, credentials) lives only on
+`index.html#founder`. `asset.html` carries a compact card that links to it, so
+there is one place to edit. Navigation collapses to a menu button below 900px
+(`.menu-btn` + `#primary-nav`, toggled in `site.js`). Every page has a skip
+link, favicon, and Open Graph tags pointing at `assets/og.jpg` on
+`https://tractumbio.com/` — if the site is hosted at another origin, change
+those absolute URLs.
+
+Footer links: LinkedIn (`adrian-c-58743b25a`) and Google Scholar
+(`m-zNPssAAAAJ`), both taken from the `tractumbio/resume` repo.
 
 Design constraints that matter (see `CLAUDE.md` for the full brief):
 - Premium, restrained. No stock photography, no hype vocabulary.
@@ -87,24 +96,28 @@ separately: `pip install -r bd_screen/requirements.txt`, then `make bd-screen`.
 
 ## Open — needs Adrian, not Claude
 
-1. **A photograph.** The About block still shows the logo mark where a portrait
-   should be. For a practice that sells a person this is the single biggest
-   trust gap on the page.
+1. **A calendar-booking link.** Every CTA is still `mailto:`. A Calendly-style
+   link converts far better for a "free intro call"; drop the URL in and the
+   `.mailbtn` / `.nav-cta` hrefs can switch to it.
 2. **Track 1 fee and duration.** The engagement section states shape only
    ("fixed fee", "weeks, not quarters"). Real numbers convert better; vagueness
    reads as expensive.
 3. **The personal story** in the About block was drafted from documented facts.
    The emotional core is inferred — read it and make it true.
-4. **Triple → four vantage.** The site now shows four capabilities (biology,
-   path, deal, strategy). `CLAUDE.md` and `tractum-agents/company/COMPANY.md`
-   still document a *triple* vantage. Mirror them, or `brand_voice` will keep
-   enforcing three.
+4. **Anonymised case studies.** The site has credentials but no worked proof
+   ("a biotech came with X, left with Y"). Two short, client-approved examples
+   would do more than any further copy polish.
+5. **Founder numbers conflict.** `CLAUDE.md` says ~25 publications, 400+
+   citations, h-index 14, 3 patents; the resume repo says h-index 9, 196
+   citations, 2 patents. The site uses the `CLAUDE.md` figures. Confirm which
+   are current (Scholar is the source of truth for citations).
+6. **GitHub default branch** is still the old `claude/...` branch. Flip it to
+   `main` in Settings → Branches.
 
 ## Open — Claude can do next
 
 - **FAQ block** — "What if the answer is no?", "Do you run the lab work?",
   "How do you handle confidentiality?", "What does it cost?"
-- **Hero balance** — roughly 45% of the hero is empty on the right at desktop.
 - **Tier 2 page** — the pharma/CRO capability-build buyer currently has
   nothing to land on. This is a whole page that does not exist yet.
 - **A second site** for the CRO automation arm — decided as a one-pager served

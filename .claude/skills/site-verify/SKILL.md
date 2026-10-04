@@ -39,7 +39,9 @@ uneven card heights, anything hard to read in dark mode.
 
 - `.reveal` elements are hidden until scrolled into view. The script forces them
   visible; your own ad-hoc Playwright captures must inject
-  `.reveal{opacity:1!important;transform:none!important}` or the page looks blank.
+  `.reveal{opacity:1!important;transform:none!important;transition:none!important}`
+  or the page looks blank — and without `transition:none` it is captured mid-fade,
+  which makes headings look washed out.
 - `.wrap` must use `padding-inline`, never the `padding` shorthand — the shorthand
   zeroes vertical padding on every `<section class="wrap">`.
 - Inline SVG diagrams (the lens on `asset.html`, the stack on `capability.html`)

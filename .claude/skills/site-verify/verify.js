@@ -51,7 +51,7 @@ for (const p of pages) {
       pg.on('requestfailed', r => errs.push('failed request ' + r.url()));
       await pg.goto(url);
       // Scroll-triggered reveals stay hidden in a headless capture; force them visible.
-      await pg.addStyleTag({ content: '.reveal{opacity:1!important;transform:none!important}' });
+      await pg.addStyleTag({ content: '.reveal{opacity:1!important;transform:none!important;transition:none!important}' });
       await pg.waitForTimeout(250);
       const r = await pg.evaluate((minFont) => {
         const overflow = document.documentElement.scrollWidth - document.documentElement.clientWidth;

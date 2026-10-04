@@ -177,3 +177,9 @@ the old section repeated the two-audience choice the doors had just made, so vis
 it twice. Hiding the detail behind a click was considered and rejected: the buttons
 already lead to the service pages, and hidden first steps would go unread. Full detail
 stays on `asset.html` and `capability.html`.
+
+## Door headings removed — Oct 2026
+
+Adrian asked to remove "I have an asset" and "I run a CRO" from the landing-page doors.
+The doors are now headed simply "For biotech" and "For CROs" (the former small labels,
+promoted to the heading). This supersedes the earlier note that those headings stay.

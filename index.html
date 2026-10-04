@@ -1,224 +1,9 @@
-<title>Tractum Bio — Is the eye the opportunity for your asset?</title>
-<style>
-  :root{
-    --ground:#F9FBF8;--surface:#FFFFFF;--surface-2:#EEF3F8;--ink:#33414C;--muted:#66757F;
-    --heading:#183553;--line:#DFE6EC;--line-strong:#C7D3DC;--blue:#2463A7;--blue-bright:#2E7BE0;
-    --teal:#2B8C86;--amber:#B27E24;--band:#0E2038;--band-ink:#C6D4E2;--band-head:#F4F8FC;
-    --band-line:#263B57;--band-muted:#8FA2B6;
-    --measure:66ch;--maxw:1120px;
-    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
-    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    --mono:"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
-  }
-  @media (prefers-color-scheme:dark){
-    :root{
-      --ground:#0A1421;--surface:#0F1D2E;--surface-2:#132538;--ink:#C4D2DE;--muted:#8195A6;
-      --heading:#EAF1F8;--line:#213448;--line-strong:#2C4159;--blue:#5E9BDD;--blue-bright:#6AA6E8;
-      --teal:#4FB3AC;--amber:#D2A24E;--band:#07101B;--band-ink:#B7C6D6;--band-head:#EAF1F8;
-      --band-line:#1E3149;--band-muted:#7A8D9F;
-    }
-  }
-  :root[data-theme="light"]{
-    --ground:#F9FBF8;--surface:#FFFFFF;--surface-2:#EEF3F8;--ink:#33414C;--muted:#66757F;
-    --heading:#183553;--line:#DFE6EC;--line-strong:#C7D3DC;--blue:#2463A7;--blue-bright:#2E7BE0;
-    --teal:#2B8C86;--amber:#B27E24;--band:#0E2038;--band-ink:#C6D4E2;--band-head:#F4F8FC;
-    --band-line:#263B57;--band-muted:#8FA2B6;
-  }
-  :root[data-theme="dark"]{
-    --ground:#0A1421;--surface:#0F1D2E;--surface-2:#132538;--ink:#C4D2DE;--muted:#8195A6;
-    --heading:#EAF1F8;--line:#213448;--line-strong:#2C4159;--blue:#5E9BDD;--blue-bright:#6AA6E8;
-    --teal:#4FB3AC;--amber:#D2A24E;--band:#07101B;--band-ink:#B7C6D6;--band-head:#EAF1F8;
-    --band-line:#1E3149;--band-muted:#7A8D9F;
-  }
-
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:17px;
-    line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  h1,h2,h3{color:var(--heading);text-wrap:balance;line-height:1.14;margin:0}
-  p{margin:0}
-  a{color:var(--blue);text-decoration:none}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px;border-radius:2px}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-  .measure{max-width:var(--measure)}
-  .eyebrow{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:650;
-    color:var(--teal);margin:0 0 18px;display:flex;align-items:center;gap:12px}
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--teal);flex:none}
-  .display{font-size:clamp(2rem,4.9vw,3.35rem);font-weight:700;letter-spacing:-.02em}
-  .h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:700;letter-spacing:-.015em}
-  .h3{font-size:1.16rem;font-weight:680;letter-spacing:-.01em}
-  .lead{font-size:clamp(1.05rem,1.7vw,1.22rem);color:var(--muted);line-height:1.6}
-  section{padding:clamp(60px,8vw,110px) 0}
-  .divider{border:0;border-top:1px solid var(--line);margin:0}
-
-  /* nav */
-  header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--ground) 88%,transparent);
-    backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
-  .nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:24px}
-  .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
-  .brand .word{font-weight:720;letter-spacing:-.01em;color:var(--heading);font-size:1.1rem}
-  .brand .word span{font-weight:420;color:var(--muted)}
-  .mark{width:29px;height:29px;flex:none;color:var(--heading)}
-  .mark .sweep{color:var(--blue-bright)}
-  nav.links{display:flex;gap:24px}
-  nav.links a{color:var(--muted);font-size:.93rem;font-weight:520}
-  nav.links a:hover{color:var(--heading)}
-  .nav-cta{font-size:.9rem;font-weight:600;color:#fff;background:var(--blue);padding:9px 16px;border-radius:7px;white-space:nowrap}
-  .nav-cta:hover{background:var(--blue-bright)}
-  /* At phone widths the full CTA label overflows the viewport; shorten it rather
-     than let the page scroll sideways. */
-  @media(max-width:420px){
-    .nav-cta{font-size:.82rem;padding:8px 12px}
-    .nav-cta .cta-long{display:none}
-    .nav-cta .cta-short{display:inline}
-  }
-  .nav-cta .cta-short{display:none}
-  @media(max-width:900px){nav.links{display:none}}
-
-  /* buttons */
-  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;
-    padding:14px 22px;border-radius:9px;border:1px solid transparent;transition:.18s}
-  .btn .arw{transition:transform .18s}.btn:hover .arw{transform:translateX(3px)}
-  .btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-bright)}
-  .btn-ghost{background:transparent;color:var(--heading);border-color:var(--line-strong)}
-  .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
-
-  /* hero */
-  .hero{padding-top:clamp(50px,7vw,90px);position:relative;overflow:hidden}
-  .hero .display{margin-bottom:24px;max-width:17ch}
-  .hero .lead{max-width:52ch;margin-bottom:34px}
-  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-  .hero-meta{margin-top:44px;padding-top:24px;border-top:1px solid var(--line);
-    display:flex;flex-wrap:wrap;gap:12px 32px;font-size:.9rem;color:var(--muted)}
-  .hero-meta b{color:var(--heading);font-weight:640}
-  .retina{position:absolute;right:-160px;top:-30px;width:600px;height:600px;pointer-events:none;opacity:.5;z-index:-1}
-  @media(max-width:900px){.retina{opacity:.2;right:-260px}}
-
-  .assess-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:8px}
-
-  /* engagement pipeline — three phases + outcome on one rail, with the gate below */
-  .pipe{margin-top:44px}
-  .pipe-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
-  .pipe-rail-4{grid-template-columns:repeat(4,1fr)}
-  .pipe-rail::before{content:"";position:absolute;left:0;right:0;top:11px;height:1px;
-    background:linear-gradient(90deg,var(--teal),var(--blue) 38%,var(--amber) 68%,var(--blue-bright));opacity:.45}
-  .phase{position:relative;padding-top:34px}
-  .phase::before{content:"";position:absolute;top:6px;left:0;width:11px;height:11px;border-radius:50%;
-    background:var(--surface);border:2px solid var(--teal);box-shadow:0 0 0 4px var(--ground)}
-  .phase:nth-child(2)::before{border-color:var(--blue)}
-  .phase:nth-child(3)::before{border-color:var(--amber)}
-  .phase.outcome::before{border-color:var(--blue-bright);background:var(--blue-bright)}
-  .phase .pnum{font-family:var(--mono);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--muted);font-weight:650;display:block;margin-bottom:8px}
-  .phase.outcome .pnum{color:var(--blue-bright)}
-  .phase h3{margin-bottom:12px;font-size:1.12rem}
-  .phase ul{list-style:none;margin:0 0 14px;padding:0;border-top:1px solid var(--line)}
-  .phase li{font-size:.95rem;color:var(--muted);padding:8px 0 8px 18px;border-bottom:1px solid var(--line);
-    position:relative;line-height:1.4}
-  .phase li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:1px;background:var(--line-strong)}
-  .phase.outcome{background:linear-gradient(180deg,color-mix(in srgb,var(--blue-bright) 6%,transparent),transparent);
-    border-radius:12px;padding:34px 16px 10px;margin-top:-10px}
-  .ostat{margin-bottom:14px}
-  .ostat:last-child{margin-bottom:0}
-  .ostat b{display:block;font-size:1.34rem;font-weight:760;color:var(--blue);letter-spacing:-.02em;
-    font-variant-numeric:tabular-nums;line-height:1.1}
-  .ostat b small{font-size:.82rem;font-weight:650;color:var(--muted);letter-spacing:.06em;
-    text-transform:uppercase;margin-left:6px;vertical-align:middle}
-  .ostat span{display:block;font-size:.9rem;color:var(--muted);line-height:1.35;margin-top:2px}
-  @media(max-width:900px){.pipe-rail-4 .phase.outcome{margin-top:0;padding-top:34px}}
-
-  @media(max-width:900px){
-    .pipe-rail{grid-template-columns:1fr;gap:34px}
-    .pipe-rail::before{left:5px;right:auto;top:0;bottom:0;width:1px;height:auto;
-      background:linear-gradient(180deg,var(--teal),var(--blue) 55%,var(--amber))}
-    .phase{padding-top:0;padding-left:30px}
-    .phase::before{top:4px}
-  }
-  @media(max-width:520px){.phase{padding-left:24px}}
-
-  /* why the eye + why me, synthesized */
-  .whyme-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;margin-top:36px;align-items:center}
-  @media(max-width:760px){.whyme-grid{grid-template-columns:1fr;gap:38px}}
-  .wm-label{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted);font-weight:650;margin:0 0 18px}
-  .whyme-eye .ostat{margin-bottom:20px}
-  .capmap{max-width:560px;margin:0 auto}
-  .capmap svg{display:block;width:100%;height:auto;overflow:visible}
-  .cap-lbl{font-family:var(--mono);font-size:15px;font-weight:700;letter-spacing:.08em}
-  .cap-sub{font-family:var(--sans);font-size:15px;font-weight:500;fill:var(--muted)}
-  /* the SVG scales down on phones; grow the type in user units so it stays readable */
-  @media(max-width:760px){.cap-lbl{font-size:21px}.cap-sub{font-size:19px}}
-
-  /* founder bio */
-  .founder{background:var(--surface-2);position:relative}
-  /* fade the tint in and out instead of cutting it with a 1px rule */
-  .founder::before,.founder::after{content:"";position:absolute;left:0;right:0;height:90px;pointer-events:none}
-  .founder::before{top:0;background:linear-gradient(to bottom,var(--ground),transparent)}
-  .founder::after{bottom:0;background:linear-gradient(to top,var(--ground),transparent)}
-  .fgrid{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(28px,5vw,60px);align-items:center}
-  @media(max-width:820px){.fgrid{grid-template-columns:1fr}}
-  .fmark{aspect-ratio:1;border-radius:16px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
-    background:radial-gradient(120% 120% at 30% 20%, color-mix(in srgb,var(--blue) 20%,var(--surface)), var(--surface) 62%)}
-  .fmark svg{width:60%;height:60%;color:var(--blue)}
-  .frole{font-family:var(--mono);font-size:.88rem;color:var(--teal);letter-spacing:.04em;margin-bottom:12px}
-  .creds{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:11px 24px}
-  @media(max-width:520px){.creds{grid-template-columns:1fr}}
-  .creds li{font-size:.94rem;color:var(--ink);padding-left:18px;position:relative}
-  .creds li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:var(--teal)}
-  .creds li b{color:var(--heading);font-weight:640}
-  .story{margin-top:22px;border-left:2px solid var(--teal);padding-left:20px}
-  .story p{font-size:1rem;color:var(--ink);line-height:1.68}
-  .story p + p{margin-top:14px}
-  .story b{color:var(--heading);font-weight:640}
-
-  /* engagement model */
-  .eng{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
-    border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:40px}
-  .eng .ecell{background:var(--surface);padding:28px 24px}
-  .eng .ek{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
-    font-weight:650;margin-bottom:12px}
-  .eng .ecell h3{margin-bottom:9px;font-size:1.06rem}
-  .eng .ecell p{font-size:.93rem;color:var(--muted);line-height:1.55}
-  @media(max-width:760px){.eng{grid-template-columns:1fr}}
-  .introcta{margin-top:28px;border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:14px;
-    background:linear-gradient(90deg,color-mix(in srgb,var(--teal) 7%,transparent),transparent);
-    padding:26px 28px;display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center}
-  @media(max-width:720px){.introcta{grid-template-columns:1fr;gap:18px}}
-  .introcta h3{margin-bottom:8px}
-  .introcta p{color:var(--muted);font-size:.98rem;max-width:58ch}
-  .eng-note{margin-top:24px;font-size:.95rem;color:var(--muted);max-width:66ch}
-  .eng-note b{color:var(--heading);font-weight:640}
-
-  /* after-go strip */
-  .aftergo{border:1px solid var(--line);border-radius:16px;padding:30px 30px;background:var(--surface);
-    display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
-  @media(max-width:720px){.aftergo{grid-template-columns:1fr}}
-  .aftergo h3{margin-bottom:8px}.aftergo p{color:var(--muted);font-size:.98rem;max-width:56ch}
-
-  /* contact */
-  .contact{text-align:center}
-  .contact .h2{max-width:20ch;margin:0 auto 16px}
-  .contact .lead{max-width:48ch;margin:0 auto 28px}
-  .mailbtn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1.02rem;
-    background:var(--blue);color:#fff;padding:15px 26px;border-radius:10px}
-  .mailbtn:hover{background:var(--blue-bright)}
-  .next{margin:20px auto 0;max-width:52ch;font-size:.95rem;color:var(--muted)}
-
-  footer{border-top:1px solid var(--line);padding:38px 0}
-  .foot{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;font-size:.86rem;color:var(--muted)}
-  .foot .brand{margin-right:auto}.foot .word{font-size:1rem}
-  .foot .disc{flex-basis:100%;font-size:.84rem;color:var(--muted);opacity:.85;border-top:1px solid var(--line);padding-top:16px;margin-top:4px;line-height:1.6}
-
-  .reveal{opacity:0;transform:translateY(24px);
-    transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
-  .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;transition-delay:0s!important}}
-</style>
+<title>Tractum Bio</title>
+<link rel="stylesheet" href="styles.css">
 
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="#top" aria-label="Tractum Bio home">
+    <a class="brand" href="index.html" aria-label="Tractum Bio home">
       <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <path d="M7 8 H21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
         <path d="M14 8 V25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
@@ -228,19 +13,18 @@
       <span class="word">tractum<span>bio</span></span>
     </a>
     <nav class="links" aria-label="Primary">
-      <a href="#how">Approach</a>
-      <a href="#engage">Engagement</a>
-      <a href="#why">Evidence</a>
+      <a href="asset.html">For biotech</a>
+      <a href="capability.html">For labs</a>
       <a href="#founder">About</a>
     </nav>
-    <a class="nav-cta" href="#contact"><span class="cta-long">Evaluate your candidate</span><span class="cta-short">Get in touch</span></a>
+    <a class="nav-cta" href="#contact"><span class="cta-long">Book a free intro call</span><span class="cta-short">Get in touch</span></a>
   </div>
 </header>
 
 <main id="top">
 
   <!-- HERO -->
-  <section class="hero wrap">
+  <section class="hero wrap" style="padding-bottom:clamp(40px,5vw,64px)">
     <svg class="retina" viewBox="0 0 400 400" fill="none" aria-hidden="true">
       <g stroke="var(--teal)" stroke-width="1" opacity="0.55" fill="none">
         <circle cx="200" cy="200" r="60"/><circle cx="200" cy="200" r="105"/>
@@ -248,174 +32,46 @@
       </g>
       <path d="M40 210 Q150 205 185 235 Q200 250 215 235 Q250 205 360 210" stroke="var(--blue)" stroke-width="1.4" fill="none" opacity="0.7"/>
     </svg>
-    <p class="eyebrow reveal">Ophthalmic asset diligence</p>
-    <h1 class="display reveal">Could your existing lead candidate become a valuable ophthalmic asset?</h1>
-    <p class="lead reveal">I assess whether your existing drug, biologic, or lead candidate has a credible route into ophthalmology — from discovery to IND-ready — before you invest heavily in development.</p>
-    <div class="cta-row reveal">
-      <a class="btn btn-primary" href="#contact">Evaluate your candidate <span class="arw">→</span></a>
-      <a class="btn btn-ghost" href="#how">See the approach <span class="arw">→</span></a>
-    </div>
-    <div class="hero-meta reveal">
-      <span><b>The route:</b> Discovery <span class="arw">→</span> Indication fit <span class="arw">→</span> Evidence <span class="arw">→</span> IND-ready</span>
-    </div>
-  </section>
+    <p class="eyebrow reveal">Ophthalmic drug development</p>
+    <h1 class="display reveal" style="max-width:19ch">The eye, judged by someone who has worked every side of it.</h1>
+    <p class="lead reveal">One specialist practice for two kinds of client: biotechs deciding whether their asset belongs in the eye, and labs adding the capability to do the work.</p>
 
-  <!-- HOW WE ASSESS -->
-  <section class="wrap" id="how">
-    <div class="assess-head">
-      <div>
-        <p class="eyebrow reveal">How the engagement runs</p>
-        <h2 class="h2 reveal" style="max-width:24ch">A deliberate plan, from first question to a package a partner can act on.</h2>
-      </div>
-    </div>
+    <div class="doors" id="doors">
+      <article class="door reveal" style="--c:var(--teal)">
+        <span class="ek">For biotech</span>
+        <h2 class="h2">I have an asset</h2>
+        <p>Find out whether your lead candidate has a credible route into the eye, before you commit serious capital.</p>
+        <ul>
+          <li>Go / no-go on ocular relevance</li>
+          <li>Evidence plan through to IND-ready</li>
+          <li>IP and a valuation story partners can test</li>
+        </ul>
+        <a class="btn" href="asset.html">Evaluate your candidate <span class="arw">→</span></a>
+      </article>
 
-    <p class="reveal" style="color:var(--muted);max-width:60ch;margin-top:18px">
-      Three tracks, one gate. Most assets should stop at the gate — an early no-go is the win.
-      Automation speeds the search; the call is mine.
-    </p>
-
-    <div class="pipe reveal">
-      <div class="pipe-rail pipe-rail-4">
-
-        <div class="phase">
-          <span class="pnum">Track 1 · Relevance</span>
-          <h3 class="h3">Is the eye real?</h3>
-          <ul>
-            <li>Lit review + in-silico screen</li>
-            <li>Mechanism → indication fit</li>
-            <li>Feasibility &amp; FTO scan</li>
-          </ul>
-        </div>
-
-        <div class="phase">
-          <span class="pnum">Track 2 · Evidence</span>
-          <h3 class="h3">Prove it</h3>
-          <ul>
-            <li>Safety / tox / efficacy plan</li>
-            <li>Endpoints &amp; success thresholds</li>
-            <li>CRO selection + oversight</li>
-          </ul>
-        </div>
-
-        <div class="phase">
-          <span class="pnum">Track 3 · Position</span>
-          <h3 class="h3">Defend it</h3>
-          <ul>
-            <li>IP strategy + filing support</li>
-            <li>Valuation modelling, tunable</li>
-            <li>Investor / pharma materials</li>
-          </ul>
-        </div>
-
-        <div class="phase outcome">
-          <span class="pnum">On track</span>
-          <h3 class="h3">What it's worth</h3>
-          <div class="ostat"><b>5→1</b><span>one package, not five open questions</span></div>
-          <div class="ostat"><b>+76%<small>illustrative</small></b><span>$85M→$150M, range +30/+76/+140%</span></div>
-          <div class="ostat"><b>$1.3B<small>2024</small></b><span>Merck/EyeBio precedent, up to $3B</span></div>
-        </div>
-
-      </div>
+      <article class="door reveal" style="--c:var(--blue)">
+        <span class="ek">For CROs &amp; labs</span>
+        <h2 class="h2">I run a lab</h2>
+        <p>Add ophthalmic services, cutting-edge omics and fully automated analysis, on the infrastructure you already run.</p>
+        <ul>
+          <li>Ophthalmic disease models, imaging, OCT and ERG</li>
+          <li>Bulk, single-cell and spatial transcriptomics</li>
+          <li>Full pipeline automation, from raw data to report</li>
+        </ul>
+        <a class="btn" href="capability.html">Scope a capability build <span class="arw">→</span></a>
+      </article>
     </div>
   </section>
 
-  <!-- WHY THE EYE + WHY ME -->
-  <section class="wrap" id="why">
-    <p class="eyebrow reveal">Why this, why me</p>
-    <h2 class="h2 reveal" style="max-width:28ch">A real opportunity — judged by someone who's sat on every side of the table.</h2>
-
-    <div class="whyme-grid reveal">
-      <div class="whyme-eye">
-        <p class="wm-label">Why the eye</p>
-        <div class="ostat"><b>7.9%<small>Ph1</small></b><span>odds favour the eye — BIO/Informa</span></div>
-        <div class="ostat"><b>$20–40B<small>2025</small></b><span>market, retina-weighted — MarketsandMarkets/Mordor</span></div>
-        <div class="ostat"><b>$1.3B<small>2024</small></b><span>Merck/EyeBio — pharma is buying ophthalmic assets, not building them</span></div>
-      </div>
-
-      <div class="whyme-me" id="me">
-        <p class="wm-label">Why me</p>
-        <div class="capmap">
-          <svg viewBox="0 0 620 292" role="img" aria-label="Four capabilities — biology, path, deal and strategy — refracted through one lens into a single verdict">
-            <defs>
-              <linearGradient id="lensG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="var(--teal)"/>
-                <stop offset="0.36" stop-color="var(--blue)"/>
-                <stop offset="0.68" stop-color="var(--amber)"/>
-                <stop offset="1" stop-color="var(--blue-bright)"/>
-              </linearGradient>
-            </defs>
-
-            <!-- incoming -->
-            <path d="M200 50 L 318 50"   stroke="var(--teal)"        stroke-width="1.5" fill="none" opacity=".85"/>
-            <path d="M200 115 L 307 115" stroke="var(--blue)"        stroke-width="1.5" fill="none" opacity=".85"/>
-            <path d="M200 180 L 307 180" stroke="var(--amber)"       stroke-width="1.5" fill="none" opacity=".85"/>
-            <path d="M200 245 L 318 245" stroke="var(--blue-bright)" stroke-width="1.5" fill="none" opacity=".85"/>
-
-            <!-- the lens -->
-            <path d="M330 18 C 364 66, 364 226, 330 274 C 296 226, 296 66, 330 18 Z"
-                  fill="url(#lensG)" fill-opacity=".13" stroke="url(#lensG)" stroke-width="1.5"/>
-
-            <!-- refracted, converging -->
-            <path d="M342 50 L 470 147"   stroke="var(--teal)"        stroke-width="1.5" fill="none" opacity=".85"/>
-            <path d="M353 115 L 470 147"  stroke="var(--blue)"        stroke-width="1.5" fill="none" opacity=".85"/>
-            <path d="M353 180 L 470 147"  stroke="var(--amber)"       stroke-width="1.5" fill="none" opacity=".85"/>
-            <path d="M342 245 L 470 147"  stroke="var(--blue-bright)" stroke-width="1.5" fill="none" opacity=".85"/>
-
-            <circle cx="470" cy="147" r="5.5" fill="var(--blue-bright)"/>
-
-            <text x="0" y="45" class="cap-lbl" fill="var(--teal)">BIOLOGY</text>
-            <text x="0" y="66" class="cap-sub">PhD · retinal degeneration</text>
-
-            <text x="0" y="110" class="cap-lbl" fill="var(--blue)">PATH</text>
-            <text x="0" y="131" class="cap-sub">Pharma + biotech</text>
-
-            <text x="0" y="175" class="cap-lbl" fill="var(--amber)">DEAL</text>
-            <text x="0" y="196" class="cap-sub">Founder-raised · IP secured</text>
-
-            <text x="0" y="240" class="cap-lbl" fill="var(--blue-bright)">STRATEGY</text>
-            <text x="0" y="261" class="cap-sub">Retail · gov · pharma</text>
-
-            <text x="488" y="142" class="cap-lbl" fill="var(--blue-bright)">ONE VERDICT</text>
-            <text x="488" y="163" class="cap-sub">board-ready</text>
-          </svg>
-        </div>
-      </div>
+  <!-- WHY THE EYE -->
+  <section class="wrap" id="why" style="padding-top:clamp(30px,4vw,56px)">
+    <p class="eyebrow reveal">Why the eye</p>
+    <h2 class="h2 reveal" style="max-width:26ch">Better odds, a large market, and pharma already buying.</h2>
+    <div class="stats3 reveal">
+      <div class="ostat"><b>7.9%<small>Ph1</small></b><span>all-indication baseline; ophthalmology ranks among the highest for approval from Phase 1 — BIO/Informa</span></div>
+      <div class="ostat"><b>$20–40B<small>2025</small></b><span>ophthalmic drug market, weighted to retina — MarketsandMarkets/Mordor</span></div>
+      <div class="ostat"><b>$1.3B<small>2024</small></b><span>Merck/EyeBio — pharma is buying ophthalmic assets, not building them</span></div>
     </div>
-  </section>
-
-  <!-- ENGAGEMENT MODEL -->
-  <section class="wrap" id="engage">
-    <p class="eyebrow reveal">How the engagement works</p>
-    <h2 class="h2 reveal" style="max-width:26ch">Built for early-stage: a small first step, not a retainer.</h2>
-
-    <div class="eng reveal">
-      <div class="ecell">
-        <div class="ek" style="color:var(--teal)">Start here</div>
-        <h3 class="h3">Free intro call</h3>
-        <p>Thirty minutes, no charge and no obligation. Tell me the asset and the question; I'll tell you straight whether it's worth a Track 1 — including if it isn't.</p>
-      </div>
-      <div class="ecell">
-        <div class="ek" style="color:var(--blue)">Nothing locked in</div>
-        <h3 class="h3">Stop after any track</h3>
-        <p>No retainer, no minimum term, no notice period. Track 1 is a fixed fee agreed upfront; Tracks 2–3 are scoped only if you choose to go. CRO costs are quoted to you directly and passed through at cost — I don't mark up lab work.</p>
-      </div>
-      <div class="ecell">
-        <div class="ek" style="color:var(--amber)">Deliberately limited</div>
-        <h3 class="h3">A handful of assets at a time</h3>
-        <p>This is a specialist practice, not an agency. If I can't give your asset the attention it needs, I'll tell you that instead of taking it on.</p>
-      </div>
-    </div>
-
-    <div class="introcta reveal">
-      <div>
-        <h3 class="h3">Start with a conversation, not a contract.</h3>
-        <p>The first call costs nothing and commits you to nothing. Most of what I need to give you a useful first read, I can get in half an hour.</p>
-      </div>
-      <a class="btn btn-primary" href="#contact">Book a free intro call <span class="arw">→</span></a>
-    </div>
-
-    <p class="eng-note reveal"><b>Pricing on request.</b> Tell me the asset, the stage and the question — you'll get a Track 1 scope and fixed quote back, not a proposal deck.</p>
-
   </section>
 
   <section class="founder" id="founder">
@@ -449,33 +105,21 @@
     </div>
   </section>
 
-  <!-- AFTER GO -->
-  <section class="wrap" id="aftergo">
-    <div class="aftergo reveal">
-      <div>
-        <p class="eyebrow" style="margin-bottom:12px">If the decision is go</p>
-        <h3 class="h3">I can help you execute, not just decide.</h3>
-        <p>Beyond the assessment, I design the validating studies, match you to the right specialist CROs, and — for organisations building ophthalmic capability in-house — stand up disease modelling, imaging, molecular and analytics workflows on the infrastructure you already have.</p>
-      </div>
-      <a class="btn btn-ghost" href="#contact">Discuss execution <span class="arw">→</span></a>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section class="contact wrap" id="contact">
-    <p class="eyebrow reveal" style="justify-content:center">Start with the scientific question</p>
-    <h2 class="h2 reveal">Evaluate your candidate.</h2>
-    <p class="lead reveal">Tell me about your asset. I will tell you — honestly — whether the eye is a credible, valuable opportunity worth pursuing.</p>
-    <a class="mailbtn reveal" href="mailto:adrian@tractumbio.com?subject=Intro%20call%20%E2%80%94%20ophthalmic%20asset">Book a free intro call →</a>
-    <p class="next reveal">Thirty minutes, no charge, nothing locked in. I reply within two business days —
-      send the asset, its stage and the question you are trying to answer.</p>
+    <p class="eyebrow reveal" style="justify-content:center">Free intro call</p>
+    <h2 class="h2 reveal">Tell me about your asset, or your lab.</h2>
+    <p class="lead reveal">I’ll tell you honestly whether I can help, and what the first step would be.</p>
+    <a class="mailbtn reveal" href="mailto:adrian@tractumbio.com?subject=Intro%20call">Book a free intro call →</a>
+    <p class="addr reveal">adrian@tractumbio.com</p>
+    <p class="next reveal">Thirty minutes, no charge. No retainer, no minimum term, and you can stop after any stage. I reply within two business days.</p>
   </section>
 
 </main>
 
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="#top" aria-label="Tractum Bio home">
+    <a class="brand" href="index.html" aria-label="Tractum Bio home">
       <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <path d="M7 8 H21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
         <path d="M14 8 V25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
@@ -491,21 +135,4 @@
   </div>
 </footer>
 
-<script>
-  (function(){
-    var els=document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion:reduce)').matches){
-      els.forEach(function(e){e.classList.add('in')});return;
-    }
-    var io=new IntersectionObserver(function(en){
-      en.forEach(function(x){
-        if(!x.isIntersecting)return;
-        var el=x.target,sibs=el.parentNode?el.parentNode.querySelectorAll(':scope > .reveal'):[];
-        var i=Array.prototype.indexOf.call(sibs,el);
-        el.style.transitionDelay=(Math.min(i<0?0:i,4)*60)+'ms';
-        el.classList.add('in');io.unobserve(el);
-      });
-    },{threshold:0.12,rootMargin:'0px 0px -12% 0px'});
-    els.forEach(function(e){io.observe(e)});
-  })();
-</script>
+<script src="site.js"></script>

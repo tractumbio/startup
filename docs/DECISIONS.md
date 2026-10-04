@@ -107,3 +107,24 @@ would not break it.
 ⚠️ `CLAUDE.md` and `tractum-agents/company/COMPANY.md` still document a triple
 vantage. They need mirroring — otherwise the `brand_voice` agent enforces the
 old version.
+
+## Site routes by buyer, and the lab page brand-leads omics + automation — Oct 2026
+
+The site is now three pages: a landing page (`index.html`) with two doors, a
+biotech page (`asset.html`) and a labs page (`capability.html`).
+
+This is **not** the two-door gateway that was rejected earlier. That one split
+the firm into two businesses (generic CRO automation vs. ophthalmology). This
+one splits **one firm by buyer**, and the landing page carries shared substance
+(why the eye, the founder, contact) rather than being a splash screen.
+
+**Change to the "Firm shape" decision, made by Adrian:** the labs page now
+presents three equal capabilities — ophthalmic services, cutting-edge omics
+(bulk, single-cell, spatial) and full pipeline automation — with omics and
+automation explicitly scoped to *any therapeutic area*. Previously the
+domain-agnostic work was referral-only and never brand-led. It is now brand-led
+on the labs page. Ophthalmology remains the specialism and the landing page's
+framing.
+
+Reason: lab buyers have **active** demand (a lost sponsor request is a known
+gap), unlike the latent demand on the biotech side.

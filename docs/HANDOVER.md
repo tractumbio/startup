@@ -11,7 +11,10 @@ Dr. Adrian Cioanca. Two things live here:
 
 | Path | What it is |
 |---|---|
-| `index.html` | The Tier 1 website — single page, self-contained, no build step |
+| `index.html` | Landing page — shared claim, two doors, why the eye, founder, contact |
+| `asset.html` | For biotech — tracks, outcome, engagement (was the old `index.html`) |
+| `capability.html` | For labs — ophthalmic services, omics, pipeline automation, build rail |
+| `styles.css`, `site.js` | Shared by all three pages — edit once, applies everywhere |
 | `assets/` | Logo and email-signature reference images |
 | `tractum-agents/` | Four local Ollama agents with a human gate, plus a BD screen |
 | `CLAUDE.md` | Strategy, positioning, founder facts. Read before writing copy |
@@ -19,11 +22,11 @@ Dr. Adrian Cioanca. Two things live here:
 
 ## Branch
 
-**`dev` is the live branch.** All current work is there.
+**`main` is the live branch.** `dev` is kept identical to it.
 
 ```bash
 git clone https://github.com/tractumbio/startup.git
-cd startup && git checkout dev
+cd startup && git checkout main
 ```
 
 Note the repo has **no `main`** — the default branch is
@@ -32,11 +35,16 @@ Note the repo has **no `main`** — the default branch is
 
 ## The website
 
-`index.html` is a single self-contained file — no framework, no build, no
-external CSS or JS. Open it directly in a browser.
+Three static HTML pages sharing `styles.css` and `site.js` — no framework, no
+build step. Open any of them in a browser.
 
-Section order: hero → approach (the track rail) → why this / why me →
-engagement → about → execution strip → contact.
+- `index.html`: hero → two doors → why the eye → founder → contact
+- `asset.html`: hero → track rail → why this / why me → engagement → founder → contact
+- `capability.html`: hero → three capabilities → pipeline → build rail →
+  what you own → engagement → contact
+
+The founder block exists in both `index.html` and `asset.html` (outbound links
+to biotechs land directly on `asset.html`, so it must stand alone). Edit both.
 
 Design constraints that matter (see `CLAUDE.md` for the full brief):
 - Premium, restrained. No stock photography, no hype vocabulary.

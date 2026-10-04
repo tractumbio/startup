@@ -14,6 +14,8 @@ Dr. Adrian Cioanca. Two things live here:
 | `index.html` | Landing page — shared claim, two doors, why the eye, founder, contact |
 | `asset.html` | For biotech — tracks, outcome, engagement (was the old `index.html`) |
 | `capability.html` | For labs — ophthalmic services, omics, pipeline automation, build rail |
+| `about.html` | Full founder profile: story, background, how I work |
+| `privacy.html`, `404.html` | Privacy note and page-not-found (the 404 is `noindex`) |
 | `styles.css`, `site.js` | Shared by all three pages — edit once, applies everywhere |
 | `assets/` | Logo, email-signature reference, founder portrait (`adrian.png`), favicon, OG card (`og.jpg`) |
 | `tools/make_og.py` | Regenerates `assets/og.jpg` — run it after changing the landing headline |
@@ -46,8 +48,8 @@ build step. Open any of them in a browser.
 - `capability.html`: split hero (route card) → three capabilities → pipeline →
   build rail → what you own → engagement → contact
 
-The full founder profile (portrait, story, credentials) lives only on
-`index.html#founder`. `asset.html` carries a compact card that links to it, so
+The full founder profile lives only on `about.html`; the landing page keeps a
+short bio that links to it. `asset.html` carries a compact card that links to it, so
 there is one place to edit. Navigation collapses to a menu button below 900px
 (`.menu-btn` + `#primary-nav`, toggled in `site.js`). Every page has a skip
 link, favicon, and Open Graph tags pointing at `assets/og.jpg` on
@@ -123,6 +125,12 @@ separately: `pip install -r bd_screen/requirements.txt`, then `make bd-screen`.
 8. **Analytics.** The review proposes measuring route visits, contact clicks,
    enquiries, qualified enquiries and engagements. Pick a privacy-respecting tool
    (e.g. Plausible) and it can be wired in; never put asset details in event data.
+7b. **Confirm the privacy note** (`privacy.html`). It is accurate for the site as
+   built (no cookies, analytics or third-party loads) and promises email is used
+   only to reply and to do agreed work. If analytics are added, it must change.
+8b. **Hosting.** The site is static and ready to deploy (any static host works:
+   GitHub Pages, Netlify, Cloudflare Pages). Point the host's 404 at `404.html`
+   and DNS for tractumbio.com at it. This needs your account, so it is not done.
 6. **GitHub default branch** is still the old `claude/...` branch. Flip it to
    `main` in Settings → Branches.
 

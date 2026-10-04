@@ -416,3 +416,24 @@
 @media(max-width:700px){.handover ul{grid-template-columns:1fr}}
 .handover li{font-size:.95rem;color:var(--ink);padding-left:18px;position:relative;line-height:1.45}
 .handover li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:var(--blue)}
+
+/* ---- about page ---- */
+.about-hero .fphoto{max-width:340px}
+.bg-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px 40px;margin-top:30px}
+@media(max-width:760px){.bg-grid{grid-template-columns:1fr;gap:28px}}
+.bg-col{border-top:3px solid var(--c);padding-top:18px;min-width:0}
+.bg-col h3{margin-bottom:10px}
+.bg-col ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.bg-col li{padding:10px 0;border-bottom:1px solid var(--line);display:grid;gap:2px;line-height:1.4}
+.bg-col li b{color:var(--heading);font-weight:640;font-size:.98rem}
+.bg-col li span{color:var(--muted);font-size:.92rem}
+@media(max-width:760px){.ownrow[style]{grid-template-columns:1fr!important}}
+
+/* ---- privacy and 404 ---- */
+.legal{padding-top:clamp(50px,7vw,90px)}
+.legal .display{margin-bottom:24px}
+.legal .measure p{margin-bottom:14px}
+.legal .updated{color:var(--muted);font-size:.92rem}
+.nf-links{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.nf-links a{font-weight:600}
+@media(max-width:900px){.about-hero .fphoto{order:-1;max-width:170px;margin:0}}

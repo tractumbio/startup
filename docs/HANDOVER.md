@@ -40,7 +40,7 @@ Note the repo has **no `main`** — the default branch is
 Three static HTML pages sharing `styles.css` and `site.js` — no framework, no
 build step. Open any of them in a browser.
 
-- `index.html`: hero → two doors → why the eye → founder → contact
+- `index.html`: hero → two doors (each ends with its first paid step) → credential strip → why the eye → founder → contact
 - `asset.html`: split hero (route card) → track rail → why this / why me →
   engagement → compact founder card → contact
 - `capability.html`: split hero (route card) → three capabilities → pipeline →

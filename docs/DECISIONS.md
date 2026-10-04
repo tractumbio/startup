@@ -168,3 +168,12 @@ aphorisms, stock phrases and most section kicker labels were rewritten or remove
 headings now name the section plainly. The landing headline became "I help biotechs decide
 whether a drug belongs in the eye, and help CROs build the services to test it." The rule
 is recorded in `CLAUDE.md` → Claims discipline and mirrored in the agents' `BRAND.md`.
+
+## Landing page: first step lives inside each door — Oct 2026
+
+Adrian approved a concept that removed the separate "Where each route starts" section
+and folded each route's first paid step into its door, just above the button. Reason:
+the old section repeated the two-audience choice the doors had just made, so visitors met
+it twice. Hiding the detail behind a click was considered and rejected: the buttons
+already lead to the service pages, and hidden first steps would go unread. Full detail
+stays on `asset.html` and `capability.html`.

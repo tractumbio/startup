@@ -359,18 +359,14 @@
 .credstrip li{font-size:.92rem;color:var(--muted);line-height:1.4;display:grid;gap:2px}
 .credstrip b{color:var(--heading);font-weight:640}
 
-/* ---- landing: where each route starts ---- */
-.startcards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
-@media(max-width:760px){.startcards{grid-template-columns:1fr}}
-.startcard{border:1px solid var(--line);border-left:3px solid var(--c);border-radius:14px;background:var(--surface);
-  padding:26px 26px 22px;display:grid;gap:12px;align-content:start;min-width:0}
-.startcard .ek{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:650;color:var(--c)}
-.startcard > p{color:var(--muted);font-size:.97rem}
-.startcard ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.startcard li{font-size:.95rem;padding:8px 0 8px 18px;border-bottom:1px solid var(--line);position:relative;line-height:1.4}
-.startcard li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:1px;background:var(--c)}
-.startcard .decide{color:var(--ink)}
-.startcard .decide b{color:var(--amber)}
+/* ---- landing: each door names its first paid step ---- */
+.door .first{border:1px solid var(--line);border-left:3px solid var(--c);border-radius:10px;padding:14px 16px;
+  background:color-mix(in srgb,var(--c) 5%,var(--surface));display:grid;gap:3px}
+.door .first .fk{font-size:.8rem;font-weight:650;color:var(--c);letter-spacing:.06em;text-transform:uppercase}
+.door .first b{color:var(--heading);font-size:1rem}
+.door .first p{font-size:.93rem;color:var(--muted)}
+.doors + .ctx-note{margin-top:18px}
+
 .more{font-weight:600}
 .ctx-note{margin-top:18px;font-size:.92rem;color:var(--muted);max-width:66ch}
 

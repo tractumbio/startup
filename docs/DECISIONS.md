@@ -183,3 +183,13 @@ stays on `asset.html` and `capability.html`.
 Adrian asked to remove "I have an asset" and "I run a CRO" from the landing-page doors.
 The doors are now headed simply "For biotech" and "For CROs" (the former small labels,
 promoted to the heading). This supersedes the earlier note that those headings stay.
+
+## Headline stat is Phase I success; credentials reworded — Oct 2026
+
+Adrian asked for the odds stat to target Phase I success in ophthalmology (passing safety
+and tolerability) rather than approval. Taken from the same BIO/Informa/QLS 2011–2020
+report, Figure 2 / p7: ophthalmology Phase I → II transition 71.6% (n=88) vs 52.0% all
+indications, the highest of any disease area. Verified against the PDF text, not memory.
+
+The landing credential strip now reads: PhD in retinal degeneration · Research leader ·
+Biotech co-founder · Strategy consultant (Adrian's wording).

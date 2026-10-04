@@ -23,8 +23,9 @@ science cold and can smell padding.
   way. Never imply a team, a department or a platform that does not exist.
 - **Scarcity is a feature.** Low volume and a short client list are selectivity, not
   a shortfall. Never write defensively about size.
-- **Exact figures only (Oct 2026 review).** Approval odds as "11.9% vs 7.9%, Phase I to
-  approval, ophthalmology vs all indications, 2011–2020 (BIO/Informa/QLS)". Market as
+- **Exact figures only (Oct 2026 review).** Phase I success as "71.6% vs 52.0% of Phase I
+  programs advanced to Phase II, ophthalmology vs all indications, 2011–2020, the highest of
+  any disease area (BIO/Informa/QLS)". Market as
   "US$37.5B, 2025, Mordor Intelligence", with no blended ranges. EyeBio as "US$1.3B upfront
   plus up to US$1.7B in milestones". No valuation-uplift percentages (+76% etc.) unless
   they sit inside a hypothetical worked model with every input shown.

@@ -79,9 +79,12 @@ An external review of the site (`docs/reviews/2026-10-04-website-review.md`) was
 applied in Oct 2026. These rules now govern every public claim — site, decks, outbound,
 and the `brand_voice` agent:
 
-- **Approval odds:** "11.9% vs 7.9% — likelihood of approval from Phase I, ophthalmology
-  vs all indications, 2011–2020 (BIO/Informa/QLS, Feb 2021)". Never show 7.9% alone, never
-  present it as a current or preclinical probability, never "ranks among the highest".
+- **Headline odds stat (Oct 2026, Adrian's choice): Phase I success.** "71.6% vs 52.0% of
+  Phase I programs advanced to Phase II, ophthalmology vs all indications, 2011–2020; the
+  highest of any disease area (BIO/Informa/QLS, Feb 2021, Figure 2, n=88 transitions)".
+  Phase I is where safety and tolerability are tested. Never present it as a current or
+  preclinical probability. The older LOA figure (11.9% vs 7.9% from Phase I to approval,
+  Figure 5a) is still valid if a full-pipeline number is ever needed; never show 7.9% alone.
 - **Market:** one attributed estimate — "US$37.5B, 2025, Mordor Intelligence". No blended
   ranges across publishers, no "retina-weighted", never as Tractum's market.
 - **EyeBio:** "US$1.3B upfront plus up to US$1.7B in milestones (Merck, 2024)". Never

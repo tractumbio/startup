@@ -1,0 +1,8 @@
+{
+  "name": "tractum-site-verify",
+  "private": true,
+  "description": "Render checks for the Tractum Bio static site",
+  "dependencies": {
+    "playwright": "1.63.0"
+  }
+}

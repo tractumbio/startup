@@ -112,13 +112,18 @@ separately: `pip install -r bd_screen/requirements.txt`, then `make bd-screen`.
 
 ## How work gets verified here
 
-There is no test suite; the page is verified by rendering it. The pattern used
-throughout, with the pre-installed Chromium at `/opt/pw-browsers/chromium`:
+There is no test suite; the site is verified by rendering it. That procedure is
+now a project skill:
 
-1. Load the page, inject `.reveal{opacity:1!important;transform:none!important}`
-   (content is scroll-triggered and won't appear otherwise).
-2. Assert `scrollWidth - clientWidth === 0` at **1280 / 820 / 390 / 360**.
-3. Screenshot the changed sections and actually look at them.
-4. Check both `colorScheme: 'light'` and `'dark'`.
-5. For motion changes, emulate `reducedMotion: 'reduce'` and confirm content
-   is visible with no transition.
+```bash
+node .claude/skills/site-verify/verify.js --shots <scratch-dir>
+```
+
+It checks every page at 1280/820/390/360 in light and dark, overflow, errors,
+links and anchors, markup balance, minimum text size and reduced motion — then
+**look at the screenshots**, because purely visual faults pass every check. See
+`.claude/skills/site-verify/SKILL.md`.
+
+`.claude/hooks/session-start.sh` runs automatically at the start of every cloud
+session: it installs the verify tooling and the agent stack's Python deps (~8s
+cold, near-instant after), and prints a warning if the checkout is behind `main`.

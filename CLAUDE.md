@@ -73,6 +73,40 @@ the centrepiece" — the automation arm is real, domain-agnostic, and since Oct 
 brand-led on the CRO page; (c) any framing that treats growth or scale as the
 objective.
 
+## Claims discipline — DECIDED (Oct 2026 website review)
+
+An external review of the site (`docs/reviews/2026-10-04-website-review.md`) was
+applied in Oct 2026. These rules now govern every public claim — site, decks, outbound,
+and the `brand_voice` agent:
+
+- **Approval odds:** "11.9% vs 7.9% — likelihood of approval from Phase I, ophthalmology
+  vs all indications, 2011–2020 (BIO/Informa/QLS, Feb 2021)". Never show 7.9% alone, never
+  present it as a current or preclinical probability, never "ranks among the highest".
+- **Market:** one attributed estimate — "US$37.5B, 2025, Mordor Intelligence". No blended
+  ranges across publishers, no "retina-weighted", never as Tractum's market.
+- **EyeBio:** "US$1.3B upfront plus up to US$1.7B in milestones (Merck, 2024)". Never
+  "$3B" as if paid. Editorial line: "acquisition is one route pharma uses to build an eye
+  pipeline" — not "pharma is buying, not building".
+- **No valuation-uplift numbers on sales pages.** The illustrative $85M → $150M (+76%)
+  and the +30/+76/+140% range are OFF the site. They return only as a clearly hypothetical
+  worked model with every input shown (indication, modality, stage, geography, costs,
+  timing, probabilities, discounting, sensitivities). Sell outputs instead: decision memo,
+  evidence matrix, risk register, study plan, assumptions register.
+- **Say who does what.** Preliminary patent landscape is Adrian's; formal FTO opinions and
+  filings come from a qualified patent attorney. Studies run at CROs the client contracts.
+  "IND-ready" means an IND-ready *plan*; filing runs through regulatory specialists.
+- **CRO claims stay specific:** "your instruments and formats, agreed at scoping" (not
+  "any instrument"); "reproducible / traceable" with versions, seeds and records named (not
+  "deterministic / fully auditable"); "qualification agreed with your QA" (not "validated
+  against your QMS"); "fewer hires" (not "no new hire"); "built around your systems,
+  changes agreed upfront" (not "untouched"). Retina is hands-on; anterior segment and ocular
+  safety are delivered with partners.
+- **No competitor generalisations** ("most vendors have only sat at the computer") — state
+  Adrian's own bench / computer / sponsor experience directly.
+- **Booking language matches behaviour.** While contact is email-only, CTAs say "Email to
+  arrange…", never "Book…".
+- **Dynamic metrics** (citations, h-index) are linked to Google Scholar, not printed.
+
 ## Strategic direction (CURRENT — an ophthalmic-focused firm)
 
 **Note (Sept 2026): partially superseded — read "Firm shape" above first.** The
@@ -220,7 +254,8 @@ is the moat; a software vendor only knows the middle one.
 improve what you deliver today (Acts 3–4) and expand what you can offer tomorrow
 (Act 5) are the same pipeline seen at two moments in time.
 
-**Core properties:** Deterministic · Fully auditable · Human-in-the-loop.
+**Core properties:** Reproducible · Traceable · Human-in-the-loop. *(Was "Deterministic · Fully
+auditable" — narrowed Oct 2026, see Claims discipline.)*
 
 **Selling points:**
 - Frees scientists for bench work instead of manual analysis/reporting
@@ -239,7 +274,10 @@ improve what you deliver today (Acts 3–4) and expand what you can offer tomorr
 Positioned as a **valuation-uplift argument**, not a services list. The pitch: "your
 lead asset may already have a second market — it's in the eye."
 
-**Centerpiece:** an illustrative small biotech valuation going **$85M → $150M (+76%)**
+**⚠️ Oct 2026: the centerpiece below is OFF the public site** (see Claims discipline). It
+may return only as a clearly hypothetical worked model with every input shown.
+
+**Centerpiece (historical):** an illustrative small biotech valuation going **$85M → $150M (+76%)**
 by adding an ophthalmic indication. Shown as:
 - Before/after headline number with uplift badge
 - Sum-of-the-parts waterfall (base asset + ophthalmic indication added)

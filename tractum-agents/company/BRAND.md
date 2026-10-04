@@ -23,6 +23,15 @@ science cold and can smell padding.
   way. Never imply a team, a department or a platform that does not exist.
 - **Scarcity is a feature.** Low volume and a short client list are selectivity, not
   a shortfall. Never write defensively about size.
+- **Exact figures only (Oct 2026 review).** Approval odds as "11.9% vs 7.9%, Phase I to
+  approval, ophthalmology vs all indications, 2011–2020 (BIO/Informa/QLS)". Market as
+  "US$37.5B, 2025, Mordor Intelligence" — no blended ranges. EyeBio as "US$1.3B upfront
+  plus up to US$1.7B in milestones". No valuation-uplift percentages (+76% etc.) unless
+  they sit inside a hypothetical worked model with every input shown.
+- **Say who does what.** Formal FTO opinions and patent filings come from a qualified
+  patent attorney; studies run at CROs; IND filing runs through regulatory specialists.
+  Never write "any instrument", "fully auditable", "deterministic", "validated against
+  your QMS" or "no new hire" — use the specific forms in `CLAUDE.md` → Claims discipline.
 - **Never cite the ophthalmic drug market as Tractum's market.** ~$37B is the clients'
   market. Quoting it as our TAM is the fastest way to look like we don't understand
   our own business.

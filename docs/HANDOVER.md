@@ -16,9 +16,11 @@ Dr. Adrian Cioanca. Two things live here:
 | `capability.html` | For labs — ophthalmic services, omics, pipeline automation, build rail |
 | `styles.css`, `site.js` | Shared by all three pages — edit once, applies everywhere |
 | `assets/` | Logo, email-signature reference, founder portrait (`adrian.png`), favicon, OG card (`og.jpg`) |
+| `tools/make_og.py` | Regenerates `assets/og.jpg` — run it after changing the landing headline |
+| `robots.txt`, `sitemap.xml` | For the production domain `tractumbio.com` |
 | `tractum-agents/` | Four local Ollama agents with a human gate, plus a BD screen |
 | `CLAUDE.md` | Strategy, positioning, founder facts. Read before writing copy |
-| `docs/` | This handover, the decision record, and working plans |
+| `docs/` | This handover, the decision record, working plans, and `reviews/` (external site reviews) |
 
 ## Branch
 
@@ -99,18 +101,28 @@ separately: `pip install -r bd_screen/requirements.txt`, then `make bd-screen`.
 1. **A calendar-booking link.** Every CTA is still `mailto:`. A Calendly-style
    link converts far better for a "free intro call"; drop the URL in and the
    `.mailbtn` / `.nav-cta` hrefs can switch to it.
-2. **Track 1 fee and duration.** The engagement section states shape only
-   ("fixed fee", "weeks, not quarters"). Real numbers convert better; vagueness
-   reads as expensive.
+2. **Track 1 fee and duration.** The biotech page now defines the first paid
+   step in full (inputs, work, deliverables, decision, exclusions) but says only
+   "fixed scope and fee". Supply a duration range and a fee basis you can keep.
 3. **The personal story** in the About block was drafted from documented facts.
    The emotional core is inferred — read it and make it true.
-4. **Anonymised case studies.** The site has credentials but no worked proof
-   ("a biotech came with X, left with Y"). Two short, client-approved examples
-   would do more than any further copy polish.
+4. **Two case studies.** One ophthalmic capability, one analytics/automation.
+   Use the six-part template in `docs/reviews/2026-10-04-website-review.md` §7
+   (context, starting point, your role, work delivered, evidence, limitations).
+   Qualitative is fine; client approval or anonymisation is required.
 5. **Founder numbers conflict.** `CLAUDE.md` says ~25 publications, 400+
    citations, h-index 14, 3 patents; the resume repo says h-index 9, 196
-   citations, 2 patents. The site uses the `CLAUDE.md` figures. Confirm which
-   are current (Scholar is the source of truth for citations).
+   citations, 2 patents. The site no longer prints citation metrics (it links
+   Google Scholar), but CVs and decks still need one answer.
+7. **Confirm three statements written on your behalf** (Oct 2026 review pass):
+   - CRO page: "any overlap with my biotech advisory clients is declared before
+     we start" — a conflict-of-interest commitment.
+   - CRO page: "Retina is my hands-on research field; anterior segment and ocular
+     safety are delivered with specialist partners."
+   - Landing page: CRO scoping returns "a fixed quote for the build".
+8. **Analytics.** The review proposes measuring route visits, contact clicks,
+   enquiries, qualified enquiries and engagements. Pick a privacy-respecting tool
+   (e.g. Plausible) and it can be wired in; never put asset details in event data.
 6. **GitHub default branch** is still the old `claude/...` branch. Flip it to
    `main` in Settings → Branches.
 
@@ -118,10 +130,11 @@ separately: `pip install -r bd_screen/requirements.txt`, then `make bd-screen`.
 
 - **FAQ block** — "What if the answer is no?", "Do you run the lab work?",
   "How do you handle confidentiality?", "What does it cost?"
-- **Tier 2 page** — the pharma/CRO capability-build buyer currently has
-  nothing to land on. This is a whole page that does not exist yet.
-- **A second site** for the CRO automation arm — decided as a one-pager served
-  by referral, deliberately not brand-led.
+- **Case-study section** — the layout can be built as soon as the content in
+  item 4 exists; do not publish placeholders.
+- **Hypothetical valuation model** — only if Adrian wants the uplift story back:
+  a worked, clearly-labelled model with every input visible (see `CLAUDE.md` →
+  Claims discipline).
 
 ## How work gets verified here
 
@@ -132,8 +145,9 @@ now a project skill:
 node .claude/skills/site-verify/verify.js --shots <scratch-dir>
 ```
 
-It checks every page at 1280/820/390/360 in light and dark, overflow, errors,
-links and anchors, markup balance, minimum text size and reduced motion — then
+It checks every page at ten widths (1440 down to 320) in light and dark, overflow,
+errors, links and anchors, markup balance, minimum text size, WCAG text contrast,
+nav/menu behaviour, JavaScript-off rendering and reduced motion — then
 **look at the screenshots**, because purely visual faults pass every check. See
 `.claude/skills/site-verify/SKILL.md`.
 

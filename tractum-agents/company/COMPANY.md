@@ -31,6 +31,8 @@ They lack ophthalmic expertise, infrastructure, and capability. Tractum guides t
 position: mechanism deep dive → indication screening → safety/efficacy plan → IP & path
 to Phase 1 → valuation modelling (rNPV/DCF) → CRO matching.
 Deliverable = decisions + roadmap + a valuation story the client can defend to a board.
+Publicly, sell the outputs (decision memo, evidence matrix, risk register, study plan,
+assumptions register), never an uplift percentage — see `CLAUDE.md` → Claims discipline.
 
 **Tier 2 — Pharma / preclinical CROs → ophthalmic capability build.**
 They already have data and research infrastructure; they want ophthalmic testing

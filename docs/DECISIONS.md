@@ -128,3 +128,34 @@ framing.
 
 Reason: lab buyers have **active** demand (a lost sponsor request is a known
 gap), unlike the latent demand on the biotech side.
+
+## External website review applied — Oct 2026
+
+Adrian supplied an external review (`docs/reviews/2026-10-04-website-review.md`) and
+asked for its noteworthy suggestions to be implemented. What changed, and why it is now
+the rule rather than a preference:
+
+- **Numbers corrected to their sources.** 11.9% vs 7.9% (not 7.9% alone); one market
+  estimate (US$37.5B, Mordor, 2025) instead of a blended US$20–40B; EyeBio split into
+  US$1.3B upfront plus up to US$1.7B milestones. Sources are linked in each footer.
+- **Valuation uplift removed from the site.** The +76% / $85M→$150M figures were
+  illustrative with no model behind them. The biotech outcome column now shows the
+  decision gate (proceed / pause / stop) — the "no-go is the hero" idea made concrete.
+- **First paid step defined** on the biotech page (who it is for, inputs, work,
+  deliverables, decision, fee basis, exclusions). Duration and price are deliberately
+  absent until Adrian supplies them.
+- **Homepage headline replaced.** "The eye, judged by someone who has worked every side
+  of it" → "Ophthalmic development decisions. Practical capability for the labs behind
+  them." The review's reason: the old line did not name the service. Door headings ("I
+  have an asset" / "I run a CRO") were kept because Adrian chose them directly.
+- **"IND-ready" kept in the hero** (Adrian's explicit wording) but the route card now
+  says "IND-ready plan" and names who files.
+- **CRO claims narrowed** and a handover-package list added; see `CLAUDE.md` → Claims
+  discipline for the exact wording.
+- **Contrast fixed site-wide.** Light-theme teal, amber, bright blue and muted text were
+  darkened to reach 4.5:1; filled buttons got their own `--btn*` tokens. `verify.js` now
+  checks contrast on every text element, JavaScript-off rendering, and ten widths.
+
+Not adopted: the review's door headings ("Assess an ophthalmic opportunity" / "Build
+ophthalmic and analytical capabilities") — Adrian's own wording stands. Conversion
+measurement is deferred until an analytics tool is chosen.

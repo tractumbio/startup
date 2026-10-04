@@ -1,8 +1,13 @@
-/* Tractum Bio — shared styles for index, asset and capability pages */
+/* Tractum Bio — shared styles for index, asset and capability pages.
+   Colour rule: text tokens (--teal, --amber, --blue-bright, --muted) must reach 4.5:1 on
+   --ground, --surface and --surface-2. Filled buttons use their own --btn* tokens, never the
+   text/link colours, because a link colour that reads well on dark ground fails behind white
+   button text. verify.js checks every text element. */
 :root{
-    --ground:#F9FBF8;--surface:#FFFFFF;--surface-2:#EEF3F8;--ink:#33414C;--muted:#66757F;
-    --heading:#183553;--line:#DFE6EC;--line-strong:#C7D3DC;--blue:#2463A7;--blue-bright:#2E7BE0;
-    --teal:#2B8C86;--amber:#B27E24;--band:#0E2038;--band-ink:#C6D4E2;--band-head:#F4F8FC;
+    --ground:#F9FBF8;--surface:#FFFFFF;--surface-2:#EEF3F8;--ink:#33414C;--muted:#5E6C76;
+    --heading:#183553;--line:#DFE6EC;--line-strong:#C7D3DC;--blue:#2463A7;--blue-bright:#2569C4;
+    --teal:#22716C;--amber:#8F6414;
+    --btn:#2463A7;--btn-hover:#1F5A99;--btn-teal:#22716C;--band:#0E2038;--band-ink:#C6D4E2;--band-head:#F4F8FC;
     --band-line:#263B57;--band-muted:#8FA2B6;
     --measure:66ch;--maxw:1120px;
     --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
@@ -13,25 +18,30 @@
     :root{
       --ground:#0A1421;--surface:#0F1D2E;--surface-2:#132538;--ink:#C4D2DE;--muted:#8195A6;
       --heading:#EAF1F8;--line:#213448;--line-strong:#2C4159;--blue:#5E9BDD;--blue-bright:#6AA6E8;
-      --teal:#4FB3AC;--amber:#D2A24E;--band:#07101B;--band-ink:#B7C6D6;--band-head:#EAF1F8;
+      --teal:#4FB3AC;--amber:#D2A24E;--band:#07101B;
+      --btn:#2463A7;--btn-hover:#2A6CB3;--btn-teal:#1F6B66;--band-ink:#B7C6D6;--band-head:#EAF1F8;
       --band-line:#1E3149;--band-muted:#7A8D9F;
     }
   }
   :root[data-theme="light"]{
-    --ground:#F9FBF8;--surface:#FFFFFF;--surface-2:#EEF3F8;--ink:#33414C;--muted:#66757F;
-    --heading:#183553;--line:#DFE6EC;--line-strong:#C7D3DC;--blue:#2463A7;--blue-bright:#2E7BE0;
-    --teal:#2B8C86;--amber:#B27E24;--band:#0E2038;--band-ink:#C6D4E2;--band-head:#F4F8FC;
+    --ground:#F9FBF8;--surface:#FFFFFF;--surface-2:#EEF3F8;--ink:#33414C;--muted:#5E6C76;
+    --heading:#183553;--line:#DFE6EC;--line-strong:#C7D3DC;--blue:#2463A7;--blue-bright:#2569C4;
+    --teal:#22716C;--amber:#8F6414;
+    --btn:#2463A7;--btn-hover:#1F5A99;--btn-teal:#22716C;--band:#0E2038;--band-ink:#C6D4E2;--band-head:#F4F8FC;
     --band-line:#263B57;--band-muted:#8FA2B6;
   }
   :root[data-theme="dark"]{
     --ground:#0A1421;--surface:#0F1D2E;--surface-2:#132538;--ink:#C4D2DE;--muted:#8195A6;
     --heading:#EAF1F8;--line:#213448;--line-strong:#2C4159;--blue:#5E9BDD;--blue-bright:#6AA6E8;
-    --teal:#4FB3AC;--amber:#D2A24E;--band:#07101B;--band-ink:#B7C6D6;--band-head:#EAF1F8;
+    --teal:#4FB3AC;--amber:#D2A24E;--band:#07101B;
+      --btn:#2463A7;--btn-hover:#2A6CB3;--btn-teal:#1F6B66;--band-ink:#B7C6D6;--band-head:#EAF1F8;
     --band-line:#1E3149;--band-muted:#7A8D9F;
   }
 
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
+  /* in-page anchors land below the sticky header */
+  main [id]{scroll-margin-top:84px}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:17px;
     line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -63,9 +73,10 @@
   .mark .sweep{color:var(--blue-bright)}
   nav.links{display:flex;gap:24px}
   nav.links a{color:var(--muted);font-size:.93rem;font-weight:520}
-  nav.links a:hover{color:var(--heading)}
-  .nav-cta{font-size:.9rem;font-weight:600;color:#fff;background:var(--blue);padding:9px 16px;border-radius:7px;white-space:nowrap}
-  .nav-cta:hover{background:var(--blue-bright)}
+  nav.links a:hover,nav.links a[aria-current="page"]{color:var(--heading)}
+  nav.links a[aria-current="page"]{font-weight:650}
+  .nav-cta{font-size:.9rem;font-weight:600;color:#fff;background:var(--btn);padding:9px 16px;border-radius:7px;white-space:nowrap}
+  .nav-cta:hover{background:var(--btn-hover)}
   /* The short label is hidden by default and swapped in at phone widths. This rule
      must come BEFORE the media query below, or it wins the cascade and the pill renders empty. */
   .nav-cta .cta-short{display:none}
@@ -87,12 +98,18 @@
       background:var(--surface);border-bottom:1px solid var(--line);padding:6px 28px 14px;
       box-shadow:0 18px 34px -22px rgba(0,0,0,.35)}
     nav.links.open{display:flex}
+    /* without JavaScript the menu button can't work: show the links as a second header row */
+    html:not(.js) .menu-btn{display:none}
+    html:not(.js) .nav-in{flex-wrap:wrap}
+    html:not(.js) nav.links{display:flex;position:static;order:3;flex-basis:100%;flex-direction:row;flex-wrap:wrap;
+      gap:4px 20px;padding:0;background:none;border:0;box-shadow:none}
+    html:not(.js) nav.links a{padding:4px 0;border:0;font-size:.93rem}
     nav.links a{padding:13px 0;border-bottom:1px solid var(--line);font-size:1rem;color:var(--heading)}
     nav.links a:last-child{border-bottom:none}
   }
 
   /* skip link: off-screen until focused */
-  .skip{position:absolute;left:-999px;top:10px;z-index:100;background:var(--blue);color:#fff;
+  .skip{position:absolute;left:-999px;top:10px;z-index:100;background:var(--btn);color:#fff;
     padding:10px 14px;border-radius:7px;font-weight:600}
   .skip:focus{left:10px}
 
@@ -100,7 +117,7 @@
   .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;
     padding:14px 22px;border-radius:9px;border:1px solid transparent;transition:.18s}
   .btn .arw{transition:transform .18s}.btn:hover .arw{transform:translateX(3px)}
-  .btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-bright)}
+  .btn-primary{background:var(--btn);color:#fff}.btn-primary:hover{background:var(--btn-hover)}
   .btn-ghost{background:transparent;color:var(--heading);border-color:var(--line-strong)}
   .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
 
@@ -250,18 +267,18 @@
   .contact .h2{max-width:20ch;margin:0 auto 16px}
   .contact .lead{max-width:48ch;margin:0 auto 28px}
   .mailbtn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1.02rem;
-    background:var(--blue);color:#fff;padding:15px 26px;border-radius:10px}
-  .mailbtn:hover{background:var(--blue-bright)}
+    background:var(--btn);color:#fff;padding:15px 26px;border-radius:10px}
+  .mailbtn:hover{background:var(--btn-hover)}
   .next{margin:20px auto 0;max-width:52ch;font-size:.95rem;color:var(--muted)}
 
   footer{border-top:1px solid var(--line);padding:38px 0}
   .foot{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;font-size:.86rem;color:var(--muted)}
   .foot .brand{margin-right:auto}.foot .word{font-size:1rem}
-  .foot .disc{flex-basis:100%;font-size:.84rem;color:var(--muted);opacity:.85;border-top:1px solid var(--line);padding-top:16px;margin-top:4px;line-height:1.6}
+  .foot .disc{flex-basis:100%;font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:4px;line-height:1.6}
 
-  .js .reveal{opacity:0;transform:translateY(24px);
+  .reveal-ready .reveal{opacity:0;transform:translateY(24px);
     transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
-  .js .reveal.in{opacity:1;transform:none}
+  .reveal-ready .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;transition-delay:0s!important}}
 
 /* ---- landing: two doors ---- */
@@ -275,8 +292,8 @@
 .door ul{list-style:none;margin:2px 0 0;padding:0;border-top:1px solid var(--line)}
 .door li{font-size:.95rem;padding:9px 0 9px 18px;border-bottom:1px solid var(--line);position:relative;line-height:1.4}
 .door li::before{content:"";position:absolute;left:0;top:16px;width:7px;height:1px;background:var(--c)}
-.door .btn{justify-self:start;margin-top:8px;background:var(--c);color:#fff}
-.door .btn:hover{filter:brightness(1.08)}
+.door .btn{justify-self:start;margin-top:8px;background:var(--cb,var(--btn));color:#fff}
+.door .btn:hover{background:var(--btn-hover)}
 
 /* ---- capability: three service pillars ---- */
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
@@ -333,3 +350,73 @@
 
 /* keep content above the tinted sections' fade overlays */
 .founder > *{position:relative;z-index:1}
+
+/* ---- landing: compact credentials under the doors ---- */
+.credstrip{list-style:none;margin:30px 0 0;padding:20px 0 0;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px 26px}
+@media(max-width:900px){.credstrip{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.credstrip{grid-template-columns:1fr}}
+.credstrip li{font-size:.92rem;color:var(--muted);line-height:1.4;display:grid;gap:2px}
+.credstrip b{color:var(--heading);font-weight:640}
+
+/* ---- landing: where each route starts ---- */
+.startcards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+@media(max-width:760px){.startcards{grid-template-columns:1fr}}
+.startcard{border:1px solid var(--line);border-left:3px solid var(--c);border-radius:14px;background:var(--surface);
+  padding:26px 26px 22px;display:grid;gap:12px;align-content:start;min-width:0}
+.startcard .ek{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:650;color:var(--c)}
+.startcard > p{color:var(--muted);font-size:.97rem}
+.startcard ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.startcard li{font-size:.95rem;padding:8px 0 8px 18px;border-bottom:1px solid var(--line);position:relative;line-height:1.4}
+.startcard li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:1px;background:var(--c)}
+.startcard .decide{color:var(--ink)}
+.startcard .decide b{color:var(--amber)}
+.more{font-weight:600}
+.ctx-note{margin-top:18px;font-size:.92rem;color:var(--muted);max-width:66ch}
+
+/* ---- track outputs and the first paid offer ---- */
+.pout{font-size:.9rem;color:var(--muted);line-height:1.45}
+.pout b{display:block;color:var(--heading);font-weight:640;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-family:var(--mono);margin-bottom:3px}
+.offer{margin-top:36px;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.offer-h{padding:22px 26px;border-bottom:1px solid var(--line);display:grid;gap:4px;
+  background:linear-gradient(90deg,color-mix(in srgb,var(--teal) 7%,var(--surface)),var(--surface))}
+.offer-h .ek{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:650;color:var(--teal)}
+.offer-h b{font-size:1.2rem;color:var(--heading);font-weight:700;letter-spacing:-.01em}
+.offer dl{margin:0}
+.offer dl div{display:grid;grid-template-columns:160px 1fr;gap:20px;padding:13px 26px;border-top:1px solid var(--line)}
+.offer dl div:first-child{border-top:none}
+.offer dt{font-family:var(--mono);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:650;color:var(--muted);padding-top:2px}
+.offer dd{margin:0;font-size:.96rem;color:var(--ink);line-height:1.5}
+@media(max-width:600px){.offer dl div{grid-template-columns:1fr;gap:4px;padding:13px 20px}.offer-h{padding:20px}}
+.offer + .eng{margin-top:24px}
+
+/* ---- founder: collapsible longer story ---- */
+.more-story{margin-top:14px}
+.more-story summary{cursor:pointer;font-weight:600;color:var(--blue);font-size:.95rem;list-style-position:inside}
+.more-story[open] summary{margin-bottom:12px}
+.creds li a{font-weight:500}
+
+/* ---- phone versions of the two diagrams: SVG text shrinks with the graphic ---- */
+.caplist,.stacklist{display:none;list-style:none;margin:0;padding:0}
+@media(max-width:560px){
+  .capmap,.stack svg{display:none}
+  .caplist,.stacklist{display:grid;gap:10px}
+}
+.caplist li{border-left:3px solid var(--c);padding:6px 0 6px 14px;display:grid;gap:1px}
+.caplist li b{font-family:var(--mono);font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;color:var(--heading)}
+.caplist li span{color:var(--muted);font-size:.95rem}
+.caplist li.end{margin-top:6px;border-left-width:0;padding-left:0;border-top:1px solid var(--line);padding-top:12px}
+.caplist li.end b{color:var(--blue-bright)}
+.stacklist li{border:1px solid var(--line-strong);border-radius:12px;padding:14px 16px;display:grid;gap:3px;background:var(--surface)}
+.stacklist li.mid{border-color:var(--blue);background:color-mix(in srgb,var(--blue) 8%,var(--surface))}
+.stacklist li.base{background:var(--surface-2)}
+.stacklist li b{font-family:var(--mono);font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;color:var(--heading)}
+.stacklist li span{color:var(--muted);font-size:.93rem}
+
+/* ---- capability: handover package ---- */
+.handover{margin-top:40px;border-top:1px solid var(--line-strong);padding-top:26px}
+.handover h3{margin-bottom:14px}
+.handover ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 30px}
+@media(max-width:700px){.handover ul{grid-template-columns:1fr}}
+.handover li{font-size:.95rem;color:var(--ink);padding-left:18px;position:relative;line-height:1.45}
+.handover li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:var(--blue)}

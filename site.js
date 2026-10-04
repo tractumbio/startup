@@ -1,19 +1,26 @@
 document.documentElement.classList.add('js');
+// Scroll reveal. Content is visible by default: the .reveal-ready class that hides .reveal elements is only
+// added once the observer exists, and any failure reveals everything rather than leaving it hidden.
 (function(){
     var els=document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion:reduce)').matches){
-      els.forEach(function(e){e.classList.add('in')});return;
-    }
-    var io=new IntersectionObserver(function(en){
-      en.forEach(function(x){
-        if(!x.isIntersecting)return;
-        var el=x.target,sibs=el.parentNode?el.parentNode.querySelectorAll(':scope > .reveal'):[];
-        var i=Array.prototype.indexOf.call(sibs,el);
-        el.style.transitionDelay=(Math.min(i<0?0:i,4)*60)+'ms';
-        el.classList.add('in');io.unobserve(el);
-      });
-    },{threshold:0.12,rootMargin:'0px 0px -12% 0px'});
-    els.forEach(function(e){io.observe(e)});
+    function showAll(){els.forEach(function(e){e.classList.add('in')})}
+    try{
+      if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion:reduce)').matches){showAll();return;}
+      var io=new IntersectionObserver(function(en){
+        en.forEach(function(x){
+          if(!x.isIntersecting)return;
+          var el=x.target,sibs=el.parentNode?el.parentNode.querySelectorAll(':scope > .reveal'):[];
+          var i=Array.prototype.indexOf.call(sibs,el);
+          el.style.transitionDelay=(Math.min(i<0?0:i,4)*60)+'ms';
+          el.classList.add('in');io.unobserve(el);
+        });
+      },{threshold:0,rootMargin:'0px 0px -10% 0px'});
+      els.forEach(function(e){io.observe(e)});
+      document.documentElement.classList.add('reveal-ready');
+      // keyboard focus or an anchor jump into a not-yet-revealed block shows it at once
+      document.addEventListener('focusin',function(e){var r=e.target.closest&&e.target.closest('.reveal');if(r)r.classList.add('in')});
+      window.addEventListener('hashchange',function(){var t=document.getElementById(location.hash.slice(1));if(t){(t.closest('.reveal')||t).classList.add('in');t.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')})}});
+    }catch(err){document.documentElement.classList.remove('reveal-ready');showAll();}
   })();
 // mobile menu
 (function(){

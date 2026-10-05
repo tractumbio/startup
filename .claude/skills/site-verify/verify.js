@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-// Render-check every top-level page of the Tractum Bio site.
-// Usage: node verify.js [--shots <dir>] [page.html ...]
+// Render-check every top-level page of a site under sites/ (default: sites/tractumbio).
+// Usage: [SITE_DIR=sites/<name>] node verify.js [--shots <dir>] [page.html ...]
 // Exits non-zero if any check fails.
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 
-const ROOT = path.resolve(__dirname, '..', '..', '..');
+const ROOT = path.resolve(__dirname, '..', '..', '..', process.env.SITE_DIR || 'sites/tractumbio');
 const args = process.argv.slice(2);
 const shotIdx = args.indexOf('--shots');
 const SHOTS = shotIdx >= 0 ? args.splice(shotIdx, 2)[1] : null;

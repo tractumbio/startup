@@ -3,6 +3,16 @@
 Working notes for the Tractum Bio Consulting website. This file exists so context isn't
 lost between sessions — read it before starting new work on this repo.
 
+## Repo layout
+
+- `sites/<name>/` — one folder per website, each self-contained and deployable as-is. Today:
+  `sites/tractumbio/` (the Tractum Bio Consulting site). Check one with
+  `SITE_DIR=sites/<name> node .claude/skills/site-verify/verify.js`.
+- `tractum-agents/` — the Ollama agent stack.
+- `docs/` — handover, decisions, plans, reviews. New documents go here.
+- Page and asset paths mentioned in the notes below (`index.html`, `assets/logo.png`) are
+  relative to `sites/tractumbio/`.
+
 > **Continue here:** [`docs/HANDOVER.md`](docs/HANDOVER.md) — what's built, what's
 > outstanding, how to run everything. [`docs/DECISIONS.md`](docs/DECISIONS.md) records
 > what is already settled and why, so it doesn't get re-litigated. Live branch is `main`.

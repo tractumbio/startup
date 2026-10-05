@@ -60,3 +60,7 @@ Tractum Bio is a boutique ophthalmic advisory practice with two audiences (biote
 lab teams). Good references are credible, quiet and specific: clear first-screen claim, restrained
 palette, proof placed near claims, an obvious next step. Note anything that fails this too, since
 a "do not do this" entry is useful.
+
+## Source lists
+
+- `firms-compared.jpg`: the "Firms Compared" table from g-co.agency's article on pharma strategy consultancies, which supplied ten of the sites above.

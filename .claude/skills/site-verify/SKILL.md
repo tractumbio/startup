@@ -45,10 +45,10 @@ uneven card heights, anything hard to read in dark mode.
   which makes headings look washed out.
 - `.wrap` must use `padding-inline`, never the `padding` shorthand — the shorthand
   zeroes vertical padding on every `<section class="wrap">`.
-- Inline SVG diagrams (the lens on `asset.html`, the stack on `capability.html`)
+- Inline SVG diagrams (the lens on `biotech-consulting/`, the stack on `cro-services/`)
   have hand-placed coordinates. After editing labels, check they still clear the
   lines at 360px.
-- The founder block is duplicated in `index.html` and `asset.html` — change both.
+- The founder block is duplicated in `index.html` and `biotech-consulting/index.html` — change both.
 
 ## After it passes
 

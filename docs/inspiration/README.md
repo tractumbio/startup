@@ -1,0 +1,34 @@
+# Design inspiration
+
+Reference websites for the Tractum Bio design. Point Claude at a URL and it adds an entry here;
+when the final design is decided, the index below is the shortlist to draw from.
+
+## How to add a site
+
+Tell Claude: "add https://example.com to inspiration, I like the hero and the pricing layout".
+Claude will:
+
+1. Capture desktop and phone screenshots into `shots/` (`node capture.js <url> <slug>`).
+2. Add a row to the index below.
+3. Write `entries/<slug>.md` from `entries/_template.md`: what is worth borrowing, what is not, and
+   how it maps to a Tractum page.
+
+If the session's network policy blocks the site, the capture fails with `ERR_TUNNEL_CONNECTION_FAILED`. Either
+add the host under Allowed domains in the environment settings, or send Claude your own screenshots
+(drop them in `shots/`) and describe what you like. The entry is then written from those.
+
+Screenshots are for private design reference only. Do not publish them or copy a site's text,
+imagery or code.
+
+## Index
+
+| Site | Why it is here | Maps to | Added |
+|---|---|---|---|
+| _none yet_ | | | |
+
+## What we are looking for
+
+Tractum Bio is a boutique ophthalmic advisory practice with two audiences (biotech firms and CRO or
+lab teams). Good references are credible, quiet and specific: clear first-screen claim, restrained
+palette, proof placed near claims, an obvious next step. Note anything that fails this too, since
+a "do not do this" entry is useful.

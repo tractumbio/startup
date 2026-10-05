@@ -10,7 +10,19 @@ const ROOT = path.resolve(__dirname, '..', '..', '..', process.env.SITE_DIR || '
 const args = process.argv.slice(2);
 const shotIdx = args.indexOf('--shots');
 const SHOTS = shotIdx >= 0 ? args.splice(shotIdx, 2)[1] : null;
-const pages = (args.length ? args : fs.readdirSync(ROOT).filter(f => f.endsWith('.html'))).sort();
+// Every .html under the site, recursively (about/index.html etc.), excluding tooling folders.
+const walk = d => fs.readdirSync(path.join(ROOT, d), { withFileTypes: true }).flatMap(e =>
+  e.isDirectory() ? (e.name === 'node_modules' || e.name.startsWith('.') ? [] : walk(path.join(d, e.name)))
+  : e.name.endsWith('.html') ? [path.join(d, e.name)] : []);
+const pages = (args.length ? args : walk('.')).sort();
+// Resolve a link as a browser would from page p; a directory (about/) means about/index.html.
+const resolveRef = (p, ref) => {
+  let t = path.normalize(path.join(path.dirname(p), ref || path.basename(p)));
+  if (ref !== undefined && (ref === '' ? false : (ref.endsWith('/') || ref === '..' || ref === '.'))) t = path.join(t, 'index.html');
+  else if (fs.existsSync(path.join(ROOT, t)) && fs.statSync(path.join(ROOT, t)).isDirectory()) t = path.join(t, 'index.html');
+  return t;
+};
+const shot = p => p.replace(/\.html$/, '').replace(/[\/\\]/g, '-');
 const WIDTHS = [1440, 1280, 900, 820, 768, 420, 390, 375, 360, 320];
 const MIN_FONT = 12.5;
 const CHROMIUM = fs.existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined;
@@ -38,15 +50,15 @@ for (const p of pages) {
   for (const [tag] of html[p].matchAll(/<img\b[^>]*>/g)) {
     if (!/\balt="/.test(tag)) fail(p, `img without alt: ${tag.slice(0, 60)}`);
     const src = (tag.match(/src="([^"]+)"/) || [])[1];
-    if (src && !/^https?:/.test(src) && !fs.existsSync(path.join(ROOT, src))) fail(p, `img src missing on disk: ${src}`);
+    if (src && !/^https?:/.test(src) && !fs.existsSync(path.join(ROOT, resolveRef(p, src)))) fail(p, `img src missing on disk: ${src}`);
   }
-  for (const [, src] of html[p].matchAll(/(?:href|content)="(assets\/[^"]+)"/g)) {
-    if (!fs.existsSync(path.join(ROOT, src))) fail(p, `asset missing on disk: ${src}`);
+  for (const [, src] of html[p].matchAll(/(?:href|content)="((?:\.\.\/)*assets\/[^"]+)"/g)) {
+    if (!fs.existsSync(path.join(ROOT, resolveRef(p, src)))) fail(p, `asset missing on disk: ${src}`);
   }
   for (const [, href] of html[p].matchAll(/href="([^"]+)"/g)) {
     if (/^(mailto:|https?:|tel:)/.test(href) || /\.(css|js|png|svg|ico)$/.test(href)) continue;
     const [file, frag] = href.split('#');
-    const target = file || p;
+    const target = file ? resolveRef(p, file) : p;
     if (!fs.existsSync(path.join(ROOT, target))) { fail(p, `link to missing page ${href}`); continue; }
     if (frag && ids[target] && !ids[target].has(frag)) fail(p, `link to missing anchor ${href}`);
   }
@@ -126,10 +138,10 @@ for (const p of pages) {
         });
         if (!m.open || m.expanded !== 'true') fail(p, `${tag}: menu button does not open the nav`);
         if (m.overflow > 0) fail(p, `${tag}: horizontal overflow ${m.overflow}px with menu open`);
-        if (SHOTS && w === 390 && scheme === 'light') await pg.screenshot({ path: path.join(SHOTS, `${p.replace('.html', '')}-${w}-menu.png`) });
+        if (SHOTS && w === 390 && scheme === 'light') await pg.screenshot({ path: path.join(SHOTS, `${shot(p)}-${w}-menu.png`) });
         await pg.click('.menu-btn');
       }
-      if (SHOTS) await pg.screenshot({ path: path.join(SHOTS, `${p.replace('.html', '')}-${w}-${scheme}.png`), fullPage: true });
+      if (SHOTS) await pg.screenshot({ path: path.join(SHOTS, `${shot(p)}-${w}-${scheme}.png`), fullPage: true });
       await pg.close();
     }
     // With JavaScript off, every block is visible and the nav links are reachable without the menu button.

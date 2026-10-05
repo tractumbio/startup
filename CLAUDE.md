@@ -11,7 +11,8 @@ lost between sessions — read it before starting new work on this repo.
 - `tractum-agents/` — the Ollama agent stack.
 - `docs/` — handover, decisions, plans, reviews. New documents go here.
 - Page and asset paths mentioned in the notes below (`index.html`, `assets/logo.png`) are
-  relative to `sites/tractumbio/`.
+  relative to `sites/tractumbio/`. Pages live in folders (`cro-services/`, `biotech-consulting/`,
+  `about/`, `privacy/`); the old `capability.html`/`asset.html` names in the notes map to the first two.
 
 > **Continue here:** [`docs/HANDOVER.md`](docs/HANDOVER.md) — what's built, what's
 > outstanding, how to run everything. [`docs/DECISIONS.md`](docs/DECISIONS.md) records

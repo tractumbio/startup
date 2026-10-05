@@ -1,6 +1,6 @@
 ---
 name: site-verify
-description: Render-check the Tractum Bio website in sites/tractumbio/ (index.html, asset.html, capability.html and any other top-level .html page) before committing or publishing. Use after ANY change to a page, styles.css or site.js — copy edits included. Checks every page at ten widths (1440 to 320px) in light and dark, horizontal overflow, JS errors and failed requests, standards mode, text below 12.5px, WCAG text contrast, nav CTA and mobile menu, JavaScript-off rendering, reduced-motion visibility, metadata, image alt text and asset files, balanced markup, and that every internal link and #anchor resolves. Produces screenshots to look at.
+description: Render-check the Tractum Bio website in sites/tractumbio/ (index.html, biotech-consulting/, cro-services/, about/, privacy/, 404.html and any other .html page) before committing or publishing. Use after ANY change to a page, styles.css or site.js — copy edits included. Checks every page at ten widths (1440 to 320px) in light and dark, horizontal overflow, JS errors and failed requests, standards mode, text below 12.5px, WCAG text contrast, nav CTA and mobile menu, JavaScript-off rendering, reduced-motion visibility, metadata, image alt text and asset files, balanced markup, and that every internal link and #anchor resolves. Produces screenshots to look at.
 ---
 
 # Site verification
@@ -14,7 +14,7 @@ node .claude/skills/site-verify/verify.js --shots "$SCRATCH/shots"
 ```
 
 - Checks `sites/tractumbio/` by default; set `SITE_DIR=sites/<name>` to check another site.
-- Omit page names to check every top-level `*.html`; or name them: `verify.js capability.html`.
+- Omit page names to check every `.html` under the site, including `*/index.html`; or name them: `verify.js cro-services/index.html`.
 - `--shots <dir>` writes a full-page PNG per page × width × theme. Use the session
   scratchpad, never the repo.
 - Exit 0 = PASS, 1 = a check failed (each failure is listed), 2 = the script itself broke.

@@ -7,8 +7,9 @@ account. Read this, then the root `CLAUDE.md` (strategy) and
 ## What this repo is
 
 Tractum Bio Consulting — a boutique ophthalmic advisory practice run by
-Dr. Adrian Cioanca. Two things live here. Site files are under `sites/tractumbio/` (paths below are relative to it, so
-`index.html` means `sites/tractumbio/index.html`):
+Dr. Adrian Cioanca. Two things live here. Site files are under `sites/tractumbio/` (paths below are relative to it). Pages now live in folders: `asset.html` is
+`biotech-consulting/index.html`, `capability.html` is `cro-services/index.html`, `about.html` is `about/index.html`,
+`privacy.html` is `privacy/index.html`. See `sites/tractumbio/README.md`:
 
 | Path | What it is |
 |---|---|

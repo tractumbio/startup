@@ -26,6 +26,18 @@ imagery or code.
 |---|---|---|---|
 | _none yet_ | | | |
 
+## Queue (named, not yet captured)
+
+Sites asked for but not yet looked at, because the session's network policy blocked them. Each needs
+a capture and an entry once the host is allowed, or screenshots are supplied.
+
+| Site | URL | Note |
+|---|---|---|
+| Boston Biomedical Consulting | https://www.bostonbio.com/ | boutique life-sciences consultancy, closest in size to Tractum |
+| McKinsey Life Sciences | https://www.mckinsey.com/industries/life-sciences/how-we-help-clients | how a top-tier firm presents a sector practice |
+| IQVIA | https://www.iqvia.com/ | large CRO/data company; CRO-side language and proof |
+| g-co.agency list | https://www.g-co.agency/insights/top-pharma-strategy-consulting-firms-to-work-with | article listing pharma strategy consultancies; each firm it names is a candidate for this index |
+
 ## What we are looking for
 
 Tractum Bio is a boutique ophthalmic advisory practice with two audiences (biotech firms and CRO or

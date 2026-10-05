@@ -8,7 +8,7 @@ when the final design is decided, the index below is the shortlist to draw from.
 Tell Claude: "add https://example.com to inspiration, I like the hero and the pricing layout".
 Claude will:
 
-1. Capture desktop and phone screenshots into `shots/` (`node capture.js <url> <slug>`).
+1. Capture desktop and phone screenshots into `shots/` (`node capture.js <url> <slug>`; set `SETTLE_MS=12000` for sites behind a bot check).
 2. Add a row to the index below.
 3. Write `entries/<slug>.md` from `entries/_template.md`: what is worth borrowing, what is not, and
    how it maps to a Tractum page.
@@ -22,37 +22,36 @@ imagery or code.
 
 ## Index
 
+Ranked by how much of each site is worth carrying into the Tractum design. Entries in `entries/`,
+screenshots in `shots/`.
+
 | Site | Why it is here | Maps to | Added |
 |---|---|---|---|
-| _none yet_ | | | |
+| [ClearView](entries/clearview.md) | the benchmark for quiet and credible; vertical practice selector | landing, biotech-consulting | 2026-10-05 |
+| [Prescient](entries/prescient.md) | hero + proof strip + four practice cards; dual CTA | landing | 2026-10-05 |
+| [Vintura](entries/vintura.md) | serif headline, one accent, named-person CTAs | landing, contact | 2026-10-05 |
+| [Alacrita](entries/alacrita.md) | kicker + two-clause headline + three proofs; sticky sub-nav | about, biotech-consulting | 2026-10-05 |
+| [Catenion](entries/catenion.md) | numbered three reasons with one coloured phrase each | about, biotech-consulting | 2026-10-05 |
+| [Beghou](entries/beghou.md) | verb-led capability cards; single CTA | cro-services | 2026-10-05 |
+| [Blue Matter](entries/blue-matter.md) | two-column service lists; publication as proof | cro-services, biotech-consulting | 2026-10-05 |
+| [Trinity](entries/trinity.md) | three-door landing, and its enterprise failure mode | landing | 2026-10-05 |
+| [BioBoston](entries/bioboston.md) | proof tiles with specific credentials; name needs confirming | about, cro-services | 2026-10-05 |
+| [G&Co.](entries/g-co.md) | grotesk + serif type pairing; otherwise a counter-example | landing | 2026-10-05 |
+| [IQVIA](entries/iqvia.md) | CRO-side vocabulary; on-page sub-nav; density counter-example | cro-services | 2026-10-05 |
+| [Putnam / Inizio](entries/putnam.md) | merged brand, nothing to borrow; kept for the record | none | 2026-10-05 |
 
-## Queue (named, not yet captured)
+Not captured: **McKinsey Life Sciences** (https://www.mckinsey.com/industries/life-sciences/how-we-help-clients).
+The egress proxy returns "upstream request failed" for mckinsey.com even with the host allowed. Send
+screenshots and it gets an entry.
 
-Sites asked for but not yet looked at, because the session's network policy blocked them. Each needs
-a capture and an entry once the host is allowed, or screenshots are supplied.
+## Patterns that recur across the good ones
 
-| Site | URL | Note |
-|---|---|---|
-| Boston Biomedical Consulting | https://www.bostonbio.com/ | boutique life-sciences consultancy, closest in size to Tractum |
-| McKinsey Life Sciences | https://www.mckinsey.com/industries/life-sciences/how-we-help-clients | how a top-tier firm presents a sector practice |
-| IQVIA | https://www.iqvia.com/ | large CRO/data company; CRO-side language and proof |
-| g-co.agency list | https://www.g-co.agency/insights/top-pharma-strategy-consulting-firms-to-work-with | article listing pharma strategy consultancies; each firm it names is a candidate for this index |
-
-Firms from that article's "Firms Compared" table (`firms-compared.jpg`). URLs are best guesses and
-unverified until captured.
-
-| Firm | URL (unverified) | Best for (per the article) |
-|---|---|---|
-| G&Co. | https://www.g-co.agency/ | commercial strategy and digital transformation |
-| Blue Matter | https://www.bluematterconsulting.com/ | launch and commercialization strategy |
-| ClearView | https://www.clearviewhc.com/ | portfolio and asset evaluation |
-| Putnam Associates | https://www.putassoc.com/ | commercial and pricing strategy |
-| Prescient | https://www.prescienthg.com/ | competitive intelligence and positioning |
-| Trinity Life Sciences | https://trinitylifesciences.com/ | launch strategy and market access |
-| Alacrita | https://www.alacrita.com/ | clinical development and licensing |
-| Vintura | https://www.vintura.com/ | European access and value strategy |
-| Catenion | https://www.catenion.com/ | R&D productivity and pipeline strategy |
-| Beghou Consulting | https://www.beghouconsulting.com/ | commercial analytics and field strategy |
+1. One sentence that says what the firm is and for whom, before any slogan (Blue Matter, Catenion, Prescient).
+2. Proof placed next to the claim, as numbers with a credential attached, not adjectives (Prescient, Alacrita, BioBoston).
+3. Three reasons or three doors, never five (Catenion, Alacrita, Trinity, Beghou).
+4. One primary CTA per screen, phrased as a next step; the best version names the person (Vintura).
+5. A quiet palette with a single accent colour; serif display type reads as advisory, grotesk as agency (Vintura, ClearView vs G&Co.).
+6. Lazy-loaded media is the commonest visible defect: three of twelve home pages had blank blocks in a plain capture.
 
 ## What we are looking for
 

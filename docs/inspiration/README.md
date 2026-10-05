@@ -38,6 +38,22 @@ a capture and an entry once the host is allowed, or screenshots are supplied.
 | IQVIA | https://www.iqvia.com/ | large CRO/data company; CRO-side language and proof |
 | g-co.agency list | https://www.g-co.agency/insights/top-pharma-strategy-consulting-firms-to-work-with | article listing pharma strategy consultancies; each firm it names is a candidate for this index |
 
+Firms from that article's "Firms Compared" table (`firms-compared.jpg`). URLs are best guesses and
+unverified until captured.
+
+| Firm | URL (unverified) | Best for (per the article) |
+|---|---|---|
+| G&Co. | https://www.g-co.agency/ | commercial strategy and digital transformation |
+| Blue Matter | https://www.bluematterconsulting.com/ | launch and commercialization strategy |
+| ClearView | https://www.clearviewhc.com/ | portfolio and asset evaluation |
+| Putnam Associates | https://www.putassoc.com/ | commercial and pricing strategy |
+| Prescient | https://www.prescienthg.com/ | competitive intelligence and positioning |
+| Trinity Life Sciences | https://trinitylifesciences.com/ | launch strategy and market access |
+| Alacrita | https://www.alacrita.com/ | clinical development and licensing |
+| Vintura | https://www.vintura.com/ | European access and value strategy |
+| Catenion | https://www.catenion.com/ | R&D productivity and pipeline strategy |
+| Beghou Consulting | https://www.beghouconsulting.com/ | commercial analytics and field strategy |
+
 ## What we are looking for
 
 Tractum Bio is a boutique ophthalmic advisory practice with two audiences (biotech firms and CRO or

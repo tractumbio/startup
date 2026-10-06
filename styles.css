@@ -521,3 +521,24 @@
   .bio-points li::before{content:"";position:absolute;left:0;top:1.3em;width:7px;height:7px;
     border-radius:50%;background:var(--teal)}
   .bio-points li b{color:var(--heading);font-weight:650}
+
+  /* ---- career timeline on the landing page ---- */
+  .career{list-style:none;margin:34px 0 0;padding:26px 0 0;position:relative;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+  .career::before{content:"";position:absolute;left:0;right:0;top:4px;height:1px;background:var(--line-strong)}
+  .career .stage{position:relative;min-width:0}
+  .career .stage::before{content:"";position:absolute;left:0;top:-27px;width:10px;height:10px;
+    border-radius:50%;background:var(--ground);border:2px solid var(--c)}
+  .career .ph{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--c);font-weight:650;display:block;margin-bottom:5px}
+  .career h3{font-size:1rem;font-weight:650;letter-spacing:-.01em;margin-bottom:9px;line-height:1.3}
+  .career ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+  .career ul li{font-size:.88rem;color:var(--muted);line-height:1.4;padding-left:13px;position:relative}
+  .career ul li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:1px;background:var(--line-strong)}
+  @media(max-width:900px){
+    .career{grid-template-columns:1fr 1fr;gap:28px 26px}
+    .career::before{display:none}
+    .career .stage{border-top:2px solid var(--c);padding-top:16px}
+    .career .stage::before{display:none}
+  }
+  @media(max-width:520px){.career{grid-template-columns:1fr}}

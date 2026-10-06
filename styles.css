@@ -437,3 +437,48 @@
 .nf-links{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
 .nf-links a{font-weight:600}
 @media(max-width:900px){.about-hero .fphoto{order:-1;max-width:170px;margin:0}}
+
+  /* ---- booking button: sits beside .mailbtn, revealed by site.js once a real URL is set ---- */
+  .bookbtn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1.02rem;
+    padding:15px 26px;border-radius:9px;background:transparent;color:var(--blue);
+    border:1px solid var(--line-strong);transition:.18s;margin-left:10px}
+  .bookbtn:hover{border-color:var(--blue);background:color-mix(in srgb,var(--blue) 7%,transparent)}
+  @media(max-width:560px){.bookbtn{margin-left:0;margin-top:10px}}
+
+  /* ---- forms (request.html, samples.html) ---- */
+  .formwrap{max-width:660px;margin-top:34px}
+  .fgroup{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+  .fgroup label{font-size:.9rem;font-weight:650;color:var(--heading)}
+  .fgroup .hint{font-size:.85rem;color:var(--muted);font-weight:400}
+  .fgroup .req{color:var(--teal);font-weight:700}
+  .frow2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:620px){.frow2{grid-template-columns:1fr}}
+  input[type="text"],input[type="email"],select,textarea{
+    font-family:var(--sans);font-size:1rem;color:var(--ink);background:var(--surface);
+    border:1px solid var(--line-strong);border-radius:9px;padding:13px 15px;width:100%;transition:.18s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);
+    box-shadow:0 0 0 3px color-mix(in srgb,var(--blue) 18%,transparent)}
+  textarea{min-height:124px;resize:vertical;line-height:1.55}
+  select{appearance:none;
+    background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+    background-position:calc(100% - 20px) calc(50% + 2px),calc(100% - 15px) calc(50% + 2px);
+    background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:44px}
+  .fsubmit{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;
+    font-size:1.02rem;color:#fff;background:var(--btn);padding:15px 28px;border-radius:9px;
+    border:none;cursor:pointer;transition:.18s}
+  .fsubmit:hover{background:var(--btn-hover)}
+  .fnote{font-size:.88rem;color:var(--muted);margin-top:18px;max-width:60ch;line-height:1.6}
+  .fstatus{margin-top:20px;padding:15px 18px;border-radius:9px;font-size:.95rem;color:var(--heading);
+    background:var(--surface-2);border:1px solid var(--line-strong)}
+  .fstatus.err{background:color-mix(in srgb,var(--amber) 12%,transparent);
+    border-color:color-mix(in srgb,var(--amber) 45%,var(--line-strong))}
+  fieldset{border:0;margin:0;padding:0}
+  .pack{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
+  .pitem{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:22px 20px}
+  .pitem .pn{font-family:var(--mono);font-size:13px;color:var(--teal);margin-bottom:10px}
+  .pitem h3{margin-bottom:6px}
+  .pitem p{color:var(--muted);font-size:.94rem}
+  @media(max-width:760px){.pack{grid-template-columns:1fr}}
+  .freeline{display:inline-block;margin-bottom:24px;font-size:.96rem;color:var(--heading);
+    background:var(--surface-2);border:1px solid var(--line-strong);border-radius:999px;padding:9px 18px}
+  .freeline b{color:var(--teal);font-weight:700}

@@ -1,0 +1,39 @@
+# Static site, no build step. Files are served from the repository root.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Tidy URLs: /asset instead of /asset.html
+[[redirects]]
+  from = "/asset"
+  to = "/asset.html"
+  status = 200
+[[redirects]]
+  from = "/capability"
+  to = "/capability.html"
+  status = 200
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+[[redirects]]
+  from = "/samples"
+  to = "/samples.html"
+  status = 200
+[[redirects]]
+  from = "/request"
+  to = "/request.html"
+  status = 200
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200

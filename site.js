@@ -32,3 +32,11 @@ document.documentElement.classList.add('js');
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){set(false);btn.focus()}});
     document.addEventListener('click',function(e){if(nav.classList.contains('open')&&!e.target.closest('header.nav'))set(false)});
   })();
+// Booking links ship hidden with a placeholder href and are only revealed once a real
+// calendar URL is in place, so a half-configured site never shows a dead button.
+(function(){
+    document.querySelectorAll('[data-booking]').forEach(function(a){
+      var href=a.getAttribute('href')||'';
+      if(href&&href.indexOf('REPLACE-ME')===-1)a.hidden=false;
+    });
+  })();

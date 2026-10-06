@@ -23,6 +23,14 @@ document.documentElement.classList.add('js');
     window.addEventListener('scroll', onScroll, {passive:true});
   }
 
+
+  // Booking links ship hidden and only appear once a real calendar URL is set,
+  // so a placeholder is never a dead button on a live site.
+  document.querySelectorAll('[data-booking]').forEach(function(a){
+    var href = a.getAttribute('href') || '';
+    if(href && href.indexOf('REPLACE-ME') === -1) a.hidden = false;
+  });
+
   var steps = document.querySelectorAll('.step[data-s]');
   var ticks = document.querySelectorAll('.ptick[data-t]');
   if(steps.length && ticks.length && 'IntersectionObserver' in window){

@@ -125,6 +125,8 @@
   .hero{padding-top:clamp(50px,7vw,90px);position:relative;overflow:hidden}
   .hero .display{margin-bottom:24px;max-width:17ch}
   .hero .lead{max-width:52ch;margin-bottom:34px}
+  .hero .display:last-child{margin-bottom:clamp(10px,2vw,22px)}
+  .routes-wrap{padding-top:clamp(12px,2vw,20px)}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
   .hero-meta{margin-top:44px;padding-top:24px;border-top:1px solid var(--line);
     display:flex;flex-wrap:wrap;gap:12px 32px;font-size:.9rem;color:var(--muted)}

@@ -135,7 +135,7 @@
 
           <div class="fstatus" id="s-status" hidden></div>
 
-          <p class="fnote">Submitting opens your email client with these details addressed to <a href="mailto:info@tractumbio.com">info@tractumbio.com</a>, so nothing is sent until you press send. We reply with the pack directly &mdash; no mailing list, no follow-up sequence, and your details are not shared with anyone.</p>
+          <p class="fnote">Submitting opens your email client with these details addressed to <a href="mailto:adrian@tractumbio.com">adrian@tractumbio.com</a>, so nothing is sent until you press send. We reply with the pack directly &mdash; no mailing list, no follow-up sequence, and your details are not shared with anyone.</p>
         </form>
       </div>
     </div>
@@ -165,7 +165,7 @@
       <span class="word">tractum<span>bio</span></span>
     </a>
     <span>Canberra, Australia</span>
-    <span><a href="mailto:info@tractumbio.com">info@tractumbio.com</a></span>
+    <span><a href="mailto:adrian@tractumbio.com">adrian@tractumbio.com</a></span>
     <span><a href="ophthalmology.html">Ophthalmology consulting</a></span>
     <span><a href="data-automation.html">Data &amp; automation research</a></span>
   </div>
@@ -188,7 +188,7 @@
     var post = function(mailtoHref){
       // Not on a host that can accept the POST (e.g. a preview) -> go straight to email.
       if(location.protocol === 'file:' || /claude\.ai$/.test(location.hostname)){
-        show('Opening your email client with these details. If nothing happens, email info@tractumbio.com directly.', false);
+        show('Opening your email client with these details. If nothing happens, email adrian@tractumbio.com directly.', false);
         window.location.href = mailtoHref;
         return;
       }
@@ -208,7 +208,7 @@
         show('Thank you — request received. The sample pack is on its way to ' + val('s-email') + '.', false);
         form.reset();
       }).catch(function(){
-        show('Opening your email client instead. If nothing happens, email info@tractumbio.com directly.', false);
+        show('Opening your email client instead. If nothing happens, email adrian@tractumbio.com directly.', false);
         window.location.href = mailtoHref;
       });
     };
@@ -245,7 +245,7 @@
       '— sent from the Tractum Bio sample request form'
     ];
 
-    var href = 'mailto:info@tractumbio.com'
+    var href = 'mailto:adrian@tractumbio.com'
       + '?subject=' + encodeURIComponent('Sample report request — ' + val('s-company'))
       + '&body='    + encodeURIComponent(lines.join('\n'));
 

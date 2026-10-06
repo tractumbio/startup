@@ -16,10 +16,21 @@ CRO practice, so don't use the tagline version in contexts covering both practic
 Reference email signature saved to `assets/emailsig.png` — confirms Adrian's title as
 **Managing Director and Founder**.
 
-## Strategic direction (CURRENT — an ophthalmic-focused firm)
+## Strategic direction (CURRENT — two practices, decided 2026-10-06)
 
-**Supersedes the earlier "two independent practices (generic CRO automation + biotech
-ophthalmology)" framing.** Tractum is narrowing to ONE domain — **ophthalmology** — to
+> **REVERSAL — read this first.** Adrian has reinstated the **two-practice** structure and
+> it is what the live site now presents: **Ophthalmology consulting** and **Data &
+> automation research**. The ophthalmic-only narrowing described in the rest of this
+> section is NO LONGER the public positioning. The reasoning below is kept because the
+> moat argument still holds and still shapes the ophthalmology practice — but do not
+> "correct" the site back to a single practice on the strength of it.
+>
+> Both practices now share ONE palette with a per-practice accent — blue for
+> ophthalmology, teal for data — replacing the old green/blue system. The data practice
+> is positioned as sitting **between the sponsor and the CRO**: the bench work is
+> unchanged, only the handover is.
+
+**Superseded framing (retained for the argument, not the positioning).** Tractum is narrowing to ONE domain — **ophthalmology** — to
 play entirely to Adrian's real moat. Generic "any preclinical CRO automation" is NOT the
 centerpiece; the data/analytics/pipeline skill is retained but applied IN SERVICE OF
 ophthalmology (it becomes the "advanced analytics" component of the pharma capability
@@ -250,32 +261,51 @@ claim (bench/computer/client ↔ biology/deal/path); both make the honest/human 
 the trust anchor (human QC gate ↔ the no-go); both end on the compounding prize
 (better+wider deliverable ↔ valuation uplift).
 
-## Site structure (from the prototype build)
+## Site structure (BUILT — in this repo)
 
-A prior claude.ai session built a working HTML prototype with this structure:
-- `index.html` — gateway home, splits visitors into the two practices
-- `tractus.html` → rename to reflect CRO Automation Services page
-- `tractus-ophthalmology.html` → rename to reflect Ophthalmology Consulting page
+The site is built and lives at the repository root. No build step; static files.
+
+- `index.html` — gateway home, two practice cards stating what the client receives,
+  aligned row-for-row with CSS subgrid
+- `ophthalmology.html` — Practice 01: journey ribbon, sticky 5-step process, cited
+  evidence cards, the $1.3B EyeBio moment, deliverable spec
+- `data-automation.html` — Practice 02: sponsor↔CRO positioning diagram, five-act
+  bench-to-report narrative, six-property report spec, usual-vs-ours contrast
+- `about.html` — founder profile: capabilities, track record, education, methods
+- `samples.html` — sanitised sample-report request (name, email, company)
+- `request.html` — general enquiry form
+- `assets/site.css`, `assets/site.js` — shared tokens and components; reveals, sticky
+  nav, step progress
+- `netlify.toml` — publish from root, no build, extensionless URLs
+
+Forms POST to the host (Netlify Forms) and fall back to a composed mailto on any
+rejection, so the files work on any static host. Preview hosts (`file://`, `claude.ai`)
+skip the POST deliberately so a draft never reports a submission it did not make.
+
+**Superseded prototype naming** (kept so old references resolve): the earlier prototype's
+`tractus.html` is now `data-automation.html`; `tractus-ophthalmology.html` is now
+`ophthalmology.html`.
 
 Design system used: green = CRO practice, blue = biotech/ophthalmology practice,
 consistent across both. Mobile breakpoints tuned at 600px and 380px (not just the
 default 640px) — phone-width overflow was a recurring bug class, especially on the
 valuation waterfall bar and disease-tabs nav; watch for this if rebuilding.
 
-**Status:** prototype files are NOT in this repo. They exist only in the other
-claude.ai session/project ("CRO Consulting") and have not been imported here yet.
-If continuing from those files, get them uploaded into this repo first rather than
-reconstructing from memory.
+**Status:** RESOLVED. The prototype files were never recoverable — they existed only in a
+separate claude.ai project's sandbox and were not in Drive or any repo. The site was
+rebuilt from scratch here rather than imported. Do not go looking for them again.
 
 ## Founder — Dr. Adrian Cioanca
 
 - PhD in retinal degeneration research, Australian National University (ANU), John
   Curtin School of Medical Research
-- **University Medal** — awarded to ANU's top-ranking Honours graduate (Bachelor of
-  Advanced Science, 1st Class Honours, 2017)
+- **University Medal** — awarded for his PhD at ANU (confirmed by Adrian, 2026-10-06).
+  NOT an honours award: the BSc Advanced (First Class Honours, 2013–2017) was at **UNSW**.
+  Earlier notes here wrongly attributed the medal to an ANU honours degree.
 - **Frank Fenner Medal** — outstanding PhD thesis, 2022 (thesis: understanding retinal
   degeneration via high-throughput gene expression)
-- ~25 peer-reviewed publications over 4 years of research; **400+ citations, h-index 14**
+- **28 peer-reviewed publications**; **450 citations**, h-index 14 (confirmed by Adrian,
+  2026-10-06 — supersedes the earlier ~25 / 400+ figures and the "20+" in the CV PDF)
 - Published in *Communications Biology*, *Journal of Extracellular Vesicles*,
   *Molecular Neurobiology* / *Molecular Neurodegeneration*, among others
 - Postdoctoral Fellow, Natoli Group / Clear Vision Research Lab, JCSMR — research
@@ -352,21 +382,25 @@ finalizing.)
 
 ## Open decisions / gaps to resolve
 
-1. Prototype HTML files (`index.html`, `tractus.html`, `tractus-ophthalmology.html`)
-   were searched for in Google Drive and NOT found — only brand assets (logo,
-   email signature) turned up in the Drive "website" folder. They may only exist in
-   the other claude.ai project's sandbox output and may need to be rebuilt from
-   scratch here rather than imported, unless Adrian can export them from that project.
-2. Site structure now follows the ophthalmic-focus pivot: ONE ophthalmic firm, two
-   buyer tiers (Tier 1 small-biotech advisory / Tier 2 pharma capability build) — NOT
-   the old "CRO automation vs ophthalmology" two-practice split. The green/blue
-   two-practice color system from the prototype no longer maps cleanly; likely move to
-   a single ophthalmic-led palette (logo blue ~#2E7BE0, sample the file). Reconcile
-   before building.
+1. ~~Prototype HTML files~~ **CLOSED** — unrecoverable, site rebuilt from scratch in
+   this repo. See "Site structure" above.
+2. ~~Single-practice vs two-practice~~ **CLOSED 2026-10-06** — two practices, one palette
+   with a per-practice accent. See the reversal note at the top of "Strategic direction".
+2a. **OPEN — success stories.** Every practice page and the founder page had placeholder
+   story slots; these were replaced with CTAs to the request form because no engagement
+   has been written up and client names need sign-off. Real case studies are the single
+   biggest credibility gap on the site.
+2b. **OPEN — the sample pack does not exist yet.** `samples.html` promises a sanitised
+   report pack on request. Build it before driving traffic there, or soften the promise.
 3. Fill in a named specific for Adrian's "AI/data systems" work beyond the retinal
    bioinformatics pipelines already documented (text embeddings/NLP/vector-similarity
    work at Accenture is documented now — may be sufficient).
 4. Decide on core team vs. advisory board split and recruit/confirm the clinician gap.
-5. Tech stack / CMS / hosting not yet chosen for a production build.
+5. **Hosting — DECIDED, not yet executed.** Static files, no build. Plan: deploy the
+   repo root to **Netlify** (config already committed), keep **Squarespace** as the
+   registrar for `tractumbio.com`, and point the apex with an A record plus `www` with a
+   CNAME. Do NOT move nameservers to Netlify: the Google Workspace MX records for
+   `adrian@tractumbio.com` live in Squarespace DNS and a nameserver move puts mail at
+   risk. As of 2026-10-06 the domain still serves Squarespace's "Coming Soon" page.
 6. Real client names (Merck, GenN Tech per CV) must stay off the public site pending
    their explicit sign-off — use generic descriptors instead.

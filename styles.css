@@ -287,13 +287,14 @@
 @media(max-width:760px){.doors{grid-template-columns:1fr}}
 .door{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--c);border-radius:16px;
   padding:32px 30px;display:grid;gap:14px;align-content:start;min-width:0}
+.doors .door{grid-template-rows:auto auto auto 1fr auto}
 .door .ek{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:650;color:var(--c)}
 .door h2{font-size:clamp(1.5rem,2.6vw,1.9rem);letter-spacing:-.015em}
 .door p{color:var(--muted)}
 .door ul{list-style:none;margin:2px 0 0;padding:0;border-top:1px solid var(--line)}
 .door li{font-size:.95rem;padding:9px 0 9px 18px;border-bottom:1px solid var(--line);position:relative;line-height:1.4}
 .door li::before{content:"";position:absolute;left:0;top:16px;width:7px;height:1px;background:var(--c)}
-.door .btn{justify-self:start;margin-top:8px;background:var(--cb,var(--btn));color:#fff}
+.door .btn{justify-self:start;align-self:end;margin-top:8px;background:var(--cb,var(--btn));color:#fff}
 .door .btn:hover{background:var(--btn-hover)}
 
 /* ---- capability: three service pillars ---- */
@@ -361,6 +362,10 @@
 .credstrip b{color:var(--heading);font-weight:640}
 
 /* ---- landing: each door names its first paid step ---- */
+.door .dstats{border-top:1px solid var(--line);padding-top:16px;margin-top:2px;display:grid;gap:13px}
+.door .dstats .dk{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:650;color:var(--c)}
+.door .dstats .ostat{margin-bottom:0}
+.door .dstats .ostat b{font-size:1.24rem}
 .door .first{border:1px solid var(--line);border-left:3px solid var(--c);border-radius:10px;padding:14px 16px;
   background:color-mix(in srgb,var(--c) 5%,var(--surface));display:grid;gap:3px}
 .door .first .fk{font-size:.8rem;font-weight:650;color:var(--c);letter-spacing:.06em;text-transform:uppercase}
@@ -553,6 +558,8 @@
   :root[data-theme="dark"]{--teal-deep:#5FBDB6}
   .career-wrap{max-width:1320px;padding-block:clamp(30px,4vw,48px) clamp(34px,5vw,64px)}
   .close-wrap{padding-top:0;padding-bottom:clamp(44px,6vw,76px)}
+  .team-note{margin-top:30px;max-width:72ch;font-size:.96rem;color:var(--muted);line-height:1.6}
+  .team-note b{color:var(--heading)}
   .career-wrap .career{margin-top:0;grid-template-columns:repeat(5,1fr);gap:24px}
   @media(max-width:1100px){.career-wrap .career{grid-template-columns:repeat(3,1fr);gap:28px 24px}}
   @media(max-width:760px){.career-wrap .career{grid-template-columns:1fr 1fr}}

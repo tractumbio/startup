@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Request sample reports — Tractum Bio</title>
+<meta name="description" content="See what a Tractum Bio deliverable looks like. Request the sanitised sample pack.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="practice-data">
+
+<header class="nav" id="top">
+  <div class="nav-in">
+    <a class="brand" href="index.html" aria-label="Tractum Bio home">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M7 8 H21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M14 8 V25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path class="sweep" d="M8 24 C 14 22, 20 18, 26 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path class="sweep" d="M22 7 H26 V11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="word">tractum<span>bio</span></span>
+    </a>
+    <nav class="links">
+      <a href="ophthalmology.html"><span class="dot dot-eye"></span>Ophthalmology consulting</a>
+      <a href="data-automation.html"><span class="dot dot-data"></span>Data &amp; automation research</a>
+      <a href="about.html">Founder</a>
+    </nav>
+    <a class="nav-cta" href="#form">Request the pack</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero wrap" style="padding-bottom:clamp(30px,4vw,50px)">
+    <p class="eyebrow">Sample reports</p>
+    <h1 class="display" style="max-width:17ch">See what the deliverable actually looks like.</h1>
+    <p class="lead">Descriptions of a report only go so far. The sample pack is a sanitised version of what we hand over &mdash; so you can judge the standard yourself rather than take our word for it.</p>
+  </section>
+
+  <section class="wrap" id="contents" style="padding-top:clamp(24px,3vw,40px)">
+    <p class="eyebrow reveal">What is in the pack</p>
+    <h2 class="h2 reveal" style="--d:70ms;max-width:22ch">A worked example, end to end.</h2>
+    <div class="pack">
+      <div class="pitem reveal">
+        <span class="pi">01</span>
+        <div>
+          <h3 class="h3">A full study report</h3>
+          <p>One navigable document covering a complete worked study &mdash; the form the sponsor receives, not an extract or a summary of one.</p>
+        </div>
+      </div>
+      <div class="pitem reveal" style="--d:70ms">
+        <span class="pi">02</span>
+        <div>
+          <h3 class="h3">The methods, laid open</h3>
+          <p>How each value was computed, and how to follow any number in the report back to the data it came from.</p>
+        </div>
+      </div>
+      <div class="pitem reveal" style="--d:140ms">
+        <span class="pi">03</span>
+        <div>
+          <h3 class="h3">Statistics and why those ones</h3>
+          <p>The models applied, the study design they were chosen for, and the reasoning &mdash; the part most reports leave implicit.</p>
+        </div>
+      </div>
+      <div class="pitem reveal" style="--d:210ms">
+        <span class="pi">04</span>
+        <div>
+          <h3 class="h3">Figures as delivered</h3>
+          <p>Publication-grade figures at the quality they ship at, so you can compare them against what you currently receive.</p>
+        </div>
+      </div>
+      <div class="pitem reveal" style="--d:280ms">
+        <span class="pi">05</span>
+        <div>
+          <h3 class="h3">An assessment extract</h3>
+          <p>From the ophthalmology practice &mdash; how a go / no-go recommendation, its evidence and its stated limits are presented.</p>
+        </div>
+      </div>
+      <div class="pitem reveal" style="--d:350ms">
+        <span class="pi">06</span>
+        <div>
+          <h3 class="h3">What it replaced</h3>
+          <p>A short note on the manual workflow the pipeline took over, and where the days went before it did.</p>
+        </div>
+      </div>
+    </div>
+    <p class="src-note reveal"><b>On sanitisation.</b> Every sample is fully anonymised. Client names, compounds, targets, identifiers and any commercially sensitive result are removed or replaced, and nothing is shared without the originating client's agreement. The samples demonstrate structure, analytical rigour and presentation &mdash; not anyone's data.</p>
+  </section>
+
+  <section class="opener" id="form">
+    <div class="wrap">
+      <p class="eyebrow reveal">Request the pack</p>
+      <h2 class="h2 reveal" style="--d:70ms;max-width:20ch">Three fields, and it is on its way.</h2>
+      <div class="formwrap">
+        <form id="samplereq" novalidate>
+
+          <div class="frow2">
+            <div class="fgroup">
+              <label for="s-name">Your name <span class="req">*</span></label>
+              <input type="text" id="s-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="fgroup">
+              <label for="s-email">Work email <span class="req">*</span></label>
+              <input type="email" id="s-email" name="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="frow2">
+            <div class="fgroup">
+              <label for="s-company">Company <span class="req">*</span></label>
+              <input type="text" id="s-company" name="company" autocomplete="organization" required>
+            </div>
+            <div class="fgroup">
+              <label for="s-interest">Which samples?</label>
+              <select id="s-interest" name="interest">
+                <option value="Both">Both &mdash; reports and assessment extract</option>
+                <option value="Study reports">Study reports only</option>
+                <option value="Assessment extract">Ophthalmic assessment extract only</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fgroup">
+            <label for="s-context">Anything we should know? <span class="hint">Optional</span></label>
+            <textarea id="s-context" name="context" style="min-height:96px" placeholder="What you are working on, or what you want to see in the samples."></textarea>
+          </div>
+
+          <button type="submit" class="fsubmit" id="s-send">Request sample reports <span class="arw">&rarr;</span></button>
+
+          <div class="fstatus" id="s-status" hidden></div>
+
+          <p class="fnote">Submitting opens your email client with these details addressed to <a href="mailto:adrian@tractumbio.com">adrian@tractumbio.com</a>, so nothing is sent until you press send. We reply with the pack directly &mdash; no mailing list, no follow-up sequence, and your details are not shared with anyone.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="next">
+    <div class="crosslink reveal">
+      <div>
+        <h3 class="h3">Already know what you need?</h3>
+        <p>Skip the samples and tell us what you are deciding &mdash; we will come back with an honest view on whether the work is worth doing.</p>
+      </div>
+      <a class="btn btn-ghost" href="request.html">Request a conversation <span class="arw">&rarr;</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html" aria-label="Tractum Bio home">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M7 8 H21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M14 8 V25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path class="sweep" d="M8 24 C 14 22, 20 18, 26 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path class="sweep" d="M22 7 H26 V11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="word">tractum<span>bio</span></span>
+    </a>
+    <span>Canberra, Australia</span>
+    <span><a href="mailto:adrian@tractumbio.com">adrian@tractumbio.com</a></span>
+    <span><a href="ophthalmology.html">Ophthalmology consulting</a></span>
+    <span><a href="data-automation.html">Data &amp; automation research</a></span>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var form = document.getElementById('samplereq');
+  if(!form) return;
+  var status = document.getElementById('s-status');
+  var val = function(id){ var e = document.getElementById(id); return e ? e.value.trim() : ''; };
+  var show = function(msg, isErr){
+    status.textContent = msg;
+    status.classList.toggle('err', !!isErr);
+    status.hidden = false;
+  };
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+
+    var required = [['s-name','your name'],['s-email','your work email'],['s-company','your company']];
+    var missing = required.filter(function(r){ return !val(r[0]); });
+    if(missing.length){
+      show('Still needed: ' + missing.map(function(r){ return r[1]; }).join(', ') + '.', true);
+      document.getElementById(missing[0][0]).focus();
+      return;
+    }
+
+    var email = val('s-email');
+    if(email.indexOf('@') < 1 || email.indexOf('.', email.indexOf('@')) < 0){
+      show('That email address does not look right — please check it.', true);
+      document.getElementById('s-email').focus();
+      return;
+    }
+
+    var lines = [
+      'SAMPLE REPORT REQUEST',
+      '',
+      'Name: '     + val('s-name'),
+      'Email: '    + email,
+      'Company: '  + val('s-company'),
+      'Wants: '    + (val('s-interest') || 'Both'),
+      '',
+      'Context:',
+      (val('s-context') || '—'),
+      '',
+      '— sent from the Tractum Bio sample request form'
+    ];
+
+    var href = 'mailto:adrian@tractumbio.com'
+      + '?subject=' + encodeURIComponent('Sample report request — ' + val('s-company'))
+      + '&body='    + encodeURIComponent(lines.join('\n'));
+
+    show('Opening your email client with these details. If nothing happens, email adrian@tractumbio.com directly.', false);
+    window.location.href = href;
+  });
+})();
+</script>
+</body>
+</html>

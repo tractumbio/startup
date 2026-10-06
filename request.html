@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Request a conversation — Tractum Bio</title>
+<meta name="description" content="Tell us what you are deciding and we will come back to you with a view on whether it is worth pursuing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="nav-in">
+    <a class="brand" href="index.html" aria-label="Tractum Bio home">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M7 8 H21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M14 8 V25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path class="sweep" d="M8 24 C 14 22, 20 18, 26 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path class="sweep" d="M22 7 H26 V11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="word">tractum<span>bio</span></span>
+    </a>
+    <nav class="links">
+      <a href="ophthalmology.html"><span class="dot dot-eye"></span>Ophthalmology consulting</a>
+      <a href="data-automation.html"><span class="dot dot-data"></span>Data &amp; automation research</a>
+      <a href="about.html">Founder</a>
+    </nav>
+    <a class="nav-cta" href="#form">Request a conversation</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero wrap" style="padding-bottom:clamp(30px,4vw,50px)">
+    <p class="eyebrow">Request a conversation</p>
+    <h1 class="display" style="max-width:19ch">Tell us what you are deciding.</h1>
+    <p class="lead">A short description is enough to start. We will come back to you with an honest view on whether the work is worth doing &mdash; and if it is not, we will say so.</p>
+  </section>
+
+  <section class="wrap" id="form" style="padding-top:0">
+    <div class="formwrap">
+      <form id="enquiry" novalidate>
+
+        <div class="frow2">
+          <div class="fgroup">
+            <label for="q-name">Your name <span class="req">*</span></label>
+            <input type="text" id="q-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="fgroup">
+            <label for="q-email">Email <span class="req">*</span></label>
+            <input type="email" id="q-email" name="email" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="frow2">
+          <div class="fgroup">
+            <label for="q-org">Organisation <span class="req">*</span></label>
+            <input type="text" id="q-org" name="organisation" autocomplete="organization" required>
+          </div>
+          <div class="fgroup">
+            <label for="q-role">Your role</label>
+            <input type="text" id="q-role" name="role" autocomplete="organization-title" placeholder="Optional">
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <label for="q-practice">What do you need? <span class="req">*</span></label>
+          <select id="q-practice" name="practice" required>
+            <option value="">Select one</option>
+            <option value="Ophthalmic asset assessment">Ophthalmic asset assessment &mdash; does my candidate belong in the eye?</option>
+            <option value="Preclinical program design">Preclinical program design, or building ophthalmic capability in-house</option>
+            <option value="Data and reporting pipeline">Data and reporting pipeline &mdash; better deliverables from our studies</option>
+            <option value="Not sure yet">Not sure yet &mdash; happy to be pointed in the right direction</option>
+          </select>
+        </div>
+
+        <div class="fgroup">
+          <label for="q-detail">What are you deciding? <span class="req">*</span></label>
+          <span class="hint">The asset, the study, or the bottleneck. Two or three sentences is plenty &mdash; no confidential detail needed at this stage.</span>
+          <textarea id="q-detail" name="detail" required></textarea>
+        </div>
+
+        <div class="frow2">
+          <div class="fgroup">
+            <label for="q-when">Timeframe</label>
+            <select id="q-when" name="timeframe">
+              <option value="Not specified">Not specified</option>
+              <option value="Now - actively deciding">Now &mdash; actively deciding</option>
+              <option value="Next quarter">Next quarter</option>
+              <option value="This year">This year</option>
+              <option value="Exploratory">Exploratory</option>
+            </select>
+          </div>
+          <div class="fgroup">
+            <label for="q-how">How did you find us?</label>
+            <input type="text" id="q-how" name="referral" placeholder="Optional">
+          </div>
+        </div>
+
+        <button type="submit" class="fsubmit" id="q-send">Send enquiry <span class="arw">&rarr;</span></button>
+
+        <div class="fstatus" id="q-status" hidden></div>
+
+        <p class="fnote">Submitting opens your email client with the details filled in, addressed to <a href="mailto:adrian@tractumbio.com">adrian@tractumbio.com</a> &mdash; so nothing is sent until you press send, and the enquiry stays between you and us. If you would rather just write directly, that address works fine too.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html" aria-label="Tractum Bio home">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M7 8 H21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M14 8 V25" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path class="sweep" d="M8 24 C 14 22, 20 18, 26 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path class="sweep" d="M22 7 H26 V11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="word">tractum<span>bio</span></span>
+    </a>
+    <span>Canberra, Australia</span>
+    <span><a href="mailto:adrian@tractumbio.com">adrian@tractumbio.com</a></span>
+    <span><a href="ophthalmology.html">Ophthalmology consulting</a></span>
+    <span><a href="data-automation.html">Data &amp; automation research</a></span>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+(function(){
+  var form = document.getElementById('enquiry');
+  if(!form) return;
+  var status = document.getElementById('q-status');
+
+  var field = function(id){ return document.getElementById(id); };
+  var val = function(id){ var e = field(id); return e ? e.value.trim() : ''; };
+
+  var show = function(msg, isErr){
+    status.textContent = msg;
+    status.classList.toggle('err', !!isErr);
+    status.hidden = false;
+  };
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+
+    var required = [
+      ['q-name',     'your name'],
+      ['q-email',    'your email address'],
+      ['q-org',      'your organisation'],
+      ['q-practice', 'what you need'],
+      ['q-detail',   'what you are deciding']
+    ];
+
+    var missing = required.filter(function(r){ return !val(r[0]); });
+    if(missing.length){
+      show('Still needed: ' + missing.map(function(r){ return r[1]; }).join(', ') + '.', true);
+      var first = field(missing[0][0]);
+      if(first) first.focus();
+      return;
+    }
+
+    var email = val('q-email');
+    if(email.indexOf('@') < 1 || email.indexOf('.', email.indexOf('@')) < 0){
+      show('That email address does not look right — please check it.', true);
+      field('q-email').focus();
+      return;
+    }
+
+    var lines = [
+      'Name: '         + val('q-name'),
+      'Email: '        + email,
+      'Organisation: ' + val('q-org'),
+      'Role: '         + (val('q-role') || '—'),
+      '',
+      'Needs: '        + val('q-practice'),
+      'Timeframe: '    + val('q-when'),
+      'Found us via: ' + (val('q-how') || '—'),
+      '',
+      'What they are deciding:',
+      val('q-detail'),
+      '',
+      '— sent from the Tractum Bio enquiry form'
+    ];
+
+    var href = 'mailto:adrian@tractumbio.com'
+      + '?subject=' + encodeURIComponent('Enquiry — ' + val('q-practice') + ' — ' + val('q-org'))
+      + '&body='    + encodeURIComponent(lines.join('\n'));
+
+    show('Opening your email client with these details. If nothing happens, email adrian@tractumbio.com directly.', false);
+    window.location.href = href;
+  });
+})();
+</script>
+</body>
+</html>

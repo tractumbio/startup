@@ -95,7 +95,9 @@
       <p class="eyebrow reveal">Request the pack</p>
       <h2 class="h2 reveal" style="--d:70ms;max-width:20ch">Three fields, and it is on its way.</h2>
       <div class="formwrap">
-        <form id="samplereq" novalidate>
+        <form id="samplereq" name="sample-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="sample-request">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
 
           <div class="frow2">
             <div class="fgroup">
@@ -181,6 +183,35 @@
     status.hidden = false;
   };
 
+
+    var post = function(mailtoHref){
+      // Not on a host that can accept the POST (e.g. a preview) -> go straight to email.
+      if(location.protocol === 'file:' || /claude\.ai$/.test(location.hostname)){
+        show('Opening your email client with these details. If nothing happens, email adrian@tractumbio.com directly.', false);
+        window.location.href = mailtoHref;
+        return;
+      }
+      var body = new URLSearchParams();
+      body.append('form-name', 'sample-request');
+      body.append('name', val('s-name'));
+      body.append('email', val('s-email'));
+      body.append('company', val('s-company'));
+      body.append('interest', val('s-interest'));
+      body.append('context', val('s-context'));
+      fetch(location.pathname, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: body.toString()
+      }).then(function(r){
+        if(!r.ok) throw new Error('rejected');
+        show('Thank you — request received. The sample pack is on its way to ' + val('s-email') + '.', false);
+        form.reset();
+      }).catch(function(){
+        show('Opening your email client instead. If nothing happens, email adrian@tractumbio.com directly.', false);
+        window.location.href = mailtoHref;
+      });
+    };
+
   form.addEventListener('submit', function(ev){
     ev.preventDefault();
 
@@ -217,8 +248,7 @@
       + '?subject=' + encodeURIComponent('Sample report request — ' + val('s-company'))
       + '&body='    + encodeURIComponent(lines.join('\n'));
 
-    show('Opening your email client with these details. If nothing happens, email adrian@tractumbio.com directly.', false);
-    window.location.href = href;
+    post(href);
   });
 })();
 </script>

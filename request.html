@@ -42,7 +42,9 @@
 
   <section class="wrap" id="form" style="padding-top:0">
     <div class="formwrap">
-      <form id="enquiry" novalidate>
+      <form id="enquiry" name="enquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="enquiry">
+        <p hidden><label>Leave blank: <input name="bot-field"></label></p>
 
         <div class="frow2">
           <div class="fgroup">
@@ -145,6 +147,38 @@
     status.hidden = false;
   };
 
+
+    var post = function(mailtoHref){
+      // Not on a host that can accept the POST (e.g. a preview) -> go straight to email.
+      if(location.protocol === 'file:' || /claude\.ai$/.test(location.hostname)){
+        show('Opening your email client with these details. If nothing happens, email adrian@tractumbio.com directly.', false);
+        window.location.href = mailtoHref;
+        return;
+      }
+      var body = new URLSearchParams();
+      body.append('form-name', 'enquiry');
+      body.append('name', val('q-name'));
+      body.append('email', val('q-email'));
+      body.append('organisation', val('q-org'));
+      body.append('role', val('q-role'));
+      body.append('practice', val('q-practice'));
+      body.append('timeframe', val('q-when'));
+      body.append('referral', val('q-how'));
+      body.append('detail', val('q-detail'));
+      fetch(location.pathname, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: body.toString()
+      }).then(function(r){
+        if(!r.ok) throw new Error('rejected');
+        show('Thank you — your enquiry is in. We will come back to you shortly.', false);
+        form.reset();
+      }).catch(function(){
+        show('Opening your email client instead. If nothing happens, email adrian@tractumbio.com directly.', false);
+        window.location.href = mailtoHref;
+      });
+    };
+
   form.addEventListener('submit', function(ev){
     ev.preventDefault();
 
@@ -191,8 +225,7 @@
       + '?subject=' + encodeURIComponent('Enquiry — ' + val('q-practice') + ' — ' + val('q-org'))
       + '&body='    + encodeURIComponent(lines.join('\n'));
 
-    show('Opening your email client with these details. If nothing happens, email adrian@tractumbio.com directly.', false);
-    window.location.href = href;
+    post(href);
   });
 })();
 </script>

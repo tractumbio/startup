@@ -1,0 +1,41 @@
+# Static site — no build step. Files are served from the repository root.
+[build]
+  publish = "."
+
+# Long-cache the fingerprint-free shared assets but let HTML revalidate,
+# so a redeploy is visible immediately.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Tidy URLs: /ophthalmology instead of /ophthalmology.html
+[[redirects]]
+  from = "/ophthalmology"
+  to = "/ophthalmology.html"
+  status = 200
+
+[[redirects]]
+  from = "/data-automation"
+  to = "/data-automation.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/samples"
+  to = "/samples.html"
+  status = 200
+
+[[redirects]]
+  from = "/request"
+  to = "/request.html"
+  status = 200

@@ -482,3 +482,42 @@
   .freeline{display:inline-block;margin-bottom:24px;font-size:.96rem;color:var(--heading);
     background:var(--surface-2);border:1px solid var(--line-strong);border-radius:999px;padding:9px 18px}
   .freeline b{color:var(--teal);font-weight:700}
+
+  /* ---- why the eye: one row of stats across the full width ---- */
+  .whyeye-wide{max-width:1320px;margin:0 auto;padding-inline:28px}
+  .whyeye-row{display:grid;grid-template-columns:repeat(5,1fr);gap:30px;margin-top:28px}
+  .whyeye-row .ostat{margin-bottom:0;border-top:2px solid var(--line);padding-top:14px}
+  .whyeye-row .ostat b{font-size:1.5rem}
+  .whyeye-row .ostat span{font-size:.86rem;line-height:1.4}
+  @media(max-width:1180px){.whyeye-row{grid-template-columns:repeat(3,1fr);gap:26px}}
+  @media(max-width:760px){.whyeye-row{grid-template-columns:1fr;gap:20px}}
+
+  /* ---- profile: one line, then plain points ---- */
+  .bio-line{font-family:var(--mono);font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--teal);font-weight:650;margin:0 0 20px}
+  .bio-points{list-style:none;margin:0;padding:0;max-width:62ch;border-top:1px solid var(--line)}
+  .bio-points li{position:relative;padding:13px 0 13px 22px;border-bottom:1px solid var(--line);
+    font-size:1rem;color:var(--ink);line-height:1.45}
+  .bio-points li::before{content:"";position:absolute;left:0;top:1.28em;width:7px;height:7px;
+    border-radius:50%;background:var(--teal)}
+  .bio-points li b{color:var(--heading);font-weight:650}
+
+  /* ---- why the eye: five stats on one row at desktop width ---- */
+  #why.wrap{max-width:1320px}
+  .whyeye-row{display:grid;grid-template-columns:repeat(5,1fr);gap:30px;margin-top:26px}
+  .whyeye-row .ostat{margin:0;border-top:2px solid var(--line);padding-top:14px}
+  .whyeye-row .ostat b{font-size:1.44rem}
+  .whyeye-row .ostat span{font-size:.87rem;line-height:1.4}
+  @media(max-width:1180px){.whyeye-row{grid-template-columns:repeat(3,1fr);gap:24px}}
+  @media(max-width:760px){.whyeye-row{grid-template-columns:1fr;gap:20px}}
+  .whyme-solo{margin-top:46px}
+
+  /* ---- profile: one line, then plain points ---- */
+  .bio-line{font-family:var(--mono);font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--teal);font-weight:650;margin:0 0 20px}
+  .bio-points{list-style:none;margin:0;padding:0;max-width:62ch;border-top:1px solid var(--line)}
+  .bio-points li{position:relative;padding:13px 0 13px 22px;border-bottom:1px solid var(--line);
+    font-size:1rem;color:var(--ink);line-height:1.45}
+  .bio-points li::before{content:"";position:absolute;left:0;top:1.3em;width:7px;height:7px;
+    border-radius:50%;background:var(--teal)}
+  .bio-points li b{color:var(--heading);font-weight:650}

@@ -426,6 +426,10 @@
   .hublist{display:grid;gap:14px}
 }
 
+.fcard .fpoints{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.fcard .fpoints li{position:relative;padding-left:16px;font-size:.93rem;color:var(--muted);line-height:1.5}
+.fcard .fpoints li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:1px;background:var(--teal)}
+
 /* ---- references ---- */
 .refs{counter-reset:ref}
 .refs ol{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px;max-width:88ch}

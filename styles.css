@@ -289,7 +289,8 @@
 @media(max-width:760px){.doors{grid-template-columns:1fr}}
 .door{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--c);border-radius:16px;
   padding:32px 30px;display:grid;gap:14px;align-content:start;min-width:0}
-.doors .door{grid-template-rows:auto auto auto 1fr auto}
+.doors .door{display:flex;flex-direction:column;gap:14px}
+.doors .door .btn{margin-top:auto;align-self:flex-start}
 .door .ek{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:650;color:var(--c)}
 .door h2{font-size:clamp(1.5rem,2.6vw,1.9rem);letter-spacing:-.015em}
 .door p{color:var(--muted)}
@@ -364,6 +365,12 @@
 .credstrip b{color:var(--heading);font-weight:640}
 
 /* ---- landing: each door names its first paid step ---- */
+.door .svcval{display:grid;gap:16px;border-top:1px solid var(--line);padding-top:16px;margin-top:2px}
+.door .sv{border-left:3px solid var(--c);padding:2px 0 2px 14px;display:grid;gap:3px}
+.door .svk{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:650;color:var(--c)}
+.door .svn{font-size:1.5rem;font-weight:760;color:var(--heading);letter-spacing:-.02em;line-height:1.1}
+.door .svn small{font-size:.8rem;font-weight:650;color:var(--muted);letter-spacing:.05em;margin-left:7px}
+.door .svt{font-size:.92rem;color:var(--muted);line-height:1.45}
 .door .dstats{border-top:1px solid var(--line);padding-top:16px;margin-top:2px;display:grid;gap:13px}
 .door .dstats .dk{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:650;color:var(--c)}
 .door .dstats .ostat{margin-bottom:0}

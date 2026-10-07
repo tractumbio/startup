@@ -1,4 +1,18 @@
 document.documentElement.classList.add('js');
+// A fresh navigation starts at the top. Browsers restore the scroll position of a page you have
+// visited before, which lands you mid-page after following a link; back and forward still restore.
+(function(){
+  try{
+    var e=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+    if(e&&e.type==='back_forward')return;
+    if('scrollRestoration' in history)history.scrollRestoration='manual';
+    if(location.hash)return;
+    var h=document.documentElement,prev=h.style.scrollBehavior;
+    h.style.scrollBehavior='auto';
+    window.scrollTo(0,0);
+    window.addEventListener('load',function(){window.scrollTo(0,0);h.style.scrollBehavior=prev;});
+  }catch(err){}
+})();
 // Scroll reveal. Content is visible by default: the .reveal-ready class that hides .reveal elements is only
 // added once the observer exists, and any failure reveals everything rather than leaving it hidden.
 (function(){

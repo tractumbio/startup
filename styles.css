@@ -407,6 +407,35 @@
 .more-story[open] summary{margin-bottom:12px}
 .creds li a{font-weight:500}
 
+/* ---- where we sit: the sponsor, us, and the specialists ---- */
+.hubfig{margin:34px 0 0}
+.hubmap{max-width:1000px;margin:0 auto}
+.hubmap svg{display:block;width:100%;height:auto;overflow:visible}
+.hubmap .h-k{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.1em}
+.hubmap .h-t{font-family:var(--sans);font-size:15px;font-weight:650;fill:var(--heading)}
+.hubmap .h-s{font-family:var(--sans);font-size:13.5px;font-weight:500;fill:var(--muted)}
+.hubfig figcaption{margin-top:18px;font-size:.95rem;color:var(--muted);max-width:72ch}
+.hublist{display:none;list-style:none;margin:0;padding:0}
+.hublist li{border-left:3px solid var(--c);padding:8px 0 8px 16px;display:grid;gap:3px}
+.hublist li b{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--heading)}
+.hublist li span{color:var(--muted);font-size:.95rem;line-height:1.55}
+.hublist li.end{margin-top:4px;border-left-width:0;padding-left:0;border-top:1px solid var(--line);padding-top:14px}
+.hublist li.end b{color:var(--blue-bright)}
+@media(max-width:900px){
+  .hubmap{display:none}
+  .hublist{display:grid;gap:14px}
+}
+
+/* ---- references ---- */
+.refs{counter-reset:ref}
+.refs ol{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px;max-width:88ch}
+.refs li{counter-increment:ref;position:relative;padding-left:34px;font-size:.92rem;color:var(--muted);line-height:1.55}
+.refs li::before{content:counter(ref);position:absolute;left:0;top:1px;font-family:var(--mono);font-size:13px;
+  font-weight:650;color:var(--teal)}
+.refs li i{color:var(--heading)}
+.refs li a{font-weight:600}
+.refs .refnote{margin-top:22px;max-width:76ch}
+
 /* ---- framework section: the agentic mesh applied to a laboratory ---- */
 .mesh-why{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:30px}
 @media(max-width:760px){.mesh-why{grid-template-columns:1fr;gap:24px}}

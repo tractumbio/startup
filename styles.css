@@ -400,6 +400,28 @@
 .more-story[open] summary{margin-bottom:12px}
 .creds li a{font-weight:500}
 
+/* ---- framework section: the agentic mesh applied to a laboratory ---- */
+.mesh-why{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:30px}
+@media(max-width:760px){.mesh-why{grid-template-columns:1fr;gap:24px}}
+.mesh-why p{color:var(--muted);margin-top:8px}
+.meshfig{margin:38px 0 0}
+.meshmap{max-width:1000px;margin:0 auto}
+.meshmap svg{display:block;width:100%;height:auto;overflow:visible}
+.meshmap .m-k{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.1em}
+.meshmap .m-t{font-family:var(--sans);font-size:15px;font-weight:650;fill:var(--heading)}
+.meshmap .m-s{font-family:var(--sans);font-size:13.5px;font-weight:500;fill:var(--muted)}
+.meshfig figcaption{margin-top:18px;font-size:.95rem;color:var(--muted);max-width:72ch}
+.meshlist{display:none;list-style:none;margin:0;padding:0}
+.meshlist li{border-left:3px solid var(--c);padding:8px 0 8px 16px;display:grid;gap:3px}
+.meshlist li b{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--heading)}
+.meshlist li span{color:var(--muted);font-size:.95rem;line-height:1.55}
+.meshlist li.end{margin-top:4px;border-left-width:0;padding-left:0;border-top:1px solid var(--line);padding-top:14px}
+.meshlist li.end b{color:var(--blue-bright)}
+@media(max-width:900px){
+  .meshmap{display:none}
+  .meshlist{display:grid;gap:14px}
+}
+
 /* ---- phone versions of the two diagrams: SVG text shrinks with the graphic ---- */
 .caplist,.stacklist{display:none;list-style:none;margin:0;padding:0}
 @media(max-width:560px){
